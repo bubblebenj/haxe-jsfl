@@ -1,20 +1,28 @@
 package jsfl;
 
-// 指定できる値は、「back」、「backward」、「forward」および「front」です。
+/**
+ * Used by document.arrange()
+ * Acceptable values are "back", "backward", "forward", and "front"
+ */
 
 @:fakeEnum(String)
-extern enum ArrangeMode {
-	BACK;
-	BACKWARD;
-	FORWARD;
-	FRONT;
+extern enum AlignMode {
+	LEFT;
+	RIGHT;
+	TOP;
+	BOTTOM;
+	VERTICAL_CENTER;
+	HORIZONTAL_CENTER;
 }
 
-@:native("jsfl.ArrangeMode")
+@:native("jsfl.AlignMode")
 private class Impl {
-	public static inline var BACK:String = "back";
-	public static inline var BACKWARD:String = "backward";
-	public static inline var FORWARD:String = "forward";
-	public static inline var FRONT:String = "front";
+	public static inline var LEFT:String = "left";
+	public static inline var RIGHT:String = "right";
+	public static inline var TOP:String = "top";
+	public static inline var BOTTOM:String = "bottom";
+	public static inline var VERTICAL_CENTER:String = "vertical center";
+	public static inline var HORIZONTAL_CENTER:String = "horizontal center";
 
 }
+
