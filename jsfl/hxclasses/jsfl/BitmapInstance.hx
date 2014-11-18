@@ -14,7 +14,7 @@ extern class BitmapInstance extends Instance {
 	
 	/**
 	 * Sets the bits of an existing bitmap element.
-	 * @param	bitmap
+	 * @param	bitmap An object that contains height, width, depth, bits, and cTab properties.
 	 */
 	public function setBits(bitmap:Bits):Void;
 	
