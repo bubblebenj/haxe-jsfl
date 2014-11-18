@@ -1,18 +1,31 @@
 package jsfl;
 
+/**
+ * The BitmapInstance object is a subclass of the Instance object and represents a bitmap in a frame
+ */
 @:native("BitmapInstance")
 extern class BitmapInstance extends Instance {
 	
-	// ビットマップのビットからビットマップエフェクトを作成し、操作し、Flash に戻します。
+	/**
+	 * Lets you create bitmap effects by getting the bits out of the bitmap, manipulating them, and then returning them to Flash.
+	 * @return An object that contains width, height, depth, bits, and, if the bitmap has a color table, cTab properties.
+	 */
 	public function getBits():Bits;
 	
-	// 既存のビットマップエレメントのビットを設定します。
+	/**
+	 * Sets the bits of an existing bitmap element.
+	 * @param	bitmap
+	 */
 	public function setBits(bitmap:Bits):Void;
 	
-	// 読み取り専用。ビットマップの幅を表すピクセル単位の整数です。
+	/**
+	 * Read-only; an integer that represents the width of the bitmap, in pixels.
+	 */
 	public var hPixels(default, null):Int;
 	
-	// 読み取り専用。ビットマップの高さを表すピクセル単位の整数です。
+	/**
+	 * Read-only; an integer that represents the height of the bitmap, in pixels.
+	 */
 	public var vPixels(default, null):Int;
 	
 }
