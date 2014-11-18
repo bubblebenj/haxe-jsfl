@@ -1,6 +1,7 @@
 package jsfl;
 
-// 指定できる値は、「photo」または「lossless」です。
+// Used by bitmapItem class
+// Acceptable values are "photo" or "lossless" . 
 
 @:fakeEnum(String)
 extern enum CompressionType {
