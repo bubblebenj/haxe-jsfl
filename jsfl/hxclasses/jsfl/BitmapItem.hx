@@ -1,48 +1,88 @@
 package jsfl;
 
+/**
+ * A BitmapItem object refers to a bitmap in the library of a document.
+ */
 @:native("BitmapItem")
 extern class BitmapItem extends Item {
 	
-	// 指定されたアイテムを PNG または JPG ファイルに書き出します。
+	/**
+	 * Exports the specified item to a PNG or JPG file.
+	 * @param	fileURI A string, expressed as a file:/// URI, that specifies the path and name of the exported file.
+	 * @param	quality A number, from 1-100, that determines the quality of the exported image file. A higher number indicates higher quality. The default is 80.
+	 * @return A Boolean value of true if the file was exported successfully; false otherwise.
+	 */
 	public function exportToFile(fileURI:String, quality:Int):Bool;
 	
-	// ビットマップのスムージングを許可するかどうかを指定するブール値。
+	/**
+	 * A Boolean value that specifies whether to allow smoothing of a bitmap (true) or not (false).
+	 */
 	public var allowSmoothing(default, default):Bool;
 	
-	// ビットマップに適用する画像圧縮の種類を指定するストリング。
+	/**
+	 * A string that determines the type of image compression applied to the bitmap.
+	 */
 	public var compressionType(default, default):CompressionType;
 	
-	// 1970 年 1 月 1 日から元のファイルの変更日付までに経過した秒数。
+	/**
+	 * Read-only; The number of seconds that have elapsed between January 1, 1970 and the modification date of the original file.
+	 */
 	public var fileLastModifiedDate(default, null):String;
 	
-	// ビットマップにアルファチャンネルが含まれているかどうかを示すブール値。
+	/**
+	 * Read-only; A Boolean value indicating whether the bitmap has an alpha channel.
+	 */
 	public var hasValidAlphaLayer(default, null):Bool;
 	
-	// ビットマップの幅をピクセル単位で指定します。
+	/**
+	 * Read-only; Specifies the width of the bitmap, in pixels.
+	 */
 	public var hPixels(default, null):Int;
 	
-	// ライブラリ内のビットマップアイテムを変更した日付。
+	/**
+	 * Read-only; The modification date of the bitmap item in the Library.
+	 */
 	public var lastModifiedDate(default, null):String;
 	
-	// アイテムが jpeg ファイルとして読み込まれたかどうかを指定します。
+	/**
+	 * Read-only; Specifies whether the item was imported as an jpeg file.
+	 */
 	public var originalCompressionType(default, null):CompressionType;
 	
-	// ライブラリに読み込まれたファイルが読み込み元の場所にまだ存在するかどうかを指定します。
+	/**
+	 * Available only for JPEG compression.
+	 * An integer from 0 to 100 that specifies the quality of the bitmap. To use the default document quality, specify -1.
+	 */
+	public var quality(default, default):Int;
+	
+	/**
+	 * Read-only; Specifies whether the file that was imported to the Library still exists in the location from where it was imported.
+	 */
 	public var sourceFileExists(default, null):Bool;
 	
-	// ライブラリアイテムのファイル変更日付が、読み込まれたファイルのディスク上の変更日付と同じかどうかを指定します。
+	/**
+	 * Read-only; Specifies whether the file modification date of the Library item is the same as the modification date on disk of the file that was imported.
+	 */
 	public var sourceFileIsCurrent(default, null):Bool;
 	
-	// ライブラリに読み込まれたファイルのパスと名前。
+	/**
+	 * Read-only; The path and name of the file that was imported into the Library.
+	 */
 	public var sourceFilePath(default, null):String;
 	
-	// 非ブロック化を有効にするかどうかを指定します。
+	/**
+	 * A Boolean value that specifies whether deblocking is enabled (true) or not (false).
+	 */
 	public var useDeblocking(default, default):Bool;
 	
-	// デフォルトの読み込み JPEG 画質を使用するかどうかを指定するブール値。
+	/**
+	 * A Boolean value that specifies whether to use the default imported JPEG quality.
+	 */
 	public var useImportedJPEGQuality(default, default):Bool;
 	
-	// ビットマップの高さをピクセル単位で指定します。
+	/**
+	 * Read-only; Specifies the height of the bitmap, in pixels.
+	 */
 	public var vPixels(default, null):Int;
 
 }
