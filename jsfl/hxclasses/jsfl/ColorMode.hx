@@ -1,6 +1,7 @@
 package jsfl;
 
-// 有効な値は、「none」、「brightness」、「tint」、「alpha」、「advanced」です。
+// Used by symbolInstance.colorMode
+// Acceptable values are "none", "brightness", "tint", "alpha", and "advanced" .
 
 @:fakeEnum(String)
 extern enum ColorMode {
