@@ -1,6 +1,9 @@
 package jsfl;
 
-// 指定できる値は、「left」、「right」、「top」、「bottom」、「vertical center」および「horizontal center」です。
+/**
+ * Used by document.align()
+ * Acceptable values are "left", "right", "top", "bottom", "vertical center", and "horizontal center"
+ */
 
 @:fakeEnum(String)
 extern enum AlignMode {
