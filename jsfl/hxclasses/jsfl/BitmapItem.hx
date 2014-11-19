@@ -31,16 +31,19 @@ extern class BitmapItem extends Item {
 	
 	/**
 	 * Read-only; A Boolean value indicating whether the bitmap has an alpha channel.
+	 * Availability: Flash CS6 Professional.
 	 */
 	public var hasValidAlphaLayer(default, null):Bool;
 	
 	/**
 	 * Read-only; Specifies the width of the bitmap, in pixels.
+	 * Availability: Flash CS6 Professional.
 	 */
 	public var hPixels(default, null):Int;
 	
 	/**
 	 * Read-only; The modification date of the bitmap item in the Library.
+	 * Availability: Flash CS6 Professional.
 	 */
 	public var lastModifiedDate(default, null):String;
 	
@@ -82,6 +85,7 @@ extern class BitmapItem extends Item {
 	
 	/**
 	 * Read-only; Specifies the height of the bitmap, in pixels.
+	 * Availability: Flash CS6 Professional.
 	 */
 	public var vPixels(default, null):Int;
 
