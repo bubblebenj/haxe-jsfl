@@ -1,36 +1,59 @@
 package jsfl;
 
+/**
+ * This object contains all the properties of the Fill color setting of the Tools panel or of a selected shape.
+ * To retrieve a Fill object, use document.getCustomFill().
+ */
 @:native("Fill")
 extern class Fill {
 	
-	// ビットマップよりも大きいシェイプのビットマップの塗りをクリップするか、繰り返すかを指定するブール値です。
+	/**
+	 * A Boolean value that specifies whether the bitmap fill for a shape that is larger than the bitmap is clipped or repeated.
+	 */
 	public var bitmapIsClipped(default, default):Bool;
 	
-	// ライブラリ内のビットマップの塗りのパスと名前を指定するストリングです。
+	/**
+	 * A string that specifies the path and name of the bitmap fill in the Library.
+	 */
 	public var bitmapPath(default, default):String;
 	
-	// 塗りのカラーを表す、ストリング、16 進数値または整数。
+	/**
+	 * A string, hexadecimal value, or integer that represents the fill color.
+	 */
 	public var color(default, default):Dynamic;
 	
-	// グラデーションカラーの配列。
+	/**
+	 * An array of colors in gradient.
+	 */
 	public var colorArray(default, default):Array<Dynamic>;
 	
-	// 変形点からのグラデーションの焦点の水平オフセットを指定する整数。
+	/**
+	 * An integer that specifies the gradient focal point horizontal offset from the transformation point.
+	 */
 	public var focalPoint(default, default):Int;
 	
-	// 塗りを線状または放射状の RGB グラデーションでレンダリングするかどうかを指定するブール値。
+	/**
+	 * A Boolean value that specifies whether to render the fill as a linear or radial RGB gradient.
+	 */
 	public var linearRGB(default, default):Bool;
 	
-	// グラデーションの塗りの配置、方向および拡大 / 縮小を定義する Matrix オブジェクトです。
+	/**
+	 * A Matrix object that defines the placement, orientation, and scales for gradient fills.
+	 */
 	public var matrix(default, default):Matrix;
 	
-	// グラデーションのオーバーフローの動作を指定するストリングです。
+	/**
+	 * A string that specifies the behavior of a gradient’s overflow.
+	 */
 	public var overflow(default, default):String;
 	
-	// 0 ～ 255 の範囲で、対応するカラーの位置を示す整数の配列です。
+	/**
+	 * An array of integers, each in the range of zero to 255, indicating the position of the corresponding color.
+	 */
 	public var posArray(default, default):Array<Int>;
 	
-	// 塗りのスタイルを指定するストリング。
+	/**
+	 * A string that specifies the fill style.
+	 */
 	public var style(default, default):String;
-
 }

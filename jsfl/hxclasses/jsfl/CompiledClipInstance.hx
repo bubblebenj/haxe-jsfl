@@ -1,7 +1,8 @@
 package jsfl;
 
 /**
- *  The CompiledClipInstance object is essentially an instance of a movie clip that has been converted to a compiled clip library item
+ * The CompiledClipInstance object is a subclass of the Instance object.
+ * It is essentially an instance of a movie clip that has been converted to a compiled clip library item (see Instance object).
  */
 @:native("CompiledClipInstance")
 extern class CompiledClipInstance extends Instance {

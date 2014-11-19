@@ -1,5 +1,9 @@
 package jsfl;
 
+/**
+ * Used by document.enterEditMode()
+ * A string that specifies the editing mode of a document. Acceptable values are "inPlace" or "newWindow". 
+ */
 @:fakeEnum(String)
 extern enum DocumentEnterEditMode {
 	IN_PLACE;

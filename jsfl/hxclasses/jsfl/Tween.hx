@@ -1,27 +1,52 @@
 package jsfl;
 
+/**
+ * The Tween object can be used to access interpolated properties of tweens. Accessing properties for a non-tween frame throws errors.
+ */
 @:native("Tween")
 extern class Tween {
 	
-	// フレーム間のカラー変換データを取得します。
+	/**
+	 * Returns color transformation data between frames.
+	 * @param	frameIndex Offset index of interpolated frame.
+	 * @return Value object {"colorAlphaAmount", "colorAlphaPercent", "colorRedAmount", "colorRedPercent", "colorGreenAmount", "colorGreenPercent", "colorBlueAmount", "colorBluePercent"}.
+	 */
 	public function getColorTransform(frameIndex:Int):{ colorAlphaAmount:Float, colorAlphaPercent:Float, colorRedAmount:Float, colorRedPercent:Float, colorGreenAmount:Float, colorGreenPercent:Float, colorBlueAmount:Float, colorBluePercent:Float };
 	
-	// トゥイーンスパンから選択したフレームのフィルターデータを返します。
+	/**
+	 * Returns filters data of a selected frame from a tween span.
+	 * @param	frameIndex Index of the frame from which filter data is to be retrieved.
+	 * @return Returns array of Filter objects.
+	 */
 	public function getFilters(frameIndex:Int):Array<Filter>;
 	
-	// ユーザー定義の範囲内（オフセットから選択されたフレーム）のトゥイーンの図形変換を表す Matrix オブジェクトを返します。
+	/**
+	 * Returns Matrix object that represents geometric transformation of a tween within a user-defined range (from offset to a selected frame).
+	 * @param	frameIndex Offset index of the frame from which geometric transformations have to be retrieved.
+	 * @return Matrix object that represents geometric transformations at the frame offset.
+	 */
 	public function getGeometricTransform(frameIndex:Int):Matrix;
 	
-	// トゥイーンスパン内の選択されたフレームの補完シェイプを返します。
+	/**
+	 * Returns interpolated shape of a selected frame within a tween-span.
+	 * @param	frameIndex Offset index of the frame from which shape data has to be retrieved.
+	 * @return Returns shape coordinates at the frame offset.
+	 */
 	public function getShape(frameIndex:Int):Dynamic;
 	
-	// トゥイーン内のフレーム数に等しいトゥイーンスパンの継続時間です。
+	/**
+	 * Duration of a tween span that is equal to number of frames in a tween.
+	 */
 	public var duration(default, default):Float;
 	
-	// トゥイーンの開始フレーム。
+	/**
+	 * Start frame of a tween.
+	 */
 	public var startFrame(default, default):Int;
 	
-	// トゥイーンのタイプを指定します。例：モーションやシェイプなど。
+	/**
+	 * Specifies the type of tween.
+	 */
 	public var tweenType(default, default):TweenType;
 	
 }

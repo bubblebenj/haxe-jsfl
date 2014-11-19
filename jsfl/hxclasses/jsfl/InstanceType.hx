@@ -1,8 +1,8 @@
 package jsfl;
 
-// インスタンスのタイプを表すストリングです。 指定できる値は、「symbol」、「bitmap」、
-// 「embedded video」、「linked video」、「video」および「compiled clip」です。
-
+/**
+ * A string that represents the type of instance. Possible values are "symbol", "bitmap", "embedded video", "linked video", "video", and "compiled clip" 
+ */
 @:enum abstract InstanceType(String) {
 	var SYMBOL = "symbol";
 	var BITMAP = "bitmap";

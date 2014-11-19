@@ -1,18 +1,30 @@
 package jsfl;
 
+/**
+ * A Contour object represents a closed path of half edges on the boundary of a shape.
+ */
 @:native("Contour")
 extern class Contour {
 
-	// 選択している輪郭の HalfEdge オブジェクトを返します。
+	/**
+	 * Returns a HalfEdge object on the contour of the selection.
+	 * @return A HalfEdge object.
+	 */
 	public function getHalfEdge():HalfEdge;
 	
-	// Fill オブジェクト。
+	/**
+	 * A Fill object.
+	 */
 	public var fill(default, default):Fill;
 	
-	// 読み取り専用。輪郭内にエリアが含まれる場合は true で、含まれない場合は false です。
+	/**
+	 * Read-only; the value is true if the contour encloses an area; false otherwise.
+	 */
 	public var interior(default, null):Bool;
 	
-	// 読み取り専用。輪郭の方向を示す整数。
+	/**
+	 * Read-only; an integer indicating the orientation of the contour.
+	 */
 	public var orientation(default, null):Int;
 
 }

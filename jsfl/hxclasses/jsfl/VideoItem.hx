@@ -3,25 +3,43 @@ package jsfl;
 @:native("VideoItem")
 extern class VideoItem extends Item {
 	
-	// 指定されたアイテムを FLV ファイルに書き出します。
+	/**
+	 * Exports the specified item to an FLV file.
+	 * @param	fileURI A string, expressed as a file:/// URI, that specifies the path and name of the exported file.
+	 * @return A Boolean value of true if the file is exported successfully; false otherwise.
+	 */
 	public function exportToFLV(fileURI:String):Bool;
 
-	// 読み取り専用。1970 年 1 月 1 日から、ファイルがライブラリに読み込まれた時点での（ディスク上の）元のファイルの修正日までの経過秒数を表す 16 進数値を含むストリングです。
+	/**
+	 * Read-only; a string containing a hexadecimal number that represents the number of seconds that have elapsed between January 1, 1970, and
+	 * the modification date of the original file (on disk) at the time the file was imported to the library.
+	 */
 	public var fileLastModifiedDate(default, null):Dynamic;
 
-	// 読み取り専用。ライブラリ内のビデオアイテムを変更した日付です。
+	/**
+	 * Read-only; the modification date of the video item in the Library.
+	 */
 	public var lastModifiedDate(default, null):Dynamic;
 
-	// 読み取り専用。ライブラリに読み込まれたファイルが読み込み元の場所にまだ存在しているかどうかを指定するブール値です。
+	/**
+	 * Read-only; a Boolean value that specifies whether the file that was imported to the Library still exists in the location from where it was imported.
+	 */
 	public var sourceFileExists(default, null):Bool;
 
-	// 読み取り専用プロパティ。ライブラリアイテムのファイル変更日付が、読み込まれたファイルの（ディスク上の）変更日付と同じかどうかを指定するブール値です。
+	/**
+	 * Read-only; a Boolean value that specifies whether the file modification date of the Library item is the same as
+	 * the modification date (on disk) of the file that was imported.
+	 */
 	public var sourceFileIsCurrent(default, null):Bool;
 
-	// 読み取り専用。ビデオアイテムへのパスを指定するストリングです。
+	/**
+	 * Read-only; a string that specifies the path to the video item.
+	 */
 	public var sourceFilePath(default, null):String;
 
-	// 読み取り専用。アイテムが表すビデオの種類を指定するストリングです。
+	/**
+	 * Read-only; a string that specifies the type of video the item represents.
+	 */
 	public var videoType(default, null):VideoType;
 
 }

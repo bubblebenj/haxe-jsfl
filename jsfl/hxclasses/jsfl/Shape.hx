@@ -1,48 +1,86 @@
 package jsfl;
 
+/**
+ * The Shape object is a subclass of the Element object.
+ * The Shape object provides more precise control than the drawing APIs when manipulating or creating geometry on the Stage.
+ * This control is necessary so that scripts can create useful effects and other drawing commands (see Element object).
+ * 
+ * All Shape methods and properties that change a shape or any of its subordinate parts must be placed between shape.beginEdit() and shape.endEdit() calls to function correctly.
+ */
 @:native("Shape")
 extern class Shape extends Element {
 	
-	// 三次曲線を定義する点の配列を返します。
+	/**
+	 * Returns an array of points that define a cubic curve.
+	 * @param	cubicSegmentIndex An integer that specifies the cubic segment for which points are returned.
+	 * @return An array of points that define a cubic curve for the Edge object that corresponds to the specified cubicSegmentIndex.
+	 */
 	public function getCubicSegmentPoints(cubicSegmentIndex:Int):Array<Edge>;
 	
-	// 編集セッションの開始を定義します。
+	/**
+	 * Defines the start of an edit session.
+	 */
 	public function beginEdit():Void;
 	
-	// 指定されたエッジを削除します。
+	/**
+	 * Deletes the specified edge.
+	 * @param	index A zero-based index that specifies the edge to delete from the shape.edges array. This method changes the length of the shape.edges array.
+	 */
 	public function deleteEdge(index:Int):Void;
 	
-	// シェイプの編集セッションの終了を定義します。
+	/**
+	 * Defines the end of an edit session for the shape.
+	 */
 	public function endEdit():Void;
 	
-	// 読み取り専用。シェイプの Contour オブジェクトの配列です（Contour オブジェクトを参照）。
+	/**
+	 * Read-only; an array of Contour objects for the shape (see Contour object).
+	 */
 	public var contours(default, null):Contour;
 	
-	// 読み取り専用。Edge オブジェクトの配列です（Edge オブジェクトを参照）。
+	/**
+	 * Read-only; an array of Edge objects (see Edge object).
+	 */
 	public var edges(default, null):Edge;
 	
-	// 読み取り専用。true の場合、シェイプは描画オブジェクトです。
+	/**
+	 * Read-only; if true, the shape is a drawing object.
+	 */
 	public var isDrawingObject(default, null):Bool;
 	
-	// 読み取り専用。true の場合、シェイプは親フレームの（またはグループの）シェイプ上をフロートしています。
+	/**
+	 * Read-only; if true, the shape is floating above the parent frame's (or group's) shape.
+	 */
 	public var isFloating(default, null):Bool;
 	
-	// 読み取り専用。true の場合、シェイプはグループです。
+	/**
+	 * Read-only; if true, the shape is a group.
+	 */
 	public var isGroup(default, null):Bool;
 	
-	// 読み取り専用。true の場合、シェイプはプリミティブ楕円オブジェクトです（楕円ツールを使用して作成）。
+	/**
+	 * Read-only; if true, the shape is a primitive Oval object (was created using the Oval tool).
+	 */
 	public var isOvalObject(default, null):Bool;
 	
-	// 読み取り専用。true の場合、シェイプはプリミティブ矩形オブジェクトです（矩形ツールを使用して作成）。
+	/**
+	 * Read-only; if true, the shape is a primitive Rectangle object (was created using the Rectangle tool).
+	 */
 	public var isRectangleObject(default, null):Bool;
 	
-	// 現在選択されているグループに含まれるオブジェクトの配列。
+	/**
+	 * An array of objects in the currently selected group.
+	 */
 	public var members(default, default):Array<Dynamic>;
 	
-	// 読み取り専用。シェイプ内の三次セグメントの数です。
+	/**
+	 * Read-only; the number of cubic segments in the shape.
+	 */
 	public var numCubicSegments(default, null):Int;
 	
-	// 読み取り専用。Vertex オブジェクトの配列です（Vertex オブジェクトを参照）。
+	/**
+	 * Read-only; an array of Vertex objects (see Vertex object).
+	 */
 	public var vertices(default, null):Array<Vertex>;
 	
 }

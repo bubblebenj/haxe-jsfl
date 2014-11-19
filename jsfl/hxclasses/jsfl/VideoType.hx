@@ -1,6 +1,8 @@
 package jsfl;
 
-// 指定できる値は、「embedded video」および「video」です。
+/**
+ * a string that specifies the type of video the item represents.
+ */
 
 @:fakeEnum(String)
 extern enum VideoType {

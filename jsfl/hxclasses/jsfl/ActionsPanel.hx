@@ -1,7 +1,7 @@
 package jsfl;
 
 /**
- * The actionsPanel object, which represents the currently displayed Actions panel, is a property of the flash object.
+ * The actionsPanel object, which represents the currently displayed Actions panel, is a property of the flash object (see fl.actionsPanel).
  */
 @:native("ActionsPanel")
 extern class ActionsPanel {
@@ -45,5 +45,4 @@ extern class ActionsPanel {
 	 * @return A Boolean value of true if the specified text was placed in the Actions panel; false otherwise.
 	 */
 	public function setText(replacementText:String):Bool;
-
 }

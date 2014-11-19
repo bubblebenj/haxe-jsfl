@@ -1,33 +1,54 @@
 package jsfl;
 
+/**
+ * The fontItem object is a subclass of the Item object (see Item object).
+ */
 @:native("FontItem")
 extern class FontItem extends Item {
 
-	// Font アイテムがビットマップ化されるかどうかを指定します。
+	/**
+	 * Specifies whether the Font item is bitmapped.
+	 */
 	public var bitmap(default, default):Bool;
 	
-	// Font アイテムがボールドかどうかを指定します。
+	/**
+	 * Specifies whether the Font item is bold.
+	 */
 	public var bold(default, default):Bool;
 	
-	// 埋め込む文字を指定します。
+	/**
+	 * Specifies characters to embed.
+	 */
 	public var embeddedCharacters(default, default):String;
 	
-	// フォントの埋め込みダイアログボックスで選択できるアイテムを指定します。
+	/**
+	 * Specifies items that can be selected in the Font Embedding dialog.
+	 */
 	public var embedRanges(default, default):String;
 	
-	// SWF ファイルをパブリッシュするときにバリアント文字をフォントで出力する必要があるかどうかを指定します。
+	/**
+	 * Specifies whether variant glyphs should be output in the font when publishing a SWF file.
+	 */
 	public var embedVariantGlyphs(default, default):Bool;
 	
-	// Font アイテムに関連付けられたデバイスフォントの名前です。
+	/**
+	 * The name of the device font associated with the Font item.
+	 */
 	public var font(default, default):String;
 	
-	// SWF ファイルをパブリッシュするときに出力されるフォントの形式を指定します。
+	/**
+	 * Specifies the format of the font that is output when publishing a SWF filem.
+	 */
 	public var isDefineFont4Symbol(default, default):Bool;
 	
-	// Font アイテムがイタリックかどうかを指定します。
+	/**
+	 * Specifies whether the Font item is italic.
+	 */
 	public var italic(default, default):Bool;
 	
-	// Font アイテムのサイズ（ポイント単位）です。
+	/**
+	 * The size of the Font item, in points.
+	 */
 	public var size(default, default):Int;
 
 }

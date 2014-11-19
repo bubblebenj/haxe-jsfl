@@ -1,45 +1,82 @@
 package jsfl;
 
+/**
+ * The SymbolItem object is a subclass of the Item object.
+ */
 @:native("SymbolItem")
 extern class SymbolItem extends Item {
 
-	// ライブラリ内のシンボルアイテムをコンパイルされたムービークリップに変換します。
+	/**
+	 * Converts a symbol item in the library to a compiled movie clip.
+	 */
 	public function convertToCompiledClip():Void;
 	
-	// シンボルアイテムを SWC ファイルに書き出します。
+	/**
+	 * Exports the symbol item to a SWC file.
+	 * @param	outputURI A string, expressed as a file:/// URI, that specifies the SWC file to which the method will export the symbol. The outputURI must reference a local file. Flash does not create a folder if outputURI does not exist.
+	 */
 	public function exportSWC(outputURI:String):Void;
 	
-	// シンボルアイテムを SWF ファイルに書き出します。
+	/**
+	 * Exports the symbol item to a SWF file.
+	 * @param	outputURI A string, expressed as a file:/// URI, that specifies the SWF file to which the method will export the symbol. The outputURI must reference a local file. Flash does not create a folder if outputURI doesn’t exist.
+	 */
 	public function exportSWF(outputURI:String):Void;
 	
-	// ライブラリの新規ビットマップにインスタンスを書き出します。
+	/**
+	 * Export an instance to a new bitmap in the Library.
+	 * @param	frameNumber An integer indicating the frame within the symbol to be exported.
+	 * @param	bitmapName A string indicating the name of the new bitmap to be added to the Library.
+	 */
 	public function exportToLibrary(frameNumber:Int, bitmapName:String):Void;
 	
-	// シンボルを PNG シーケンスファイルとして書き出します。
+	/**
+	 * Export a symbol to a sequence of PNG files.
+	 * @param	outputURI The URI to export the PNG sequence files to. This URI must reference a local file. For example: file:///c|/tests/mytest.png.
+	 * @param	startFrameNum An integer indicating the first frame within the symbol to be exported. If this parameter is omitted, all frames are exported.
+	 * @param	endFrameNum An integer indicating the last frame within the symbol to be exported. If this parameter is omitted, all frames are exported.
+	 * @param	matrix A matrix to be appended to the exported PNG sequence.
+	 */
 	public function exportToPNGSequence(outputURI:String, ?startFrameNum:Int, ?endFrameNum:Int, ?matrix:Matrix = null):Void;
 	
-	// シンボルが変更された日付を表す 16 進数値のストリング。
+	/**
+	 * A string hexadecimal value that indicates the modification date of the symbol.
+	 */
 	public var lastModifiedDate(default, null):String;
 	
-	// アイテムの 9 スライスの拡大/ 縮小が有効かどうかを指定するブール値。
+	/**
+	 * A Boolean value that specifies whether 9-slice scaling is enabled for the item.
+	 */
 	public var scalingGrid(default, default):Bool;
 	
-	// 4 つの 9 スライスのガイドの位置を指定する矩形オブジェクト。
+	/**
+	 * A Rectangle object that specifies the locations of the four 9-slice guides.
+	 */
 	public var scalingGridRect(default, default):Rectangle;
 	
-	// FLA ファイルのパブリッシュ時にアイテムを更新するかどうかを指定するブール値。
+	/**
+	 * A Boolean value that specifies whether the item is updated when the FLA file is published.
+	 */
 	public var sourceAutoUpdate(default, default):Bool;
 	
-	// ソースの FLA ファイルのパスを file:/// URI として指定するストリング。
+	/**
+	 * A string that specifies the path for the source FLA file as a file:/// URI.
+	 */
 	public var sourceFilePath(default, default):String;
 	
-	// ソースファイルライブラリ内のアイテムの名前を指定するストリング。
+	/**
+	 * A string that specifies the name of the item in the source file library.
+	 */
 	public var sourceLibraryName(default, default):String;
 	
-	// シンボルの種類を指定するストリング。
+	/**
+	 * A string that specifies the type of symbol.
+	 */
 	public var symbolType(default, default):SymbolType;
 	
-	// 読み取り専用。Timeline オブジェクトです。
+	/**
+	 * Read-only; a Timeline object.
+	 */
 	public var timeline(default, null):Timeline;
 
 }

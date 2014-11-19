@@ -1,81 +1,140 @@
 package jsfl;
 
+/**
+ * The Stroke object contains all the settings for a stroke, including the custom settings.
+ * This object represents the information contained in the Property inspector.
+ * Using the Stroke object together with the document.setCustomStroke() method, you can change the stroke settings for the Tools panel, the Property inspector, and the current selection.
+ * You can also get the stroke settings of the Tools panel and Property inspector, or of the current selection, by using the document.getCustomStroke() method.
+ * 
+ * This object always has the following four properties: style, thickness, color, and breakAtCorners.
+ * (In Flash CS3, the breakAtCorners property was deprecated in favor of stroke.joinType.) Other properties can be set, depending on the value of the stroke.style property.
+ */
 @:native("Stroke")
 extern class Stroke {
 	
-	// カスタムの線のスタイルダイアログボックスの「角を離さない」設定と同じ。
+	/**
+	 * A Boolean value, same as the Sharp Corners setting in the custom Stroke Style dialog box.
+	 */
 	public var breakAtCorners(default, default):Bool;
 	
-	// 線のキャップの種類を指定するストリング。
+	/**
+	 * A string that specifies the type of cap for the stroke.
+	 */
 	public var capType(default, default):String;
 	
-	// 線のカラーを表す、ストリング、16 進数値、または整数。
+	/**
+	 * A string, hexadecimal value, or integer that represents the stroke color.
+	 */
 	public var color(default, default):Dynamic;
 	
-	// 線のハッチの種類を指定するストリング。
+	/**
+	 * A string that specifies the type of hatching for the stroke.
+	 */
 	public var curve(default, default):String;
 	
-	// 破線の実線部分の長さを指定する整数。
+	/**
+	 * An integer that specifies the lengths of the solid part of a dashed line.
+	 */
 	public var dash1(default, default):Int;
 	
-	// 破線の空白部分の長さを指定する整数。
+	/**
+	 * An integer that specifies the lengths of the blank part of a dashed line.
+	 */
 	public var dash2(default, default):Int;
 	
-	// 点描の密度を指定するストリング。
+	/**
+	 * A string that specifies the density of a stippled line.
+	 */
 	public var density(default, default):String;
 	
-	// 点描の点の大きさを指定するストリング。
+	/**
+	 * A string that specifies the dot size of a stippled line.
+	 */
 	public var dotSize(default, default):String;
 	
-	// 点描の点の間隔を指定する整数。
+	/**
+	 * An integer that specifies the spacing between dots in a dotted line.
+	 */
 	public var dotSpace(default, default):Int;
 	
-	// ハッチの線の太さを指定するストリング。
+	/**
+	 * A string that specifies the thickness of a hatch line.
+	 */
 	public var hatchThickness(default, default):String;
 	
-	// ハッチの揺れのプロパティを指定するストリング。
+	/**
+	 * A string that specifies the jiggle property of a hatched line.
+	 */
 	public var jiggle(default, default):String;
 	
-	// 線の結合の種類を指定するストリング。
+	/**
+	 * A string that specifies the type of join for the stroke.
+	 */
 	public var joinType(default, default):String;
 	
-	// ハッチの線の長さを指定するストリング。
+	/**
+	 * A string that specifies the length of a hatch line.
+	 */
 	public var length(default, default):String;
 	
-	// マイターの先端の角度の上限を指定する浮動小数点値。この角度より大きい部分はセグメントによって切り詰められます。
+	/**
+	 * A float value that specifies the angle above which the tip of the miter will be truncated by a segment.
+	 */
 	public var miterLimit(default, default):Float;
 	
-	// ラフのパターンを指定するストリング。
+	/**
+	 * A string that specifies the pattern of a ragged line.
+	 */
 	public var pattern(default, default):String;
 	
-	// ハッチの回転を指定するストリング。
+	/**
+	 * A string that specifies the rotation of a hatch line.
+	 */
 	public var rotate(default, default):String;
 	
-	// 線に適用する拡大/ 縮小の種類を指定するストリング。
+	/**
+	 * A string that specifies the type of scale to be applied to the stroke.
+	 */
 	public var scaleType(default, default):String;
 	
-	// 線の塗りの設定を表す Fill オブジェクトです。
+	/**
+	 * A string that specifies the spacing of a hatched line.
+	 */
 	public var shapeFill(default, default):Fill;
 	
-	// ハッチの線の間隔を指定するストリング。
+	/**
+	 * A string that specifies the wave length of a ragged line.
+	 */
 	public var space(default, default):String;
 	
-	// 線のヒントが設定されているかどうかを指定するブール値。
+	/**
+	 * A Boolean value that specifies whether stroke hinting is set on the stroke.
+	 */
 	public var strokeHinting(default, default):Bool;
 	
-	// 線のスタイルを示すストリング。
+	/**
+	 * A string that describes the stroke style.
+	 */
 	public var style(default, default):String;
 	
-	// 線のサイズを指定する整数。
+	/**
+	 * An integer that specifies the stroke size.
+	 */
 	public var thickness(default, default):Int;
 	
-	// 点描のスタイルを指定するストリング。
+	/**
+	 * A string that specifies the variation of a stippled line.
+	 */
 	public var variation(default, default):String;
 	
-	// ラフの波の高さを指定するストリング。
+	/**
+	 * A string that specifies the wave height of a ragged line.
+	 */
 	public var waveHeight(default, default):String;
 	
-	// ラフの波の長さを指定するストリング。
+	/**
+	 * A string that specifies the wave length of a ragged line.
+	 */
 	public var waveLength(default, default):String;
 
 }

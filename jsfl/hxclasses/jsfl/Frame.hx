@@ -1,131 +1,238 @@
 package jsfl;
 
+/**
+ * The Frame object represents frames in the layer.
+ */
 @:native("Frame")
 extern class Frame {
 
-	// 選択したモーションオブジェクトを 2D モーションオブジェクトに変換します。
+	/**
+	 * Converts the selected motion object to a 2D motion object.
+	 */
 	public function convertMotionObjectTo2D():Void;
 
-	// 選択したモーションオブジェクトを 3D モーションオブジェクトに変換します。
+	/**
+	 * Converts the selected motion object to a 3D motion object.
+	 */
 	public function convertMotionObjectTo3D():Void;
 	
-	// 現在のフレームをフレーム単位のアニメーションに変換します。
+	/**
+	 * Availability: Flash Professional CC.
+	 * Converts the current frame to Frame-by-Frame Animation
+	 * @return Returns boolean. Returns true if the frame contains animation that can be converted to frame by frame animation.
+	 */
 	public function convertToFrameByFrameAnimation():Bool;
 	
-	// JavaScript のオブジェクトの配列を返します。それぞれ x プロパティと y プロパティがあります。
-	public function getCustomEase(property:String):Array<{x:Float, y:Float}>;
+	/**
+	 * Returns an array of JavaScript objects, each of which has an x and y property.
+	 * @param	property An optional string that specifies the property for which you want to return the custom ease value. Acceptable values are "all", "position", "rotation", "scale", "color", and "filters".
+	 * @return Returns an array of JavaScript objects, each of which has an x and y property.
+	 */
+	public function getCustomEase(?property:String="all"):Array<{x:Float, y:Float}>;
 	
-	// 選択したモーションオブジェクトからモーション XML を返します。
+	/**
+	 * Returns the motion XML from the selected motion object.
+	 * @return Returns a string of the motion XML from the selected motion object.
+	 */
 	public function getMotionObjectXML():Dynamic;
 	
-	// すべてのフレームのサウンドエンベロープデータを取得します。
+	/**
+	 * Availability: Flash Professional CC.
+	 * Gets the sound envelope data of any frame.
+	 * @return Returns a Sound object.
+	 */
 	public function getSoundEnvelope():Dynamic;
 	
-	// フレームのサウンドに適用されるカスタムサウンドエンベロープの制限（start、end）を取得します。
+	/**
+	 * Availability: Flash Professional CC.
+	 * Gets the limits(start, end) for a custom Sound envelope that is applied to the frame sound
+	 * @return Returns a structure that contain start and end fields.
+	 */
 	public function getSoundEnvelopeLimits():{start:Dynamic, end:Dynamic};
 	
-	// 現在の選択内容にモーショントゥイーンが含まれているかどうかが表示されます。
+	/**
+	 * Informs you whether or not the currrent selection has a motion tween.
+	 * @return a Boolean value. Lets you know whether the current selection includes a motion path.
+	 */
 	public function hasMotionPath():Bool;
 	
-	// 現在の選択内容が 3D モーションオブジェクトであるかどうかが表示されます。
+	/**
+	 * Informs you whether or not the currrent selection is a 3D motion object.
+	 * @return a Boolean value. Lets you know whether the current selection is a 3D motion object.
+	 */
 	public function is3DMotionObject():Bool;
 	
-	// フレームにエレメントが含まれているかどうかが表示されます。
+	/**
+	 * Informs you whether the frame contains any elements.
+	 * @return a Boolean value.
+	 */
 	public function isEmpty():Bool;
 	
-	// 現在の選択内容がモーションオブジェクトであるかどうかが表示されます。
+	/**
+	 * Informs you whether or not the currrent selection is a motion object.
+	 * @return a Boolean value.
+	 */
 	public function isMotionObject():Bool;
 	
-	// 現在のモーションオブジェクトのモーションパスを選択または選択解除します。
+	/**
+	 * Selects or deselects the motion path of the current motion object.
+	 * @return a Boolean value. Selects(true) or deselects(false)
+	 */
 	public function selectMotionPath():Bool;
 	
-	// カスタムイージング曲線として三次ベジェ曲線を使用することを指定します。
+	/**
+	 * Specifies a cubic Bézier curve to be used as a custom ease curve.
+	 * @param	property A string that specifies the property the ease curve should be used for. Acceptable values are "all", "position", "rotation", "scale", "color", and "filters" 
+	 * @param	easeCurve An array of objects that defines the ease curve. Each array element must be a JavaScript object with x and y properties.
+	 */
 	public function setCustomEase(property:String, easeCurve:Array<{ x:Float, y:Float}>):Void;
 	
-	// 現在選択されているモーションオブジェクトの継続時間（トゥイーンスパンの長さ）を指定します。
+	/**
+	 * Specifies the duration(the tween span length) of the currently selected motion object.
+	 * @param	duration Specifies the number of frames for the tween span of the selected motion object.
+	 * @param	stretchExistingKeyframes A boolean value that determines whether the tween span is stretched, or if frames are added, to the end of the last frame.
+	 */
 	public function setMotionObjectDuration(duration:Int, stretchExistingKeyframes:Bool):Void;
 	
-	// 指定されたモーション XML を、選択したモーションオブジェクトに適用します。
+	/**
+	 * Applies the specified motion XML to the selected motion object.
+	 * @param	xmlstr A string value that specifies the XML string.
+	 * @param	endAtCurrentLocation A boolean value that determines whether the tween starts or ends at the current position.
+	 */
 	public function setMotionObjectXML(xmlstr:String, endAtCurrentLocation:Bool):Void;
 	
-	// フレームのサウンドエンベロープデータを設定します。
-	public function setSoundEnvelope(soundEnv:Dynamic):Void;
+	/**
+	 * Availability: Flash Professional CC.
+	 * Sets the sound envelope data of a frame.
+	 * @param	soundEnv A sound envelope.
+	 */
+	public function setSoundEnvelope(soundEnv:Array<{mark: Dynamic, leftChannel: Dynamic, rightChannel: Dynamic}>):Void;
 	
-	// サウンドファイルを含むすべてのフレームのサウンドエンベロープの制限を設定します。
+	/**
+	 * Availability: Flash Professional CC.
+	 * Sets the sound envelope limits of any frame with a sound file.
+	 * @param	limits A structure that contains start and end fields that signify the limits for a custom sound envelope.
+	 */
 	public function setSoundEnvelopeLimits(limits:{start:Dynamic, end:Dynamic}):Void;
 	
-	// ActionScript コードを表すストリング。
+	/**
+	 * A string representing ActionScript code.
+	 */
 	public var actionScript(default, default):String;
 	
-	// 読み取り専用。フレームシーケンスのフレーム数を表す整数です。
-	public var duration(default, default):Int;
+	/**
+	 * Read-only; an integer that represents the number of frames in a frame sequence.
+	 */
+	public var duration(default, null):Int;
 	
-	// 読み取り専用。Element オブジェクトの配列です（Element オブジェクトを参照してください）。
-	public var elements(default, default):Array<Element>;
+	/**
+	 * Read-only; an array of Element objects(see Element object).
+	 */
+	public var elements(default, null):Array<Element>;
 	
-	// カスタムイージング曲線からフレームのイージング情報を取得するかどうかを指定するブール値。
+	/**
+	 * A Boolean value that specifies whether the frame gets its ease information from the custom ease curve.
+	 */
 	public var hasCustomEase(default, default):Bool;
 	
-	// フレーム名の種類を指定するストリング。
+	/**
+	 * A string that specifies the type of Frame name.
+	 */
 	public var labelType(default, default):String;
 	
-	// トゥイーンされたエレメントがパスに沿って移動するときに、パス上の各点を基準にエレメントの角度を維持するためにエレメントを回転するかどうかを指定するブール値。
+	/**
+	 * A Boolean value that specifies whether or not the tweened element rotates the element as it moves along a path to maintain its angle with respect to each point on the path.
+	 */
 	public var motionTweenOrientToPath(default, default):Bool;
 	
-	// トゥイーンされたエレメントをどのように回転するかを指定するストリング。
+	/**
+	 * A string that specifies how the tweened element rotates.
+	 */
 	public var motionTweenRotate(default, default):String;
 	
-	// 開始キーフレームと次のキーフレーム間でトゥイーンされたエレメントを回転する数を指定する整数。
+	/**
+	 * An integer that specifies the number of times the tweened element rotates between the starting keyframe and the next keyframe.
+	 */
 	public var motionTweenRotateTimes(default, default):Int;
 	
-	// トゥイーンされたエレメントを、後続のキーフレーム内にあるオブジェクトのサイズに拡大 / 縮小するかどうかを指定するブール値です。トゥイーン内の各フレームでサイズを拡大する場合は true を指定し、拡大 / 縮小しない場合は false を指定します。
+	/**
+	 * A Boolean value that specifies whether the tweened element scales to the size of the object in the following keyframe, increasing its size with each frame in the tween(true), or doesn’t scale(false).
+	 */
 	public var motionTweenScale(default, default):Bool;
 	
-	// トゥイーンされたエレメントを、このフレームのレイヤーに関連付けられているモーションガイドレイヤーで最も近くにあるポイントに自動的に吸着するかどうかを指定するブール値です。自動的に吸着する場合は true を指定し、吸着しない場合は false を指定します。
+	/**
+	 * A Boolean value that specifies whether the tweened element automatically snaps to the nearest point on the motion guide layer associated with this frame’s layer(true) or not(false).
+	 */
 	public var motionTweenSnap(default, default):Bool;
 	
-	// ブール値。true に設定すると、トゥイーンされたオブジェクトのアニメーションをメインタイムラインと同期します。
+	/**
+	 * A Boolean value that if set to true, synchronizes the animation of the tweened object with the main timeline.
+	 */
 	public var motionTweenSync(default, default):Bool;
 	
-	// フレームの名前を指定するストリング。
+	/**
+	 * A string that specifies the name of the frame.
+	 */
 	public var name(default, default):String;
 	
-	// トゥイーンの最初にあるキーフレームのシェイプと、次のキーフレームのシェイプとの間で、シェイプトゥイーンをどのようにブレンドするかを指定するストリング。
+	/**
+	 * A string that specifies how a shape tween is blended between the shape in the keyframe at the start of the tween and the shape in the following keyframe.
+	 */
 	public var shapeTweenBlend(default, default):String;
 	
-	// フレームに直接割り当てられているサウンド（frame.soundLibraryItem）のエフェクトを指定するストリング。
+	/**
+	 * A string that specifies effects for a sound that is attached directly to a frame(frame.soundLibraryItem).
+	 */
 	public var soundEffect(default, default):String;
 	
-	// サウンドの作成に使用するライブラリアイテム（SoundItem オブジェクトを参照）。
+	/**
+	 * A library item(see SoundItem object) used to create a sound.
+	 */
 	public var soundLibraryItem(default, default):SoundItem;
 	
-	// フレームに直接追加されているサウンド（frame.soundLibraryItem）の再生回数を指定する整数値。
+	/**
+	 * An integer value that specifies the number of times a sound that is attached directly to a frame(frame.soundLibraryItem) plays.
+	 */
 	public var soundLoop(default, default):Int;
 	
-	// フレームに直接割り当てられているサウンド（frame.soundLibraryItem）の再生回数を指定するか、無限にループさせるかを指定するストリング。
+	/**
+	 * A string that specifies whether a sound that is attached directly to a frame(frame.soundLibraryItem) should play a specific number of times or loop indefinitely.
+	 */
 	public var soundLoopMode(default, default):String;
 	
-	// フレームに直接割り当てられているサウンド（frame.soundLibraryItem）の名前に、ライブラリに格納されているのと同じ名前を指定するストリング。
+	/**
+	 * A string that specifies the name of a sound that is attached directly to a frame(frame.soundLibraryItem), as stored in the library.
+	 */
 	public var soundName(default, default):String;
 	
-	// フレームに直接割り当てられているサウンド（frame.soundLibraryItem）の同期の動作を指定するストリング。
+	/**
+	 * A string that specifies the sync behavior of a sound that is attached directly to a frame(frame.soundLibraryItem).
+	 */
 	public var soundSync(default, default):String;
 	
-	// 読み取り専用。シーケンス内の最初のフレームのインデックスです。
-	public var startFrame(default, default):Int;
+	/**
+	 * Read-only; the index of the first frame in a sequence.
+	 */
+	public var startFrame(default, null):Int;
 	
-	// トゥイーンオブジェクトに適用するイージング量を指定する整数。
+	/**
+	 * An integer that specifies the amount of easing that should be applied to the tweened object.
+	 */
 	public var tweenEasing(default, default):Int;
 	
-	// 指定されたモーションオブジェクトにインスタンス名を割り当てます。
+	/**
+	 * Assigns an instance name to the specified motion object.
+	 */
 	public var tweenInstanceName(default, default):String;
 	
-	// トゥイーンの種類を指定するストリング。
+	/**
+	 * A string that specifies the type of tween.
+	 */
 	public var tweenType(default, default):TweenType;
 	
-	// 単一カスタムイージング曲線をすべてのプロパティのイージング情報に使用するかどうかを指定するブール値。
+	/**
+	 * A Boolean value that specifies whether a single custom ease curve is used for easing information for all properties.
+	 */
 	public var useSingleEaseCurve(default, default):Bool;
-	
-	public var tweenObj(default, null):Tween;
 
 }

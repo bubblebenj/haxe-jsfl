@@ -1,7 +1,7 @@
 package jsfl;
 
 /**
- * TheComponentInstance object represents a component in a frame
+ * TheComponentInstance object is a subclass of the SymbolInstance object and represents a component in a frame (see SymbolInstance object).
  */
 @:native("ComponentInstance")
 extern class ComponentInstance extends SymbolInstance {

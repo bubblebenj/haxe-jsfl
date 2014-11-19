@@ -1,11 +1,17 @@
 package jsfl;
 
-// トゥイーンの種類を指定するストリングです。指定できる値は、「motion」、「shape」または「none」です
-
-// 補足 :
-// `flash_extending_reference.pdf`に記述されていない値「motion object（モーショントゥイーン）」が存在します。
-// クラシックトゥイーンの値は「motion」です。
-
+/**
+ * a string that specifies the type of tween; acceptable values are "motion", "shape", or "none".
+ * 
+ * The value "none" removes the motion tween.
+ * Use the timeline.createMotionTween() method to create a motion tween.
+ * 
+ * If you specify "motion", the object in the frame must be a symbol, text field, or grouped object.
+ * It will be tweened from its location in the current keyframe to the location in the following keyframe.
+ * 
+ * If you specify "shape", the object in the frame must be a shape.
+ * It will blend from its shape in the current keyframe to the shape in the following keyframe.
+ */
 @:enum abstract TweenType(String) {
 	var MOTION = "motion";
 	var SHAPE = "shape";

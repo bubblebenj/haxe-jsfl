@@ -2,6 +2,7 @@ package jsfl;
 
 /**
  * A BitmapItem object refers to a bitmap in the library of a document.
+ * The BitmapItem object is a subclass of the Item object (see Item object).
  */
 @:native("BitmapItem")
 extern class BitmapItem extends Item {
