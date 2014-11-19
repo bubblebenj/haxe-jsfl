@@ -1,21 +1,21 @@
 # haxe-jsfl
 
-JSFLのextern定義です。
+JSFL extern definition for Haxe.
 
-[ADOBE® FLASH® PROFESSIONAL の拡張機能](http://help.adobe.com/ja_JP/flash/cs/extend/flash_extending_reference.pdf)
-（最終更新日 2013/12/5）の内容を写したものです。
+Definitions are copied form [Extending ADOBE ® FLASH ® PROFESSIONAL](http://help.adobe.com/en_US/flash/cs/extend/flash_extending_reference.pdf)
+（Last updated 12/6/2013).
 
-## 使い方
+## How to use
 
-### 準備
+### Setup
 
-`haxelib git`を使ってインストールします。
+Install it with `haxelib git`.
 
 ```
 $ haxelib git haxe-jsfl git://github.com/tmskst/haxe-jsfl.git master /jsfl/hxclasses
 ```
 
-HXMLの例です。
+An example of HXML.
 
 ```
 -lib haxe-jsfl
@@ -24,24 +24,24 @@ HXMLの例です。
 -js bin/Main.jsfl
 ```
 
-### flの取得
+### Access the fl
 
-```js
+```haxe
 import jsfl.Lib.fl;
 var document:Document = fl.getDocumentDOM();
 ```
 
-### traceする
+### Trace output
 
-ライブラリとしてリンク(`-lib haxe-jsfl`)すると`trace`が自動的に使えるようになります。
+When link (-libhaxe-jsfl) passes as a library, 'trace' comes to be usable automatically.
 
-```js
+```haxe
 trace("Hello World"); // Main.hx:10: Hello World
 ```
 
-## 例
+## Example
 
-### ライブラリ項目を走査して項目名を出力する
+### Scan a item library and output the items name
 
 ```haxe
 import jsfl.Item;
