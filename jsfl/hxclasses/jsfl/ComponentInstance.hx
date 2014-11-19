@@ -1,9 +1,15 @@
 package jsfl;
 
+/**
+ * TheComponentInstance object represents a component in a frame
+ */
 @:native("ComponentInstance")
 extern class ComponentInstance extends SymbolInstance {
 	
-	// 読み取り専用。コンポーネントのプロパティインスペクターからアクセス可能なActionScript 2.0 のプロパティの配列です。
+	/**
+	 * Read-only; an array of ActionScript 2.0 properties that are accessible from the component Property inspector.
+	 */
 	public var parameters(default, null):Array<Parameter>;
 	
 }
+
