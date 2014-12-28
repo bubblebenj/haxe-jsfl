@@ -355,7 +355,7 @@ frames, with each frame as a separate PNG file(false).
 	 * @param	profileName A string that specifies the name of the profile to export to an XML string. if not set, the current profile is exported.
 	 * @return An XML string.
 	 */
-	public function exportPublishProfileString(?profileName:String):Dynamic;
+	public function exportPublishProfileString(?profileName:String):String;
 
 	/**
 	 * Exports the document in the Flash SWF format.
@@ -915,7 +915,7 @@ frames, with each frame as a separate PNG file(false).
 	 * @param	endIndex An integer that specifies the last character to replace.
 	 * @return A Boolean value: true if the text of at least one text string is set; false otherwise.
 	 */
-	public function setTextString(text:String, ?startIndex:Int, endIndex:Int):Bool;
+	public function setTextString(text:String, ?startIndex:Int, ?endIndex:Int):Bool;
 
 	/**
 	 * Moves the transformation point of the current selection.
@@ -962,9 +962,9 @@ frames, with each frame as a separate PNG file(false).
 
 	/**
 	 * Executes a Test Movie operation on the document.
-	 * @param	abortIfErrorsExist Boolean; the default value is false. If set to true, the test movie session will not start and the.swf window will not open if there are compiler errors. Compiler warnings will not abort the command. This parameter was added in Flash Professional CS5.
+	 * @param	abortIfErrorsExist If set to true, the test movie session will not start and the.swf window will not open if there are compiler errors. Compiler warnings will not abort the command. This parameter was added in Flash Professional CS5.
 	 */
-	public function testMovie(abortIfErrorsExist:Bool):Void;
+	public function testMovie(?abortIfErrorsExist:Bool=false):Void;
 
 	/**
 	 * Executes a Test Scene operation on the current scene of the document.

@@ -1,6 +1,10 @@
 package jsfl;
 
 /**
+ * TODO A SymbolInstance or a SymbolItem
+ */
+
+/**
  * The SpriteSheetExporter object is a subclass of the Item object.
  */
 @:native("SpriteSheetExporter")

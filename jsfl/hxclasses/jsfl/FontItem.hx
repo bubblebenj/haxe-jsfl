@@ -33,6 +33,8 @@ extern class FontItem extends Item {
 	
 	/**
 	 * The name of the device font associated with the Font item.
+	 * If you enter a string that does not correspond to an installed device font, an error message is displayed. 
+	 * To determine if a font exists on the system, use  fl.isFontInstalled() 
 	 */
 	public var font(default, default):String;
 	

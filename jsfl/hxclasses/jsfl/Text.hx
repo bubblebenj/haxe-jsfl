@@ -16,7 +16,7 @@ extern class Text extends Element {
 	 * @param	endIndex An integer that specifies the end of the range of text, which starts with startIndex and goes up to, but does not include, endIndex.
 	 * @return The value of the attribute specified in the attrName parameter.
 	 */ 
-	public function getTextAttr(attrName:String, ?startIndex:Null<Int> = null, ?endIndex:Null<Int>):String;
+	public function getTextAttr(attrName:String, ?startIndex:Null<Int> = null, ?endIndex:Null<Int>): Dynamic;
 	
 	/**
 	 * Retrieves the specified range of text.
@@ -24,15 +24,16 @@ extern class Text extends Element {
 	 * @param	endIndex An integer that specifies the end of the range of text, which starts from startIndex and goes up to, but does not include, endIndex.
 	 * @return A string of the text in the specified range.
 	 */
-	public function getTextString(?startIndex:Null<Int> = null, ?endIndex:Null<Int> = null):String;
+	public function getTextString(?startIndex:Null<Int> = null, ?endIndex:Null<Int> = null): String;
 	
 	/**
 	 * Sets the specified attribute associated with the text identified by startIndex and endIndex 
-	 * @param	attrName The value for the TextAttrs object property.
+	 * @param	attrName A string that specifies the name of the TextAttrs object property to change.
+	 * @param	attrValue The value for the TextAttrs object property.
 	 * @param	startIndex An integer that is the index (zero-based) of the first character in the array.
 	 * @param	endIndex An integer that specifies the index of the end point in the selected text string, which starts at startIndex and goes up to, but does not include, endIndex.
 	 */
-	public function setTextAttr(attrName:String, ?startIndex:Null<Int> = null, ?endIndex:Null<Int> = null):Void;
+	public function setTextAttr(attrName:String, attrValue: Dynamic, ?startIndex:Null<Int> = null, ?endIndex:Null<Int> = null):Void;
 	
 	/**
 	 * Changes the text string within this Text object.
@@ -40,7 +41,7 @@ extern class Text extends Element {
 	 * @param	startIndex An integer that specifies the index (zero-based) of the character in the string where the text will be inserted.
 	 * @param	endIndex An integer that specifies the index of the end point in the selected text string. The new text overwrites the text from startIndex up to, but not including, endIndex.
 	 */
-	public function setTextString(text:String, ?startIndex:Int, ?endIndex:Int):Void;
+	public function setTextString(text:String, ?startIndex:Null<Int> = null, ?endIndex:Null<Int> = null):Void;
 	
 	/**
 	 * A string that is equivalent to the Name field in the Accessibility panel.
