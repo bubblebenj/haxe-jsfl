@@ -1,6 +1,5 @@
 package jsfl;
 
-
 /**
  * The Text object represents a single text item in a document. All properties of the text pertain to the entire text block.
  * To set properties of a text run within the text field, see the Property summary for the TextAttrs object.
@@ -16,7 +15,7 @@ extern class Text extends Element {
 	 * @param	endIndex An integer that specifies the end of the range of text, which starts with startIndex and goes up to, but does not include, endIndex.
 	 * @return The value of the attribute specified in the attrName parameter.
 	 */ 
-	public function getTextAttr(attrName:String, ?startIndex:Null<Int> = null, ?endIndex:Null<Int>): Dynamic;
+	public function getTextAttr(attrName:String, ?startIndex:Null<Int>, ?endIndex:Null<Int>): Dynamic;
 	
 	/**
 	 * Retrieves the specified range of text.
@@ -24,8 +23,9 @@ extern class Text extends Element {
 	 * @param	endIndex An integer that specifies the end of the range of text, which starts from startIndex and goes up to, but does not include, endIndex.
 	 * @return A string of the text in the specified range.
 	 */
-	public function getTextString(?startIndex:Null<Int> = null, ?endIndex:Null<Int> = null): String;
+	public function getTextString(?startIndex:Null<Int>, ?endIndex:Null<Int>): String;
 	
+
 	/**
 	 * Sets the specified attribute associated with the text identified by startIndex and endIndex 
 	 * @param	attrName A string that specifies the name of the TextAttrs object property to change.
@@ -33,7 +33,7 @@ extern class Text extends Element {
 	 * @param	startIndex An integer that is the index (zero-based) of the first character in the array.
 	 * @param	endIndex An integer that specifies the index of the end point in the selected text string, which starts at startIndex and goes up to, but does not include, endIndex.
 	 */
-	public function setTextAttr(attrName:String, attrValue: Dynamic, ?startIndex:Null<Int> = null, ?endIndex:Null<Int> = null):Void;
+	public function setTextAttr(attrName:String, attrValue: Dynamic, ?startIndex:Null<Int>, ?endIndex:Null<Int>):Void;
 	
 	/**
 	 * Changes the text string within this Text object.
@@ -41,7 +41,7 @@ extern class Text extends Element {
 	 * @param	startIndex An integer that specifies the index (zero-based) of the character in the string where the text will be inserted.
 	 * @param	endIndex An integer that specifies the index of the end point in the selected text string. The new text overwrites the text from startIndex up to, but not including, endIndex.
 	 */
-	public function setTextString(text:String, ?startIndex:Null<Int> = null, ?endIndex:Null<Int> = null):Void;
+	public function setTextString(text:String, ?startIndex:Null<Int>, ?endIndex:Null<Int>):Void;
 	
 	/**
 	 * A string that is equivalent to the Name field in the Accessibility panel.
@@ -51,11 +51,13 @@ extern class Text extends Element {
 	/**
 	 * A float value that specifies the anti-aliasing sharpness of the text.
 	 */
+	@:require(flpro_version >= Flash8)
 	public var antiAliasSharpness(default, default):Float;
 	
 	/**
 	 * A float value that specifies the anti-aliasing thickness of the text.
 	 */
+	@:require(flpro_version >= Flash8)
 	public var antiAliasThickness(default, default):Float;
 	
 	/**
@@ -86,17 +88,20 @@ extern class Text extends Element {
 	/**
 	 * A Boolean value that specifies whether to enable the embedding of variant glyphs.
 	 */
+	@:require(flpro_version >= CS4)
 	public var embedVariantGlyphs(default, default):Bool;
 	
 	/**
 	 * An array of filters applied to the text element
 	 */
+	@:require(flpro_version >= CS6)
 	public var filters(default, default):Array<Filter>;
 	
 	/**
 	 * A string that specifies the rendering mode for the text.
 	 */
-	public var fontRenderingMode(default, default):String;
+	@:require(flpro_version >= Flash8)
+	public var fontRenderingMode(default, default):FontRenderingMode;
 	
 	/**
 	 * Read-only; an integer that represents the number of characters in the Text object.
@@ -104,9 +109,9 @@ extern class Text extends Element {
 	public var length(default, null):Int;
 	
 	/**
-	 * A string that sets the line type to "single line", "multiline", "multiline no wrap", or "password" 
+	 * A string that sets the line type. 
 	 */
-	public var lineType(default, default):String;
+	public var lineType(default, default):LineType;
 	
 	/**
 	 * An integer that specifies the maximum characters the user can enter into this Text object.
@@ -164,7 +169,7 @@ extern class Text extends Element {
 	public var textRuns(default, default):Array<TextRun>;
 	
 	/**
-	 * A string that specifies the type of text field. Acceptable values are "static", "dynamic", and "input" 
+	 * A string that specifies the type of text field.
 	 */
 	public var textType(default, default):TextType;
 	
@@ -178,6 +183,21 @@ extern class Text extends Element {
 	 */
 	public var variableName(default, default):String;
 	
+}
+
+@:enum abstract FontRenderingMode(String) {
+	var DEVICE = "device";
+	var BITMAP = "bitmap";
+	var STANDARD = "standard";
+	var ADVANCED = "advanced";
+	var CUSTOM_THICKNESS_SHARPNESS = "customThicknessSharpness";
+}
+
+@:enum abstract LineType(String) {
+	var SINGLE_LINE = "single line";
+	var MULTILINE = "multiline";
+	var MULTILINE_NO_WRAP = "multiline no wrap";
+	var PASSWORD = "password";
 }
 
 @:enum abstract TextType(String) {

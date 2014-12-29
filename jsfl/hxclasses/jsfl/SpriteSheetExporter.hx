@@ -8,6 +8,7 @@ package jsfl;
  * The SpriteSheetExporter object is a subclass of the Item object.
  */
 @:native("SpriteSheetExporter")
+@:require(flpro_version >= CS6)
 extern class SpriteSheetExporter extends Item {
 	
 	public function new();
@@ -18,7 +19,7 @@ extern class SpriteSheetExporter extends Item {
 	 */
 	public function addBitmap(bitmap:BitmapItem):Void;
 	
-	@:overload(function (symbol:SymbolInstance, name:String, ?beginFrame:Int, ?endFrame:Int):Bool {})
+	
 	/**
 	 * Adds a symbol to be used to generate the sprite sheet.
 	 * @param	symbol The SymbolItem or SymbolInstance to include in the sprite sheet.
@@ -27,6 +28,7 @@ extern class SpriteSheetExporter extends Item {
 	 * @param	endFrame The last frame of the symbol to include in the sprite sheet.
 	 * @return Boolean.
 	 */
+	@:overload(function (symbol:SymbolInstance, name:String, ?beginFrame:Int, ?endFrame:Int):Bool { } )
 	public function addSymbol(symbol:SymbolItem):Bool;
 	
 	/**
@@ -145,20 +147,19 @@ framework specified by the layoutFormat property.
 	public var layoutFormat(default, default):SpriteSheetExporterLayoutFormat;
 	
 	/**
-	 * Controls the maximum height of the generated sprite sheet when autoSize =
-true, clipped to a maximum value of 8192.
+	 * Controls the maximum height of the generated sprite sheet when autoSize = true, clipped to a maximum value of 8192.
 	 */
+	@:require(flpro_version >= CC)
 	public var maxSheetHeight(default, default):Int;
 	
 	/**
-	 * Controls the maximum width of the generated sprite sheet when autoSize =
-true, clipped to a maximum value of 8192.
+	 * Controls the maximum width of the generated sprite sheet when autoSize = true, clipped to a maximum value of 8192.
 	 */
+	@:require(flpro_version >= CC)
 	public var maxSheetWidth(default, default):Int;
 	
 	/**
-	 * A Boolean value indicating whether all the specified frames can fit in the
-specified sprite sheet size.
+	 * A Boolean value indicating whether all the specified frames can fit in the specified sprite sheet size.
 	 */
 	public var overflowed(default, null):Bool;
 	
@@ -178,8 +179,7 @@ specified sprite sheet size.
 	public var sheetWidth(default, default):Int;
 	
 	/**
-	 * A Boolean value indicating whether to stack identical symbol frames in the
-sprite sheet.
+	 * A Boolean value indicating whether to stack identical symbol frames in the sprite sheet.
 	 */
 	public var stackDuplicateFrames(default, default):Bool;
 	

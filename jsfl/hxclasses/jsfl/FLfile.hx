@@ -1,5 +1,6 @@
 package jsfl;
 
+
 /**
  * The FLfile object lets you write Flash extensions that can access, modify, and remove files and folders on the local file system. The FLfile API is provided in the form of an extension to the JavaScript API.
  * This extension is called a shared library and is located in the following folder:
@@ -19,7 +20,7 @@ extern class FLfile {
 	 * @return A Boolean value of true if successful; false otherwise.
 	 */
 	public static function copy(fileURI:String, copyURI:String):Bool;
-	
+
 	/**
 	 * Creates one or more folders.
 	 * @param	folderURI A folder URI that specifies the folder structure you want to create.
@@ -53,8 +54,8 @@ extern class FLfile {
 	 * @param	fileOrFolderURI A string, expressed as a file:/// URI, specifying the file or folder whose creation date and time you want to retrieve as a JavaScript Date object.
 	 * @return A JavaScript Date object that represents the date and time when the specified file or folder was created. If the file doesn’t exist, the object contains information indicating that the file or folder was created at midnight GMT on December 31, 1969.
 	 */
-	public static function getCreationDateObj(fileOrFolderURI:/*JavaScript Date*/String):String;
-	
+	public static function getCreationDateObj(fileOrFolderURI:String):Date;
+
 	/**
 	 * Specifies how many seconds have passed between January 1, 1970 and the time the file or folder was last modified.
 	 * @param	fileOrFolderURI A string, expressed as a file:/// URI, specifying the file whose modification date and time you want to retrieve as a hexadecimal string.
@@ -67,7 +68,7 @@ extern class FLfile {
 	 * @param	fileOrFolderURI A string, expressed as a file:/// URI, specifying the file or folder whose modification date and time you want to retrieve as a JavaScript Date object.
 	 * @return A JavaScript Date object that represents the date and time when the specified file or folder was last modified. If the file or folder doesn’t exist, the object contains information indicating that the file or folder was created at midnight GMT on December 31, 1969.
 	 */
-	public static function getModificationDateObj(fileOrFolderURI:String):String;
+	public static function getModificationDateObj(fileOrFolderURI: String): Date;
 	
 	/**
 	 * Gets the size of a file.
@@ -75,6 +76,7 @@ extern class FLfile {
 	 * @return An integer that represents the size of the specified file, in bytes, or 0 if the file doesn’t exist.
 	 */
 	public static function getSize(fileURI:String):Int;
+
 	
 	/**
 	 * Lists the contents of a folder.
@@ -85,15 +87,16 @@ a single character).
 names. If omitted, both filenames and folder names are returned. Acceptable values are "files" and "directories" 
 	 * @return An array of strings representing the contents of the folder. If the folder doesn’t exist or if no files or folders match the specified criteria, returns an empty array.
 	 */
-	public static function listFolder(folderURI:String, ?filesOrDirectories:String = null):Array<String>;
+	public static function listFolder(folderURI: String, ?filesOrDirectories:  String = null): Array<String>;
 	
 	/**
 	 * Converts a filename in a platform-specific format to a file:/// URI.
-	 * @param	FILENAME A string, expressed in a platform-specific format, specifying the filename you want to convert.
+	 * @param	fileName A string, expressed in a platform-specific format, specifying the filename you want to convert.
 	 * @return A string expressed as a file:/// URI.
-	 */
-	public static function platformPathToURI(FILENAME:String):String;
-	
+	 */	
+	@:require(flpro_version >= CS4)
+	public static function platformPathToURI(fileName:String):String;
+
 	/**
 	 * Reads the contents of a file.
 	 * @param	fileURI A string, expressed as a file:/// URI, specifying the text-based file (such as.js,.txt, or.jsfl) that you want to read.
@@ -122,7 +125,8 @@ names. If omitted, both filenames and folder names are returned. Acceptable valu
 	 * @param	fileURI A string, expressed as a file:/// URI, specifying the filename you want to convert.
 	 * @return A string representing a platform-specific path.
 	 */
-	public static function uriToPlatformPath(fileURI:String):String;
+	@:require(flpro_version >= CS4)
+	public static function uriToPlatformPath(fileURI: String): String;
 	
 	/**
 	 * Creates, writes to, or appends to a file.
@@ -131,12 +135,6 @@ names. If omitted, both filenames and folder names are returned. Acceptable valu
 	 * @param	strAppendMode An optional string with the value "append", which specifies that you want to append textToWrite to the existing file. If omitted, fileURI is overwritten with textToWrite.
 	 * @return A Boolean value of true if successful; false otherwise.
 	 */
-	public static function write(fileURI:String, textToWrite:String, ?strAppendMode:String = null):Bool;
-	
-	/**
-	 * 
-	 * @param	command
-	 */
-	public static function runCommandLine(command:String):Void;
+	public static function write(fileURI: String, textToWrite: String, ?strAppendMode: String = null): Bool;
 
 }

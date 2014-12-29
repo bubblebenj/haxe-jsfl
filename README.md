@@ -2,8 +2,14 @@
 
 JSFL extern definition for Haxe.
 
-Definitions are copied form [Extending ADOBE ® FLASH ® PROFESSIONAL](http://help.adobe.com/en_US/flash/cs/extend/flash_extending_reference.pdf)
-（Last updated 12/6/2013).
+Definitions are copied from:
+  * CC [Extending ADOBE ® FLASH ® PROFESSIONAL](http://help.adobe.com/en_US/flash/cs/extend/flash_extending_reference.pdf) （Last updated 12/6/2013).
+  * CS6 Not found
+  * CS5, CS5.5 (http://help.adobe.com/en_US/flash/cs/extend/flash_cs5_extending.pdf)
+  * CS4 (http://help.adobe.com/archive/en_US/flash/cs4/flash_cs4_extending.pdf)
+  * CS3 not found
+  * Flash8 not found
+  * MX2004 (http://download.macromedia.com/pub/documentation/en/flash/mx2004/fl_jsapi.pdf) （Last updated ).
 
 ## How to use
 

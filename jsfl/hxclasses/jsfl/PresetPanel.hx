@@ -5,6 +5,7 @@ package jsfl;
  * It is a property of the flash object (fl.presetPanel).
  */
 @:native("PresetPanel")
+@:require(flpro_version >= CS4)
 extern class PresetPanel {
 	
 	/**
@@ -42,7 +43,7 @@ extern class PresetPanel {
 	 * @param	folderPath A string that specifies the path to the folder to expand or collapse.
 	 * @return A Boolean value of true if the folder or folders are successfully expanded or collapsed; false otherwise.
 	 */
-	public function expandFolder(?bExpand:Bool = true, ?bRecurse:Bool = false, ?folderPath:String = null):Bool;
+	public function expandFolder(?bExpand:Bool = true, ?bRecurse:Bool = false, ?folderPath:String):Bool;
 	
 	/**
 	 * Exports the currently selected or the specified preset to an XML file.
@@ -78,14 +79,14 @@ extern class PresetPanel {
 	 * @param	folderPath A string that specifies the path and name of the item to move.
 	 * @return A Boolean value of true if the items are successfully moved; false otherwise.
 	 */
-	public function moveToFolder(?folderPath:String = null):Bool;
+	public function moveToFolder(?folderPath:String):Bool;
 	
 	/**
 	 * Creates a folder in the folder tree of the Motion Presets panel.
 	 * @param	folderPath A string that specifies where to add a new folder in the Motion Presets panel, and the name of the new folder.
 	 * @return A Boolean value of true if the folder is successfully added; false otherwise.
 	 */
-	public function newFolder(?folderPath:String = null):Bool;
+	public function newFolder(?folderPath:String):Bool;
 	
 	/**
 	 * Renames the currently selected preset or folder to a specified name.
@@ -107,5 +108,4 @@ extern class PresetPanel {
 	 * An array of presetItem objects in the Motion Presets panel.
 	 */
 	public var items(default, default):Array<PresetItem>;
-
 }

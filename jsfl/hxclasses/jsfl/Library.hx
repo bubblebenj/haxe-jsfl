@@ -8,13 +8,14 @@ package jsfl;
  */
 @:native("Library")
 extern class Library {
+
 	/**
 	 * Adds the current or specified item to the Stage at the specified position.
 	 * @param	position A point that specifies the x,y position of the center of the item on the Stage.
 	 * @param	namePath A string that specifies the name of the item. If the item is in a folder, you can specify its name and path using slash notation. If namePath is not specified, the current library selection is used.
 	 * @return A Boolean value: true if the item is successfully added to the document; false otherwise.
 	 */
-	public function addItemToDocument(position: { x:Float, y:Float }, ?namePath:String):Bool;
+	public function addItemToDocument(position: JSFLPoint, ?namePath: String):Bool;
 
 	/**
 	 * Creates a new item of the specified type in the Library panel and sets the new item to the currently selected item.
@@ -47,7 +48,17 @@ and path using slash notation.
 	 * @param	namePath A string that specifies the name of the item. If the item is in a folder, you can specify its name and path using slash notation. If namePath is not specified, the single selected library item opens in Edit mode. If none or more than one item in the library is currently selected, the first scene in the main timeline appears for editing.
 	 * @return A Boolean value: true if the specified item exists and can be edited; false otherwise.
 	 */
-	public function editItem(?namePath:String = null):Bool;
+	public function editItem(?namePath:String):Bool;
+
+	/**
+	 * expands or collapses the currently selected or specified folder in the library.
+	 * @param	bExpand A Boolean value: if  true , the folder is expanded;
+	 * @param	bRecurseNestedParents A Boolean value: if  true , all the folders within the specified folder are expanded or collapsed, based on the value of bExpand.
+	 * @param	namePath A string that specifies the name and, optionally, the path of the folder to expand or collapse. If this parameter is not specified, the method applies to the currently selected folder.
+	 * @return A Boolean value:  true if the item is successfully expanded or collapsed;  false if unsuccessful or the specified item is not a folder.
+	 */
+	@:require(flpro_version < CC)
+	public function expandFolder(?bExpand:Bool=false, ?bRecurseNestedParents:Bool=false, ?namePath:String):Bool;
 	
 	/**
 	 * Returns the library item’s index value (zero-based).
@@ -75,6 +86,17 @@ and path using slash notation.
 	 * @return An array of values for all currently selected items in the library.
 	 */
 	public function getSelectedItems():Array<Item>;
+
+	/**
+	 *  imports a SWF file into the library as a compiled clip. Unlike File > Import > SWF, this method lets you embed a compiled SWF file inside the library. There is no corresponding user interface functionality, and this method must be used with an external library or DLL.
+	 * The SWF file that you are importing must have one top-level movie clip that contains all the content. That movie clip should have its linkage identifier set to the same value as the linkageName parameter passed to this method.
+	 * @param	linkageName A string that provides the name of the SWF linkage of the root movie clip.
+	 * @param	swfData An array of binary SWF data, which comes from an external library or DLL.
+	 * @param	libName A string that specifies the library name for the created item. If the name is already used, the method creates
+an alternate name. This parameter is optional.
+	 */
+	@:require(flpro_version < CC)
+	public function importEmbeddedSWF(linkageName:String,swfData:Dynamic,?libName:String):Void;
 	
 	/**
 	 * Checks to see if a specified item exists in the library.
@@ -90,14 +112,14 @@ and path using slash notation.
 	 * @param	bReplace A Boolean value. If an item with the same name already exists, specifying true for the bReplace parameter replaces the existing item with the item being moved. If false, the name of the dropped item changes to a unique name.
 	 * @return A Boolean value: true if the item moves successfully; false otherwise.
 	 */
-	public function moveToFolder(folderPath:String, ?itemToMove:String = null, ?bReplace:Bool = false):Bool;
-	
+	public function moveToFolder(folderPath:String, ?itemToMove:String, ?bReplace:Bool = false):Bool;
+
 	/**
 	 * Creates a new folder with the specified name, or a default name ("untitledfolder #") if no folderName parameter is provided, in the currently selected folder.
 	 * @param	folderPath A string that specifies the name of the folder to be created. If it is specified as a path, and the path doesn’t exist, the path is created.
 	 * @return A Boolean value: true if folder is created successfully; false otherwise.
 	 */
-	public function newFolder(?folderPath:String = null):Bool;
+	public function newFolder(?folderPath:String):Bool;
 	
 	/**
 	 * Renames the currently selected library item in the Library panel.
@@ -105,12 +127,13 @@ and path using slash notation.
 	 * @return A Boolean value of true if the name of the item changes successfully, false otherwise. If multiple items are selected, no names are changed, and the return value is false (to match user interface behavior).
 	 */
 	public function renameItem(name:String):Bool;
+
 	
 	/**
 	 * Selects or deselects all items in the library.
 	 * @param	bSelectAll A Boolean value that specifies whether to select or deselect all items in the library. Omit this parameter or use the default value of true to select all the items in the library; false deselects all library items.
 	 */
-	public function selectAll(?bSelectAll:Bool = true):Void;
+	public function selectAll(?bSelectAll: Bool = true):Void;
 	
 	/**
 	 * Selects a specified library item.
@@ -119,7 +142,7 @@ and path using slash notation.
 	 * @param	bSelect A Boolean value that specifies whether to select or deselect an item.
 	 * @return A Boolean value: true if the specified item exists; false otherwise.
 	 */
-	public function selectItem(namePath:String, ?bReplaceCurrentSelection:Bool = true, ?bSelect:Bool = true):Bool;
+	public function selectItem(namePath:String, ?bReplaceCurrentSelection:Bool = true, ?bSelect:Bool = true): Bool;
 	
 	/**
 	 * Deselects all the library items.
@@ -148,6 +171,7 @@ and path using slash notation.
 	/**
 	 * An array of library Items that are not used in the document.
 	 */
+	@:require(flpro_version >= CC)
 	public var unusedItems(default, default):Array<Item>;
 	
 }

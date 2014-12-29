@@ -2,7 +2,7 @@ package jsfl;
 
 /**
  * The drawingLayer object is accessible from JavaScript as a child of the flash object.
- * The drawingLayer object is used for extensible tools when the user wants to temporarily draw while dragging—for example, when creating a selection marquee.
+ * The drawingLayer object is used for extensible tools when the user wants to temporarily draw while dragging. For example, when creating a selection marquee.
  * You should call drawingLayer.beginFrame() before you call any other drawingLayer methods.
  */
 @:native("DrawingLayer")
@@ -82,7 +82,7 @@ extern class DrawingLayer {
 		• A hexadecimal number in the format 0xRRGGBB
 		• An integer that represents the decimal equivalent of a hexadecimal number
 	 */
-	public function setColor(color:String):Void;
+	public function setColor(color:Dynamic):Void;
 	
 	/**
 	 * This method is not available.

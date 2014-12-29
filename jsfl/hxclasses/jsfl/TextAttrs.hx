@@ -15,7 +15,6 @@ extern class TextAttrs {
 	/**
 	 * A string that specifies paragraph justification. Acceptable values are "left", "center", "right", and "justify" 
 	 */
-	
 	public var alignment(default, default):String;
 	
 	/**
@@ -46,7 +45,7 @@ extern class TextAttrs {
 	/**
 	 * A string, hexadecimal value, or integer that represents the fill color.
 	 */
-	public var fillColor(default, default):Int;
+	public var fillColor(default, default):Dynamic;
 	
 	/**
 	 * An integer that specifies paragraph indentation.
@@ -56,7 +55,7 @@ extern class TextAttrs {
 	/**
 	 * A Boolean value. A value of true causes text to appear with the italic version of the font.
 	 */
-	public var italic(default, default):String;
+	public var italic(default, default):Bool;
 	
 	/**
 	 * An integer that specifies the paragraph’s left margin.
@@ -66,6 +65,7 @@ extern class TextAttrs {
 	/**
 	 * An integer that represents the space between characters.
 	 */
+	@:require(flpro_version >= Flash8)
 	public var letterSpacing(default, default):Int;
 	
 	/**

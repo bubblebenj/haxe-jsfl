@@ -9,6 +9,7 @@ package jsfl;
  */
 @:native("Filter")
 extern class Filter {
+
 	/**
 	 * A float value that specifies the angle of the shadow or highlight color, in degrees.
 	 */

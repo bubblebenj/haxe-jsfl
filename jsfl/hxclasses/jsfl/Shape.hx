@@ -11,13 +11,6 @@ package jsfl;
 extern class Shape extends Element {
 	
 	/**
-	 * Returns an array of points that define a cubic curve.
-	 * @param	cubicSegmentIndex An integer that specifies the cubic segment for which points are returned.
-	 * @return An array of points that define a cubic curve for the Edge object that corresponds to the specified cubicSegmentIndex.
-	 */
-	public function getCubicSegmentPoints(cubicSegmentIndex:Int):Array<Edge>;
-	
-	/**
 	 * Defines the start of an edit session.
 	 */
 	public function beginEdit():Void;
@@ -34,23 +27,33 @@ extern class Shape extends Element {
 	public function endEdit():Void;
 	
 	/**
+	 * Returns an array of points that define a cubic curve.
+	 * @param	cubicSegmentIndex An integer that specifies the cubic segment for which points are returned.
+	 * @return An array of points that define a cubic curve for the Edge object that corresponds to the specified cubicSegmentIndex.
+	 */
+	@:require(flpro_version >= CS4)
+	public function getCubicSegmentPoints(cubicSegmentIndex:Int): Array<JSFLPoint>;
+	
+	/**
 	 * Read-only; an array of Contour objects for the shape (see Contour object).
 	 */
-	public var contours(default, null):Contour;
+	public var contours(default, null):Array<Contour>;
 	
 	/**
 	 * Read-only; an array of Edge objects (see Edge object).
 	 */
-	public var edges(default, null):Edge;
+	public var edges(default, null):Array<Edge>;
 	
 	/**
 	 * Read-only; if true, the shape is a drawing object.
 	 */
+	@:require(flpro_version >= Flash8)
 	public var isDrawingObject(default, null):Bool;
 	
 	/**
 	 * Read-only; if true, the shape is floating above the parent frame's (or group's) shape.
 	 */
+	@:require(flpro_version >= CS6)
 	public var isFloating(default, null):Bool;
 	
 	/**
@@ -61,21 +64,25 @@ extern class Shape extends Element {
 	/**
 	 * Read-only; if true, the shape is a primitive Oval object (was created using the Oval tool).
 	 */
+	@:require(flpro_version >= CS3)
 	public var isOvalObject(default, null):Bool;
 	
 	/**
 	 * Read-only; if true, the shape is a primitive Rectangle object (was created using the Rectangle tool).
 	 */
+	@:require(flpro_version >= CS3)
 	public var isRectangleObject(default, null):Bool;
 	
 	/**
 	 * An array of objects in the currently selected group.
 	 */
+	@:require(flpro_version >= CS4)
 	public var members(default, default):Array<Dynamic>;
 	
 	/**
 	 * Read-only; the number of cubic segments in the shape.
 	 */
+	@:require(flpro_version >= CS4)
 	public var numCubicSegments(default, null):Int;
 	
 	/**

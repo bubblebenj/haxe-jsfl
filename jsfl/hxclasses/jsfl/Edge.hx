@@ -1,5 +1,7 @@
 package jsfl;
 
+import jsfl.Math;
+
 /**
  * The Edge object represents an edge of a shape on the Stage.
  */
@@ -11,7 +13,7 @@ extern class Edge {
 	 * @param	i A zero-based integer that specifies which control point of the edge to return.
 	 * @return The specified control point.
 	 */
-	public function getControl(i:Int):Dynamic;
+	public function getControl(i:Int):JSFLPoint;
 	
 	/**
 	 * Returns a HalfEdge object.
@@ -37,6 +39,7 @@ extern class Edge {
 	/**
 	 * An integer that specifies the index value of a cubic segment of the edge.
 	 */
+	@:require(flpro_version >= CS4)
 	public var cubicSegmentIndex(default, null):Int;
 	
 	/**
@@ -52,6 +55,7 @@ extern class Edge {
 	/**
 	 * A Stroke object.
 	 */
+	@:require(flpro_version >= CS4)
 	public var stroke(default, default):Stroke;
 
 }

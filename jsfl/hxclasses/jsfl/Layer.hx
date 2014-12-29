@@ -5,9 +5,11 @@ package jsfl;
  */
 @:native("Layer")
 extern class Layer {
+
 	/**
 	 * The layer type: "none", "motion object", or "IK pose".
 	 */
+	@:require(flpro_version >= CS6)
 	public var animationType(default, default):String;
 	
 	/**
@@ -24,7 +26,6 @@ extern class Layer {
 	 * Read-only; an array of Frame objects.
 	 */
 	public var frames(default, null):Array<Frame>;
-
 	/**
 	 * An integer that specifies the percentage layer height; equivalent to the Layer height value in the Layer Properties dialog box.
 	 */

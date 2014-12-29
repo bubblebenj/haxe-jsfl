@@ -14,7 +14,7 @@ extern class Tools {
 	 * @param	pt2 Point that specify the drag-to point.
 	 * @return A new adjusted or constrained point.
 	 */
-	public function constrainPoint(pt1: { x:Float, y:Float }, pt2: { x:Float, y:Float }): { x:Float, y:Float };
+	public function constrainPoint(pt1: JSFLPoint, pt2:JSFLPoint): JSFLPoint;
 	
 	/**
 	 * Returns the most recently pressed key.
@@ -35,13 +35,14 @@ extern class Tools {
 		• 7 = hand cursor
 	 */
 	public function setCursor(cursor:Int):Void;
+
 	
 	/**
 	 * Takes a point as input and returns a new point that may be adjusted or snapped to the nearest geometric object.
 	 * @param	pt Specifies the location of the point for which you want to return a snap point.
 	 * @return A new point that may be adjusted or snapped to the nearest geometric object.
 	 */
-	public function snapPoint(pt: { x:Float, y:Float }): { x:Float, y:Float };
+	public function snapPoint(pt: JSFLPoint): JSFLPoint;
 	
 	/**
 	 * Read-only; returns the ToolObj object for the currently active tool.
@@ -66,12 +67,12 @@ extern class Tools {
 	/**
 	 * Read-only; a point that represents the position of the last mouse-down event on the Stage.
 	 */
-	public var penDownLoc(default, null):Float;
+	public var penDownLoc(default, null):JSFLPoint;
 	
 	/**
 	 * Read-only; a point that represents the current location of the mouse.
 	 */
-	public var penLoc(default, null):Float;
+	public var penLoc(default, null):JSFLPoint;
 	
 	/**
 	 * Read-only; a Boolean value that identifies if the Shift key is being pressed.

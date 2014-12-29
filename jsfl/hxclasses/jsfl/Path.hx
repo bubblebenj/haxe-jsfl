@@ -53,9 +53,9 @@ extern class Path {
 	/**
 	 * Creates a shape on the Stage by using the current stroke and fill settings.
 	 * @param	bSuppressFill A Boolean value that, if set to true, suppresses the fill that would be applied to the shape.
-	 * @param	bSupressStroke A Boolean value that, if set to true, suppresses the stroke that would be applied to the shape.
+	 * @param	bSuppressStroke A Boolean value that, if set to true, suppresses the stroke that would be applied to the shape.
 	 */
-	public function makeShape(?bSuppressFill:Bool = false, ?bSupressStroke:Bool = false):Void;
+	public function makeShape(?bSuppressFill:Bool = false, ?bSuppressStroke:Bool = false):Void;
 	
 	/**
 	 * Starts a new contour in the path.
