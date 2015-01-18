@@ -9,7 +9,7 @@ package jsfl;
  * The array of registered Window SWF panels is stored in the fl.swfPanels property.
  */
 @:native("SwfPanel")
-@:require(flpro_version >= CS4)
+@:require(jsfl_version >= CS4)
 extern class SwfPanel {
 	
 	/**
@@ -23,25 +23,25 @@ extern class SwfPanel {
 	/**
 	 * Reloads content in the SWF panel.
 	 */
-	@:require(flpro_version >= CC)
+	@:require(jsfl_version >= CC)
 	public function reload():Void;
 	
 	/**
 	 * Sets the keyboard focus to the specified SWF panel.
 	 */
-	@:require(flpro_version >= CS5)
+	@:require(jsfl_version >= CS5)
 	public function setFocus():Void;
 	
 	/**
 	 * A string that contains the DPI scale factor (scaleX) for swfPanel.
 	 */
-	@:require(flpro_version >= CC)
+	@:require(jsfl_version >= CC)
 	public var dpiScaleFactorX(default, default):String;
 	
 	/**
 	 * A string that contains the DPI scale factor (scaleY) for swfPanel.
 	 */
-	@:require(flpro_version >= CC)
+	@:require(jsfl_version >= CC)
 	public var dpiScaleFactorY(default, default):String;
 	
 	/**

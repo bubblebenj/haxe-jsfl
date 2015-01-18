@@ -6,7 +6,7 @@ package jsfl;
  * To determine if an item is a Rectangle object, use shape.isRectangleObject
  */
 @:native("Rectangle")
-@:require(flpro_version >= CS3)
+@:require(jsfl_version >= CS3)
 extern class Rectangle extends Shape {
 
 	/**

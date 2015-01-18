@@ -51,13 +51,13 @@ extern class Text extends Element {
 	/**
 	 * A float value that specifies the anti-aliasing sharpness of the text.
 	 */
-	@:require(flpro_version >= Flash8)
+	@:require(jsfl_version >= FlashPro8)
 	public var antiAliasSharpness(default, default):Float;
 	
 	/**
 	 * A float value that specifies the anti-aliasing thickness of the text.
 	 */
-	@:require(flpro_version >= Flash8)
+	@:require(jsfl_version >= FlashPro8)
 	public var antiAliasThickness(default, default):Float;
 	
 	/**
@@ -88,19 +88,19 @@ extern class Text extends Element {
 	/**
 	 * A Boolean value that specifies whether to enable the embedding of variant glyphs.
 	 */
-	@:require(flpro_version >= CS4)
+	@:require(jsfl_version >= CS4)
 	public var embedVariantGlyphs(default, default):Bool;
 	
 	/**
 	 * An array of filters applied to the text element
 	 */
-	@:require(flpro_version >= CS6)
+	@:require(jsfl_version >= CS6)
 	public var filters(default, default):Array<Filter>;
 	
 	/**
 	 * A string that specifies the rendering mode for the text.
 	 */
-	@:require(flpro_version >= Flash8)
+	@:require(jsfl_version >= FlashPro8)
 	public var fontRenderingMode(default, default):FontRenderingMode;
 	
 	/**

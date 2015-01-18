@@ -1,5 +1,7 @@
 package jsfl;
 
+import jsfl.Math;
+
 /**
  * The library object represents the Library panel.
  * It is a property of the Document object (see document.library) and can be accessed by fl.getDocumentDOM().library.
@@ -57,7 +59,7 @@ and path using slash notation.
 	 * @param	namePath A string that specifies the name and, optionally, the path of the folder to expand or collapse. If this parameter is not specified, the method applies to the currently selected folder.
 	 * @return A Boolean value:  true if the item is successfully expanded or collapsed;  false if unsuccessful or the specified item is not a folder.
 	 */
-	@:require(flpro_version < CC)
+	@:require(jsfl_version < CC)
 	public function expandFolder(?bExpand:Bool=false, ?bRecurseNestedParents:Bool=false, ?namePath:String):Bool;
 	
 	/**
@@ -95,7 +97,7 @@ and path using slash notation.
 	 * @param	libName A string that specifies the library name for the created item. If the name is already used, the method creates
 an alternate name. This parameter is optional.
 	 */
-	@:require(flpro_version < CC)
+	@:require(jsfl_version < CC)
 	public function importEmbeddedSWF(linkageName:String,swfData:Dynamic,?libName:String):Void;
 	
 	/**
@@ -171,7 +173,7 @@ an alternate name. This parameter is optional.
 	/**
 	 * An array of library Items that are not used in the document.
 	 */
-	@:require(flpro_version >= CC)
+	@:require(jsfl_version >= CC)
 	public var unusedItems(default, default):Array<Item>;
 	
 }

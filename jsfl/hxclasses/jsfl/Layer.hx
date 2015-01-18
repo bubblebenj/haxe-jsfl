@@ -9,7 +9,7 @@ extern class Layer {
 	/**
 	 * The layer type: "none", "motion object", or "IK pose".
 	 */
-	@:require(flpro_version >= CS6)
+	@:require(jsfl_version >= CS6)
 	public var animationType(default, default):String;
 	
 	/**

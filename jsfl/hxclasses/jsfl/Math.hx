@@ -57,7 +57,7 @@ extern class Math {
 	 * @param	point Contains the point to which the matrix is applied.
 	 * @return The transformed point.
 	 */
-	@:require(flpro_version >= CS6)
+	@:require(jsfl_version >= CS6)
 	public function transformPoint(matrix:Matrix, point:JSFLPoint): JSFLPoint;
 
 }

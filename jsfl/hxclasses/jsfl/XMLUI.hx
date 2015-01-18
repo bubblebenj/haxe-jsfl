@@ -35,7 +35,7 @@ extern class XMLUI {
 	 * @param	controlPropertyName A string that specifies the property whose control item element you want to retrieve.
 	 * @return An object that represents the current control item for the control specified by controlPropertyName.
 	 */
-	@:require(flpro_version >= Flash8)
+	@:require(jsfl_version >= FlashPro8)
 	public function getControlItemElement(controlPropertyName:String): { label:String, value:String };
 	
 	/**
@@ -43,7 +43,7 @@ extern class XMLUI {
 	 * @param	controlID A string that specifies the ID attribute of the control whose status you want to retrieve.
 	 * @return A Boolean value of true if the control is enabled; false otherwise.
 	 */
-	@:require(flpro_version >= Flash8)
+	@:require(jsfl_version >= FlashPro8)
 	public function getEnabled(controlID:String):Bool;
 	
 	/**
@@ -51,7 +51,7 @@ extern class XMLUI {
 	 * @param	controlID A string that specifies the ID attribute of the control whose visibility status you want to retrieve.
 	 * @return A Boolean value of true if the control is visible, or false if it is invisible (hidden).
 	 */
-	@:require(flpro_version >= Flash8)
+	@:require(jsfl_version >= FlashPro8)
 	public function getVisible(controlID:String):Bool;
 	
 	/**
@@ -67,7 +67,7 @@ extern class XMLUI {
 	 * @param	elementItem A JavaScript object with a string property named label and an optional string property named value.
 	 * If the value property does not exist, then it is created and assigned the same value as label 
 	 */
-	@:require(flpro_version >= Flash8)
+	@:require(jsfl_version >= FlashPro8)
 	public function setControlItemElement(controlPropertyName:String, elementItem:{label:String, ?value:String}):Void;
 	
 	/**
@@ -76,7 +76,7 @@ extern class XMLUI {
 	 * @param	elementItemArray An array of JavaScript objects, where each object has a string property named label and an optional string property named value.
 	 * If the value property does not exist, then it is created and assigned the same value as label.
 	 */
-	@:require(flpro_version >= Flash8)
+	@:require(jsfl_version >= FlashPro8)
 	public function setControlItemElements(controlID:String,  elementItemArray:Array<{label:String, ?value:String}>):Void;
 	
 	/**
@@ -84,7 +84,7 @@ extern class XMLUI {
 	 * @param	controlID A string that specifies the ID attribute of the control you want to enable or disable.
 	 * @param	enable A Boolean value of true if you want to enable the control, or false if you want to disable (dim) it.
 	 */
-	@:require(flpro_version >= Flash8)
+	@:require(jsfl_version >= FlashPro8)
 	public function setEnabled(controlID:String, enable:Bool):Void;
 	
 	/**
@@ -92,7 +92,7 @@ extern class XMLUI {
 	 * @param	controlID A string that specifies the ID attribute of the control you want to show or hide.
 	 * @param	visible A Boolean value of true if you want to show the control; false if you want to hide it.
 	 */
-	@:require(flpro_version >= Flash8)
+	@:require(jsfl_version >= FlashPro8)
 	public function setVisible(controlID:String, visible:Bool):Void;
 
 }

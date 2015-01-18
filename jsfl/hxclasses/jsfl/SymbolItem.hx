@@ -1,5 +1,7 @@
 package jsfl;
 
+import jsfl.Math;
+
 /**
  * The SymbolItem object is a subclass of the Item object.
  */
@@ -28,7 +30,7 @@ extern class SymbolItem extends Item {
 	 * @param	frameNumber An integer indicating the frame within the symbol to be exported.
 	 * @param	bitmapName A string indicating the name of the new bitmap to be added to the Library.
 	 */
-	@:require(flpro_version >= CS6)
+	@:require(jsfl_version >= CS6)
 	public function exportToLibrary(frameNumber:Int, bitmapName:String):Void;
 	
 	/**
@@ -38,25 +40,25 @@ extern class SymbolItem extends Item {
 	 * @param	endFrameNum An integer indicating the last frame within the symbol to be exported. If this parameter is omitted, all frames are exported.
 	 * @param	matrix A matrix to be appended to the exported PNG sequence.
 	 */
-	@:require(flpro_version >= CS6)
+	@:require(jsfl_version >= CS6)
 	public function exportToPNGSequence(outputURI:String, ?startFrameNum:Int, ?endFrameNum:Int, ?matrix:Matrix = null):Void;
 	
 	/**
 	 * A string hexadecimal value that indicates the modification date of the symbol.
 	 */
-	@:require(flpro_version >= CS6)
+	@:require(jsfl_version >= CS6)
 	public var lastModifiedDate(default, null):String;
 	
 	/**
 	 * A Boolean value that specifies whether 9-slice scaling is enabled for the item.
 	 */
-	@:require(flpro_version >= Flash8)
+	@:require(jsfl_version >= FlashPro8)
 	public var scalingGrid(default, default):Bool;
 	
 	/**
 	 * A Rectangle object that specifies the locations of the four 9-slice guides. For information on the format of the rectangle, see  document.addNewRectangle() 
 	 */
-	@:require(flpro_version >= Flash8)
+	@:require(jsfl_version >= FlashPro8)
 	public var scalingGridRect(default, default):JSFLRect;
 	
 	/**

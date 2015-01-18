@@ -94,7 +94,7 @@ names. If omitted, both filenames and folder names are returned. Acceptable valu
 	 * @param	fileName A string, expressed in a platform-specific format, specifying the filename you want to convert.
 	 * @return A string expressed as a file:/// URI.
 	 */	
-	@:require(flpro_version >= CS4)
+	@:require(jsfl_version >= CS4)
 	public static function platformPathToURI(fileName:String):String;
 
 	/**
@@ -125,7 +125,7 @@ names. If omitted, both filenames and folder names are returned. Acceptable valu
 	 * @param	fileURI A string, expressed as a file:/// URI, specifying the filename you want to convert.
 	 * @return A string representing a platform-specific path.
 	 */
-	@:require(flpro_version >= CS4)
+	@:require(jsfl_version >= CS4)
 	public static function uriToPlatformPath(fileURI: String): String;
 	
 	/**

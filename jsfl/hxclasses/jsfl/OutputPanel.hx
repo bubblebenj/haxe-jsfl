@@ -18,7 +18,7 @@ extern class OutputPanel {
 	 * @param	bAppendToFile A Boolean value. If true, it appends the Output panel’s contents to the output file, and if false, the method overwrites the output file if it already exists.
 	 * @param	bUseSystemEncoding A Boolean value. If true, it saves the Output panel text using the system encoding; if false, it saves the Output panel text using UTF-8 encoding, with Byte Order Mark characters at the beginning of the text. Parameter added in Flash 8
 	 */
-	#if flpro_version >= Flash8
+	#if (jsfl_version >= FlashPro8)
 	public function save(fileURI:String, ?bAppendToFile:Bool = false, ?bUseSystemEncoding:Bool = false):Void;
 	#else
 	public function save(fileURI:String, ?bAppendToFile:Bool = false):Void;

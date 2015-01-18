@@ -4,7 +4,7 @@ package jsfl;
  * The Tween object can be used to access interpolated properties of tweens. Accessing properties for a non-tween frame throws errors.
  */
 @:native("Tween")
-@:require(flpro_version >= CC)
+@:require(jsfl_version >= CC)
 extern class Tween {
 	
 	/**

@@ -23,7 +23,7 @@ extern class Element {
 	 * @param	format A string that specifies the publishing format. If _EMBED_SWF_ is set, the persistent data will be embedded in the SWF file every time a document is published.
 	 * @return True if the specified persistent data is enabled for the specified format. Otherwise False 
 	 */
-	@:require(flpro_version >= CC)
+	@:require(jsfl_version >= CC)
 	public function getPublishPersistentData(name:String, format:String):Bool;
 
 	/**
@@ -60,7 +60,7 @@ extern class Element {
 	 * @param	format A string that specifies the publishing format. If _EMBED_SWF_ is set, the persistent data will be embedded in the SWF file every time a document is published.
 	 * @param	publish A boolean that indicates whether to enable or disable publishing of persistent data for the specified format.
 	 */
-	@:require(flpro_version >= CC)
+	@:require(jsfl_version >= CC)
 	public function setPublishPersistentData(name:String, format:String, publish:Bool):Void;
 
 	/**

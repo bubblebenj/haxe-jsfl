@@ -8,7 +8,7 @@ package jsfl;
  * so before accessing the property, use document.allowScreens() to verify that a Screens document exists.
  */
 @:native("ScreenOutline")
-@:require(flpro_version < CS5)
+@:require(jsfl_version < CS5)
 extern class ScreenOutline {
 	
 	/**

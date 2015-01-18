@@ -21,7 +21,7 @@ extern class ComponentsPanel {
 	 * Refreshes the Components panel's list of components
 	 * @return A Boolean value of true if the Component panel list is refreshed, false otherwise.
 	 */
-	@:require(flpro_version >= Flash8)
+	@:require(jsfl_version >= FlashPro8)
 	public function reload():Bool;
 	
 }

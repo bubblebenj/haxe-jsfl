@@ -5,7 +5,7 @@ package jsfl;
  * It is a property of the flash object (fl.presetPanel).
  */
 @:native("PresetPanel")
-@:require(flpro_version >= CS4)
+@:require(jsfl_version >= CS4)
 extern class PresetPanel {
 	
 	/**

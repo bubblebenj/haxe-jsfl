@@ -1,6 +1,5 @@
 package jsfl;
 	
-import jsfl.Config;
 import jsfl.Math;
 	
 /**
@@ -61,7 +60,7 @@ extern class Document {
 	 * @param	bSuppressFill A Boolean value that, if set to true, causes the method to create the oval without a fill. 
 	 * @param	bSuppressStroke A Boolean value that, if set to true, causes the method to create the oval without a stroke.
 	 */
-	@:require(flpro_version >= CS4)
+	@:require(jsfl_version >= CS4)
 	public function addNewPrimitiveOval(boundingRectangle:JSFLRect, ?bSuppressFill:Bool = false, ?bSuppressStroke:Bool = false):Void;
 	
 	/**
@@ -71,7 +70,7 @@ extern class Document {
 	 * @param	bSuppressFill A Boolean value that, if set to true, causes the method to create the rectangle without a fill.
 	 * @param	bSuppressStroke A Boolean value that, if set to true, causes the method to create the rectangle without a stroke.
 	 */
-	@:require(flpro_version >= CS4)
+	@:require(jsfl_version >= CS4)
 	public function addNewPrimitiveRectangle(rect:Rectangle, roundness:Int, ?bSuppressFill:Bool = false, ?bSuppressStroke:Bool = false):Void;
 	
 	/**
@@ -115,7 +114,7 @@ extern class Document {
 	 * 
 	 * @return A Boolean value:  true if  document.screenOutline can be used safely;  false otherwise.
 	 */
-	@:require(flpro_version < CC)
+	@:require(jsfl_version < CC)
 	public function allowScreens():Bool;
 	
 	/**
@@ -145,7 +144,7 @@ extern class Document {
 	 * 
 	 * @return
 	 */
-	@:require(flpro_version < CS5)
+	@:require(jsfl_version < CS5)
 	public function canSaveAVersion():Bool;
 	
 	/**
@@ -198,7 +197,7 @@ extern class Document {
 	 * Converts selected objects in the current frame to a bitmap and inserts the bitmap into the library.
 	 * @return 
 	 */
-	@:require(flpro_version >= CC)
+	@:require(jsfl_version >= CC)
 	public function convertSelectionToBitmap():Bool;
 
 	/**
@@ -220,7 +219,7 @@ extern class Document {
 	 * @param	abortIfErrorsExist If set to true, the debug session will not start and the.swf
 window will not open if there are compiler errors. Compiler warnings will not abort the command.
 	 */
-	@:require(flpro_version >= CS5)
+	@:require(jsfl_version >= CS5)
 	public function debugMovie(?abortIfErrorsExist:Bool = false):Void;
 
 	/**
@@ -272,7 +271,7 @@ window will not open if there are compiler errors. Compiler warnings will not ab
 	/**
 	 * Performs a distribute-to-keyframes operation on the current selection; equivalent to selecting Distribute to Keyframes.
 	 */
-	@:require(flpro_version >= CC)
+	@:require(jsfl_version >= CC)
 	public function distributeToKeyframes():Void;
 
 	/**
@@ -338,7 +337,7 @@ window will not open if there are compiler errors. Compiler warnings will not ab
 	 * @param	frameNumber Integer indicating the frame to be exported.
 	 * @param	bitmapName A string representing the name of the bitmap to be added to the Library.
 	 */
-	@:require(flpro_version >= CS6)
+	@:require(jsfl_version >= CS6)
 	public function exportInstanceToLibrary(frameNumber:Int, bitmapName:String):Void;
 	
 	/**
@@ -348,7 +347,7 @@ window will not open if there are compiler errors. Compiler warnings will not ab
 	 * @param	endFrameNum An Integer indicating the last frame to be exported. 
 	 * @param	matrix A matrix to be appended to the exported PNG sequence.
 	 */
-	@:require(flpro_version >= CS6)
+	@:require(jsfl_version >= CS6)
 	public function exportInstanceToPNGSequence(outputURI:String, ?startFrameNum:Int = 1, ?endFrameNum:Int = 99999, ?matrix:Matrix):Void;
 
 	/**
@@ -372,7 +371,7 @@ frames, with each frame as a separate PNG file(false).
 	 * @param	profileName A string that specifies the name of the profile to export to an XML string. if not set, the current profile is exported.
 	 * @return An XML string.
 	 */
-	@:require(flpro_version >= CS4)
+	@:require(jsfl_version >= CS4)
 	public function exportPublishProfileString(?profileName:String):String;
 	
 	/**
@@ -390,7 +389,7 @@ frames, with each frame as a separate PNG file(false).
 	 * @param	stopAtFrame A boolean value that specifies whether the video should be recorded(true) until it reaches a certain frame or a specific time.
 	 * @param	stopAtFrameOrTime If stopAtFrame is true, this is an int specifying the number of frames to record. If stopAtFrame is false, this is the number of milliseconds to record. The default value is 0 which, if stopAtFrame is true, will record all the frames in the main timeline.
 	 */
-	@:require(flpro_version >= CC)
+	@:require(jsfl_version >= CC)
 	public function exportVideo(fileURI:String, ?convertInAdobeMediaEncoder:Bool = true, ?transparent:Bool = false, ?stopAtFrame:Bool = true, ?stopAtFrameOrTime:Int = 0):Void;
 
 	/**
@@ -477,7 +476,7 @@ frames, with each frame as a separate PNG file(false).
 	 * @param	format A string that specifies the publishing format. If set to "_EMBED_SWF_", the persistent data will be embedded in the SWF file every time a document is published.
 	 * @return True if publishing of the specified persistent data is enabled for the specified format in this document. Otherwise False 
 	 */
-	@:require(flpro_version >= CC)
+	@:require(jsfl_version >= CC)
 	public function getPublishDocumentData(format:String):Bool;
 
 	/**
@@ -490,14 +489,14 @@ frames, with each frame as a separate PNG file(false).
 	 * Gets the full path to the SWF file that is set in the current Publish profile.
 	 * @return The full path to the SWF file that is set in the current Publish profile.
 	 */
-	@:require(flpro_version >= CS6)
+	@:require(jsfl_version >= CS6)
 	public function getSWFPathFromProfile():String;
 	
 	/**
 	 * Indicates whether the “Enable detailed telemetry” checkbox is selected in the Publish Settings dialog.
 	 * @return Returns true if the “Enable detailed telemetry” checkbox is selected; otherwise false 
 	 */
-	@:require(flpro_version >= CC)
+	@:require(jsfl_version >= CC)
 	public function getTelemetryForSwf():Bool;
 
 	/**
@@ -546,14 +545,14 @@ frames, with each frame as a separate PNG file(false).
 	 * @param	xmlString A string that contains the XML data to be imported as the current profile.
 	 * @return A Boolean value of true if the string was successfully imported; false otherwise.
 	 */
-	@:require(flpro_version >= CS4)
+	@:require(jsfl_version >= CS4)
 	public function importPublishProfileString(xmlString:String):Bool;
 	
 	/**
 	 * 
 	 * @param	fileURI A string, expressed as a file:/// URI, that specifies the file for the SWF file to import.
 	 */
-	@:require(flpro_version < CC)
+	@:require(jsfl_version < CC)
 	public function importSWF(fileURI:String):Void;
 	
 	/**
@@ -566,7 +565,7 @@ frames, with each frame as a separate PNG file(false).
 	 * @param	URI the absolute path to the cue point XML file.
 	 * @return The return value is the same as the string serialized in the Cue Point property of the object containing the instance of an FLVPlayback Component.
 	 */
-	@:require(flpro_version >= CS5 && flpro_version < CC)
+	@:require(jsfl_version >= CS5 && jsfl_version < CC)
 	public function loadCuePointXML(URI: String): String;
 
 	/**
@@ -692,7 +691,7 @@ frames, with each frame as a separate PNG file(false).
 	 * 
 	 * @return
 	 */
-	@:require(flpro_version < CS5)
+	@:require(jsfl_version < CS5)
 	public function revertToLastVersion():Bool;
 	
 	/**
@@ -700,7 +699,7 @@ frames, with each frame as a separate PNG file(false).
 	 * @param	xyzCoordinate An XYZ coordinate point that specifies the axes for 3D rotation.
 	 * @param	bGlobalTransform A Boolean value that specifies whether the transformation mode should be global(true) or local(false).
 	 */
-	@:require(flpro_version >= CS4)
+	@:require(jsfl_version >= CS4)
 	public function rotate3DSelection(xyzCoordinate: JSFLPoint3D, bGlobalTransform: Bool):Void;
 	
 	/**
@@ -724,7 +723,7 @@ frames, with each frame as a separate PNG file(false).
 box. If  false and the file was never saved, the file is not saved. The default value is  true.
 	 * @return A Boolean value:  true if the save-and-compact operation completes successfully;  false otherwise.
 	 */
-	@:require(flpro_version < CS6)
+	@:require(jsfl_version < CS6)
 	public function saveAndCompact(?bOkToSaveAs:Bool):Bool;
 
 	/**
@@ -733,14 +732,14 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	 * @param	selectionOnly A boolean indicating whether only the current Stage selection should be saved to the new FLA file.
 	 * @return A Boolean value: true if the saveAsCopy operation completes successfully; false otherwise.
 	 */
-	@:require(flpro_version >= CS6)
+	@:require(jsfl_version >= CS6)
 	public function saveAsCopy(URI:String, ?selectionOnly:Bool = false):Bool;
 	
 	/**
 	 * 
 	 * @return
 	 */
-	@:require(flpro_version < CS5)
+	@:require(jsfl_version < CS5)
 	public function saveAVersion():Bool;
 	
 	/**
@@ -883,7 +882,7 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	 * @param	format A string that specifies the publishing format.
 	 * @param	publish A boolean that indicates whether to enable or disable publishing of persistent data for the specified format. 
 	 */
-	@:require(flpro_version >= CC)
+	@:require(jsfl_version >= CC)
 	public function setPublishDocumentData(format:String, publish:Bool):Void;
 
 
@@ -913,14 +912,14 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	 * Specifies the vanishing point for viewing 3D objects.
 	 * @param	point A point that specifies the x and y coordinates of the location at which to set the vanishing point for viewing 3D objects.
 	 */
-	@:require(flpro_version >= CS4)
+	@:require(jsfl_version >= CS4)
 	public function setStageVanishingPoint(point: JSFLPoint):Void;
 	
 	/**
 	 * Specifies the perspective angle for viewing 3D objects.
 	 * @param	angle A floating point value between 0.0 and 179.0.
 	 */	
-	@:require(flpro_version >= CS4)
+	@:require(jsfl_version >= CS4)
 	public function setStageViewAngle(angle:Float):Void;
 	
 	/**
@@ -1026,7 +1025,7 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	 * 
 	 * @return
 	 */
-	@:require(flpro_version < CS5)
+	@:require(jsfl_version < CS5)
 	public function synchronizeWithHeadVersion():Bool;
 	
 	/**
@@ -1062,7 +1061,7 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	 * Sets the XYZ position around which the selection is translated or rotated. 
 	 * @param	xyzCoordinate An XYZ coordinate that specifies the center point for 3D rotation or translation.
 	 */
-	@:require(flpro_version >= CS4)
+	@:require(jsfl_version >= CS4)
 	public function translate3DCenter(xyzCoordinate:JSFLPoint3D):Void;
 	
 	/**
@@ -1070,7 +1069,7 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	 * @param	xyzCoordinate An XYZ coordinate that specifies the axes for 3D translation.
 	 * @param	bGlobalTransform A Boolean value that specifies whether the transformation mode should be global(true) or local(false).
 	 */
-	@:require(flpro_version >= CS4)
+	@:require(jsfl_version >= CS4)
 	public function translate3DSelection(xyzCoordinate: JSFLPoint3D, ?bGlobalTransform:Bool = false):Void;
 	
 	/**
@@ -1100,7 +1099,7 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	 */	
 	public var accName(default, default):String;
 		
-	@:require(flpro_version < CC)
+	@:require(jsfl_version < CC)
 	public var activeEffect:Effect;
 	
 	/**
@@ -1161,7 +1160,7 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	/**
 	 * 
 	 */
-	@:require(flpro_version < CC)
+	@:require(jsfl_version < CC)
 	public var drawingLayer: DrawingLayer;
 	
 	/**
@@ -1172,7 +1171,7 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	/**
 	 * A string that contains a list of items in the document’s ActionScript 3.0 External library path, which specifies the location of SWC files used as runtime shared libraries.
 	 */
-	@:require(flpro_version >= CS4)
+	@:require(jsfl_version >= CS4)
 	public var externalLibraryPath(default, default):String;
 
 	/**
@@ -1203,7 +1202,7 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	/**
 	 * A string that contains a list of items in the document’s ActionScript 3.0 Library path, which specifies the location of SWC files or folders containing SWC files.
 	 */
-	@:require(flpro_version >= CS4)
+	@:require(jsfl_version >= CS4)
 	public var libraryPath(default, default):String;
 	
 	/**
@@ -1219,7 +1218,7 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	/**
 	 * A string that corresponds to the global Classpath setting in the ActionScript 2.0 Settings dialog box.
 	 */
-	@:require(flpro_version < CC)
+	@:require(jsfl_version < CC)
 	public var packagePaths:Array<String>;
 	
 	/**
@@ -1230,7 +1229,7 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	/**
 	 * Read-only; a string that represents the path of the document, expressed as a file:/// URI.
 	 */
-	@:require(flpro_version >= CS4)
+	@:require(jsfl_version >= CS4)
 	public var pathURI(default, null):String;
 	
 	/**
@@ -1241,7 +1240,7 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	/**
 	 * Read-only property; the current ScreenOutline object for the document.
 	 */
-	@:require(flpro_version < CC)
+	@:require(jsfl_version < CC)
 	public var screenOutline:ScreenOutline;
 	
 	/**
@@ -1257,13 +1256,13 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	/**
 	 * A string that contains a list of items in the document’s ActionScript 3.0 Source path, which specifies the location of ActionScript class files.
 	 */
-	@:require(flpro_version >= CS4)
+	@:require(jsfl_version >= CS4)
 	public var sourcePath(default, default):String;
 	
 	/**
 	 * An integer that returns the JPEG Quality setting from the current Publish Profile in the document.
 	 */
-	@:require(flpro_version >= CS6)
+	@:require(jsfl_version >= CS6)
 	public var swfJPEGQuality(default, default):Int;
 
 	/**

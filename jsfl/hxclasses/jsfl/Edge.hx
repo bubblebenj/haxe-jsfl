@@ -39,7 +39,7 @@ extern class Edge {
 	/**
 	 * An integer that specifies the index value of a cubic segment of the edge.
 	 */
-	@:require(flpro_version >= CS4)
+	@:require(jsfl_version >= CS4)
 	public var cubicSegmentIndex(default, null):Int;
 	
 	/**
@@ -55,7 +55,7 @@ extern class Edge {
 	/**
 	 * A Stroke object.
 	 */
-	@:require(flpro_version >= CS4)
+	@:require(jsfl_version >= CS4)
 	public var stroke(default, default):Stroke;
 
 }

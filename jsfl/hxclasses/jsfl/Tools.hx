@@ -1,5 +1,7 @@
 package jsfl;
 
+import jsfl.Math;
+
 /**
  * The Tools object is accessible from the flash object (fl.tools).
  * The tools.toolObjs property contains an array of ToolObj objects, and the tools.activeTool

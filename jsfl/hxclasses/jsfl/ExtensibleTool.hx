@@ -1,6 +1,6 @@
 package jsfl;
 	
-import jsfl.Fl;
+import jsfl.Flash;
 
 @:native("")
 class ExtensibleTool {
@@ -62,10 +62,5 @@ tools.getKeyDown() to determine which key was pressed.
 	 * called when the extensible tool is active and the mouse moves, to allow the script to set custom pointers. The script should call  tools.setCursor() to specify the pointer to use. For a list that shows which pointers correspond to which integer values, see  tools.setCursor() 
 	 */
 	public function setCursor(): Void;
-	
-	/**
-	 * 
-	 */
-	public function attachTool(): Void{
 	
 }

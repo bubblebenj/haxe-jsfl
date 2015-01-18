@@ -1,5 +1,7 @@
 package jsfl;
 
+import jsfl.Math;
+
 /**
  * The Shape object is a subclass of the Element object.
  * The Shape object provides more precise control than the drawing APIs when manipulating or creating geometry on the Stage.
@@ -31,7 +33,7 @@ extern class Shape extends Element {
 	 * @param	cubicSegmentIndex An integer that specifies the cubic segment for which points are returned.
 	 * @return An array of points that define a cubic curve for the Edge object that corresponds to the specified cubicSegmentIndex.
 	 */
-	@:require(flpro_version >= CS4)
+	@:require(jsfl_version >= CS4)
 	public function getCubicSegmentPoints(cubicSegmentIndex:Int): Array<JSFLPoint>;
 	
 	/**
@@ -47,13 +49,13 @@ extern class Shape extends Element {
 	/**
 	 * Read-only; if true, the shape is a drawing object.
 	 */
-	@:require(flpro_version >= Flash8)
+	@:require(jsfl_version >= FlashPro8)
 	public var isDrawingObject(default, null):Bool;
 	
 	/**
 	 * Read-only; if true, the shape is floating above the parent frame's (or group's) shape.
 	 */
-	@:require(flpro_version >= CS6)
+	@:require(jsfl_version >= CS6)
 	public var isFloating(default, null):Bool;
 	
 	/**
@@ -64,25 +66,25 @@ extern class Shape extends Element {
 	/**
 	 * Read-only; if true, the shape is a primitive Oval object (was created using the Oval tool).
 	 */
-	@:require(flpro_version >= CS3)
+	@:require(jsfl_version >= CS3)
 	public var isOvalObject(default, null):Bool;
 	
 	/**
 	 * Read-only; if true, the shape is a primitive Rectangle object (was created using the Rectangle tool).
 	 */
-	@:require(flpro_version >= CS3)
+	@:require(jsfl_version >= CS3)
 	public var isRectangleObject(default, null):Bool;
 	
 	/**
 	 * An array of objects in the currently selected group.
 	 */
-	@:require(flpro_version >= CS4)
+	@:require(jsfl_version >= CS4)
 	public var members(default, default):Array<Dynamic>;
 	
 	/**
 	 * Read-only; the number of cubic segments in the shape.
 	 */
-	@:require(flpro_version >= CS4)
+	@:require(jsfl_version >= CS4)
 	public var numCubicSegments(default, null):Int;
 	
 	/**

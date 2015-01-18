@@ -50,7 +50,7 @@ extern class HalfEdge {
 	/**
 	 * Read-only property; an integer with a value of 0 or 1 that specifies the index for this HalfEdge object in the parent edge.
 	 */
-	@:require(flpro_version < CC)
+	@:require(jsfl_version < CC)
 	public var index(default, null):Int;
 
 }

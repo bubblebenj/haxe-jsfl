@@ -8,7 +8,7 @@ package jsfl;
  * The SpriteSheetExporter object is a subclass of the Item object.
  */
 @:native("SpriteSheetExporter")
-@:require(flpro_version >= CS6)
+@:require(jsfl_version >= CS6)
 extern class SpriteSheetExporter extends Item {
 	
 	public function new();
@@ -149,13 +149,13 @@ framework specified by the layoutFormat property.
 	/**
 	 * Controls the maximum height of the generated sprite sheet when autoSize = true, clipped to a maximum value of 8192.
 	 */
-	@:require(flpro_version >= CC)
+	@:require(jsfl_version >= CC)
 	public var maxSheetHeight(default, default):Int;
 	
 	/**
 	 * Controls the maximum width of the generated sprite sheet when autoSize = true, clipped to a maximum value of 8192.
 	 */
-	@:require(flpro_version >= CC)
+	@:require(jsfl_version >= CC)
 	public var maxSheetWidth(default, default):Int;
 	
 	/**

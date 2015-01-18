@@ -1,5 +1,7 @@
 package jsfl;
 
+import jsfl.Math;
+
 /**
  * The Timeline object represents the Flash timeline, which can be accessed for the current document by using fl.getDocumentDOM().getTimeline().
  * This method returns the timeline of the current scene or symbol that is being edited.
@@ -69,19 +71,19 @@ to the new layer (“Layer n,” where n is the total number of layers created a
 	 * @param	startLayerIndex A zero-based index that specifies the beginning of the range of layers to copy. If you omit startLayerIndex, the method uses the current selection.
 	 * @param	endLayerIndex A zero-based index that specifies the layer at which to stop copying. The range of layers to copy goes up to and including endLayerIndex. If you specify only startLayerIndex, then endLayerIndex defaults to the value of startLayerIndex.
 	 */
-	@:require(flpro_version >= CS5)
+	@:require(jsfl_version >= CS5)
 	public function copyLayers(?startLayerIndex:Null<Int> =null, ?endLayerIndex:Null<Int> = null):Void;
 	
 	/**
 	 * Copies motion on selected frames, either from a motion tween or from frame-by-frame animation, so it can be applied to other frames.
 	 */
-	@:require(flpro_version >= CS3)
+	@:require(jsfl_version >= CS3)
 	public function copyMotion():Void;
 	
 	/**
 	 * Copies motion on selected frames, either from a motion tween or from frame-by-frame animation, to the clipboard as ActionScript 3.0 code.
 	 */
-	@:require(flpro_version >= CS3)
+	@:require(jsfl_version >= CS3)
 	public function copyMotionAsAS3():Void;
 	
 	/**
@@ -89,7 +91,7 @@ to the new layer (“Layer n,” where n is the total number of layers created a
 	 * @param	startFrame Specifies the first frame at which to create motion objects. If you omit startFrame, the method uses the current selection; if there is no selection, all frames at the current playhead on all layers are removed.
 	 * @param	endFrame Specifies the frame at which to stop creating motion objects; the range of frames goes up to, but does not include, endFrame. If you specify only startFrame, endFrame defaults to the startFrame value.
 	 */
-	@:require(flpro_version >= CS5)
+	@:require(jsfl_version >= CS5)
 	public function createMotionObject(?startFrame:Null<Int> =null, ?endFrame:Null<Int> = null):Void;
 	
 	/**
@@ -111,7 +113,7 @@ to the new layer (“Layer n,” where n is the total number of layers created a
 	 * @param	startLayerIndex A zero-based index that specifies the beginning of the range of layers to cut. If you omit startLayerIndex, the method uses the current selection. 
 	 * @param	endLayerIndex A zero-based index that specifies the layer at which to stop cutting. The range of layers to cut goes up to and including endLayerIndex. If you specify only startLayerIndex, then endLayerIndex defaults to the value of startLayerIndex.
 	 */
-	@:require(flpro_version >= CS5)
+	@:require(jsfl_version >= CS5)
 	public function cutLayers(?startLayerIndex:Null<Int> =null, ?endLayerIndex:Null<Int> = null):Void;
 	
 	/**
@@ -125,7 +127,7 @@ to the new layer (“Layer n,” where n is the total number of layers created a
 	 * @param	startLayerIndex A zero-based index that specifies the beginning of the range of layers to copy. It also specifies the layer above which the layers on the clipboard are pasted. If you omit startLayerIndex, the method uses the current layer selection.
 	 * @param	endLayerIndex A zero-based index that specifies the layer at which to stop copying. The range of layers to copy goes up to and including endLayerIndex. If you specify only startLayerIndex, then endLayerIndex defaults to the value of startLayerIndex.
 	 */
-	@:require(flpro_version >= CS5)
+	@:require(jsfl_version >= CS5)
 	public function duplicateLayers(?startLayerIndex:Null<Int>, ?endLayerIndex:Null<Int>):Void;
 	
 	/**
@@ -149,8 +151,8 @@ to the new layer (“Layer n,” where n is the total number of layers created a
 	 * @param	includeHiddenLayers Indicates whether to include element bounds from hidden layers. Defaults to the SWF publish setting value for "include hidden layers".
 	 * @return The bounding rectangle for all elements on all layers on the Timeline, for the specified frame.
 	 */
-	@:require(flpro_version >= CC)
-	public function getBounds(?frame:Int = 1, ?includeHiddenLayers:Bool = true):BoundingRectangle;
+	@:require(jsfl_version >= CC)
+	public function getBounds(?frame:Int = 1, ?includeHiddenLayers:Bool = true): JSFLRect;
 	
 	/**
 	 * Retrieves the specified property’s value for the selected frames.
@@ -165,7 +167,7 @@ to the new layer (“Layer n,” where n is the total number of layers created a
 	 * Returns an XML string that represents the current positions of the horizontal and vertical guide lines for a timeline (View > Guides > Show Guides).
 	 * @return An XML string.
 	 */
-	@:require(flpro_version >= CS4)
+	@:require(jsfl_version >= CS4)
 	public function getGuidelines():String;
 	
 	/**
@@ -219,13 +221,13 @@ to the new layer (“Layer n,” where n is the total number of layers created a
 	 * @param	layerIndex A zero-based index that specifies the layer above which the layers on the clipboard are pasted. If you omit layerIndex, the method uses the current selection.
 	 * @return Integer indicating the lowest layer index of the layers that were pasted.
 	 */
-	@:require(flpro_version >= CS5)
+	@:require(jsfl_version >= CS5)
 	public function pasteLayers(?layerIndex:Int):Int;
 	
 	/**
 	 * Pastes the range of motion frames retrieved by to the Timeline.
 	 */
-	@:require(flpro_version >= CS3)
+	@:require(jsfl_version >= CS3)
 	public function pasteMotion():Void;
 	
 	/**
@@ -245,7 +247,7 @@ to the new layer (“Layer n,” where n is the total number of layers created a
 	 * @param	startFrame Specifies the first frame at which to start removing motion objects. If you omit startFrame, the method uses the current selection; if there is no selection, all frames at the current playhead on all layers are removed.
 	 * @param	endFrame Specifies the frame at which to stop removing motion objects; the range of frames goes up to, but does not include, endFrame. If you specify only startFrame, endFrame defaults to the startFrame value.
 	 */
-	@:require(flpro_version >= CS5)
+	@:require(jsfl_version >= CS5)
 	public function removeMotionObject(?startFrame:Null<Int> =null, ?endFrame:Null<Int> = null):Void;
 	
 	/**
@@ -282,7 +284,7 @@ to the new layer (“Layer n,” where n is the total number of layers created a
 	 * @param	xmlString An XML string that contains information on the guidelines to apply.
 	 * @return A Boolean value of true if the guidelines are successfully applied; false otherwise.
 	 */
-	@:require(flpro_version >= CS4)
+	@:require(jsfl_version >= CS4)
 	public function setGuidelines(xmlString:String):Bool;
 	
 	/**
@@ -320,13 +322,13 @@ selection; false causes the method to extend the current selection.
 	/**
 	 * Starts automatic playback of the timeline if it is not currently playing.
 	 */
-	@:require(flpro_version >= CS5)
+	@:require(jsfl_version >= CS5)
 	public function startPlayback():Void;
 	
 	/**
 	 * Stops autoumatic playback of the timeline if it is currently playing.
 	 */
-	@:require(flpro_version >= CS5)
+	@:require(jsfl_version >= CS5)
 	public function stopPlayback():Void;
 	
 	/**
@@ -357,7 +359,7 @@ selection; false causes the method to extend the current selection.
 	/**
 	 * Read-only property; indicates whether the timeline belongs to a scene.
 	 */
-	@:require(flpro_version >= CS5)
+	@:require(jsfl_version >= CS5)
 	public var libraryItem(default, null):Null<Item>;
 	
 	/**
