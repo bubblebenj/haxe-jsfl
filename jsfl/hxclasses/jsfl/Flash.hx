@@ -43,7 +43,7 @@ extern class Flash {
 	 * @param	description A string that specifies the event type to pass to this callback function.
 	 * @return A string that specifies the event type to pass to this callback function.
 	 */
-	@:require(jsfl_version >= macro getVersionNumber(FlashPro8))
+	@:require(jsfl_version >= FlashPro8)
 	public function browseForFolderURL(?description:String = null):String;
 
 	/**

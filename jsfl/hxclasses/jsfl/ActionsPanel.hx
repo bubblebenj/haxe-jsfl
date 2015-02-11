@@ -13,6 +13,7 @@ extern class ActionsPanel {
 	 * @return A string that represents the class of which ASvariableName is a member.
 	 */
 	@:require(jsfl_version >= CS3 && jsfl_version < CC)
+	@:jsflVersion({ added : CS3, removed : CC })
 	public function getClassForObject(ASvariableName:String):String;
 	
 		/**
