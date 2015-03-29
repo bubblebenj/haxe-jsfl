@@ -1,42 +1,89 @@
 package jsfl;
 
+import jsfl.Math;
+
+/**
+ * The Tools object is accessible from the flash object (fl.tools).
+ * The tools.toolObjs property contains an array of ToolObj objects, and the tools.activeTool
+ * property returns the ToolObj object for the currently active tool.
+ */
 @:native("Tools")
 extern class Tools {
 	
-	// 2 つのポイントを取得し、調整または制限された新しいポイントを返します。
-	public function constrainPoint(pt1: { x:Float, y:Float }, pt2: { x:Float, y:Float } ):Float;
+	/**
+	 * Takes two points and returns a new adjusted or constrained point.
+	 * @param	pt1 Point that specify the starting-click.
+	 * @param	pt2 Point that specify the drag-to point.
+	 * @return A new adjusted or constrained point.
+	 */
+	public function constrainPoint(pt1: JSFLPoint, pt2:JSFLPoint): JSFLPoint;
 	
-	// 最後に押されたキーを返します。
+	/**
+	 * Returns the most recently pressed key.
+	 * @return The integer value of the key.
+	 */
 	public function getKeyDown():Int;
 	
-	// ポインターを指定した外観に設定します。
+	/**
+	 * Sets the pointer to a specified appearance.
+	 * @param	cursor An integer that defines the pointer appearance, as described in the following list:
+		• 0 = Plus cursor (+)
+		• 1 = black arrow
+		• 2 = white arrow
+		• 3 = four-way arrow
+		• 4 = two-way horizontal arrow
+		• 5 = two-way vertical arrow
+		• 6 = X
+		• 7 = hand cursor
+	 */
 	public function setCursor(cursor:Int):Void;
 	
-	// 入力としてポイントを取得し、最も近い図形オブジェクトに調整または吸着される新しいポイントを返します。
-	public function snapPoint(pt: { x:Float, y:Float } ):Float;
 	
-	// 読み取り専用。現在アクティブなツールの ToolObj オブジェクトを返します。
+	/**
+	 * Takes a point as input and returns a new point that may be adjusted or snapped to the nearest geometric object.
+	 * @param	pt Specifies the location of the point for which you want to return a snap point.
+	 * @return A new point that may be adjusted or snapped to the nearest geometric object.
+	 */
+	public function snapPoint(pt: JSFLPoint): JSFLPoint;
+	
+	/**
+	 * Read-only; returns the ToolObj object for the currently active tool.
+	 */
 	public var activeTool(default, null):ToolObj;
 	
-	// 読み取り専用。Alt キーが押されているかどうかを識別するブール値です。
+	/**
+	 * Read-only; a Boolean value that identifies if the Alt key is being pressed.
+	 */
 	public var altIsDown(default, null):Bool;
 	
-	// 読み取り専用。Ctrl キーが押されているかどうかを識別するブール値です。
+	/**
+	 * Read-only; a Boolean value that identifies if the Control key is being pressed.
+	 */
 	public var ctlIsDown(default, null):Bool;
 	
-	// 読み取り専用。左マウスボタンが現在押されているかどうかを識別するブール値です。
+	/**
+	 * Read-only; a Boolean value that identifies if the left mouse button is currently pressed.
+	 */
 	public var mouseIsDown(default, null):Bool;
 	
-	// 読み取り専用。ステージ上で最後にマウスの down イベントがあったときの位置を表すポイントです。
-	public var penDownLoc(default, null):Float;
+	/**
+	 * Read-only; a point that represents the position of the last mouse-down event on the Stage.
+	 */
+	public var penDownLoc(default, null):JSFLPoint;
 	
-	// 読み取り専用。マウスの現在の場所を表すポイントです。
-	public var penLoc(default, null):Float;
+	/**
+	 * Read-only; a point that represents the current location of the mouse.
+	 */
+	public var penLoc(default, null):JSFLPoint;
 	
-	// 読み取り専用。Shift キーが押されているかどうかを識別するブール値です。
+	/**
+	 * Read-only; a Boolean value that identifies if the Shift key is being pressed.
+	 */
 	public var shiftIsDown(default, null):Bool;
 	
-	// 読み取り専用。ToolObj オブジェクトの配列です。
+	/**
+	 * Read-only; an array of ToolObj objects.
+	 */
 	public var toolObjs(default, null):Array<ToolObj>;
 	
 }

@@ -1,8 +1,9 @@
 package jsfl;
 
-// Used by bitmapItem class
-// Acceptable values are "photo" or "lossless" . 
-
+/**
+ * Used by bitmapItem class
+ * Acceptable values are "photo" or "lossless".
+ */
 @:fakeEnum(String)
 extern enum CompressionType {
 	PHOTO;

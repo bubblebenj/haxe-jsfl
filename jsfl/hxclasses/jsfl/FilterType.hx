@@ -1,7 +1,10 @@
 package jsfl;
 
-// 指定できる値は、「adjustColorFilter」、「bevelFilter」、「blurFilter」、「dropShadowFilter」、「glowFilter」、「gradientBevelFilter」および「gradientGlowFilter」です。
-
+/**
+ * a string that specifies the type of filter.
+ * The value of this property determines which other properties of the Filter object are available.
+ * Acceptable values are: "adjustColorFilter", "bevelFilter", "blurFilter", "dropShadowFilter", "glowFilter", " gradientBevelFilter ", or " gradientGlowFilter ".
+ */
 @:fakeEnum(String)
 extern enum FilterType {
 	ADJUSTCOLOR;

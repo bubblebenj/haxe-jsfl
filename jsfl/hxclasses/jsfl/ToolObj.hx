@@ -1,42 +1,82 @@
 package jsfl;
 
+/**
+ * A ToolObj object represents an individual tool in the Tools panel.
+ * To access a ToolObj object, use properties of the Tools object: either the tools.toolObjs array or tools.activeTool.
+ */
 @:native("ToolObj")
 extern class ToolObj {
 
-	// プロパティインスペクター内の指定したコントロールを有効または無効にします。 拡張ツールを作成する場合のみに使用します。
+	/**
+	 * Enables or disables the specified control in a Property inspector. Used only when creating extensible tools.
+	 * @param	control A string that specifies the name of the control to enable or disable. Legal values depend on the Property inspector invoked by this tool; see toolObj.setPI(). See documentation of toolObj.enablePIControl() for acceptable values.
+	 * @param	bEnable A Boolean value that determines whether to enable (true) or disable (false) the control.
+	 */
 	public function enablePIControl(control:String, bEnable:Bool):Void;
 	
-	// Flash のツールパネルでツールアイコンとして使用する PNG ファイルを識別します。
+	/**
+	 * Identifies a PNG file to use as a tool icon in the Flash Tools panel.
+	 * @param	file A string that specifies the name of the PNG file to use as the icon. The PNG file must be placed in the same folder as the JSFL file.
+	 */
 	public function setIcon(file:String):Void;
 	
-	// ポップアップメニューにツールの名前として表示するストリングを設定します。
+	/**
+	 * Sets the string that appears in the pop-up menu as the name for the tool.
+	 * @param	menuStr A string that specifies the name that appears in the pop-up menu as the name for the tool.
+	 */
 	public function setMenuString(menuStr:String):Void;
 	
-	// XML ファイルをツールに関連付けます。
+	/**
+	 * Associates an XML file with the tool.
+	 * @param	xmlFile A string that specifies the name of the XML file that has the description of the tool’s options. The XML file
+must be placed in the same folder as the JSFL file.
+	 */
 	public function setOptionsFile(xmlFile:String):Void;
 	
-	// ツールがアクティブになったときに使用される特定のプロパティインスペクターを設定します。
+	/**
+	 * Sets a particular Property inspector to be used when the tool is activated.
+	 * @param	pi A string that specifies the Property inspector to invoke for this tool.
+	 */
 	public function setPI(pi:String):Void;
 	
-	// ツールパネルの設定用にツールに名前を割り当てます。
+	/**
+	 * Assigns a name to the tool for the configuration of the Tools panel.
+	 * @param	name A string that specifies the name of the tool.
+	 */
 	public function setToolName(name:String):Void;
 	
-	// マウスをツールアイコンの上に置いたときに表示されるツールヒントを設定します。
+	/**
+	 * Sets the tooltip that appears when the mouse is held over the tool icon.
+	 * @param	toolTip A string that specifies the tooltip to use for the tool.
+	 */
 	public function setToolTip(toolTip:String):Void;
 	
-	// プロパティインスペクター内のコントロールを表示または非表示にします。
+	/**
+	 * Shows or hides a control in the Property inspector.
+	 * @param	control A string that specifies the name of the control to show or hide. This method is used only when you create extensible tools. Valid values depend on the Property inspector invoked by this tool
+	 * @param	bShow A Boolean value that determines whether to show or hide the specified control (true shows the control; false hides the control).
+	 */
 	public function showPIControl(control:String, bShow:Bool):Void;
 	
-	// 拡張ツールの JavaScript ファイルの configureTool
+	/**
+	 * Called in the configureTool() method of an extensible tool’s JavaScript file to indicate that the free transform handles should appear when the tool is active.
+	 * @param	bShow A Boolean value that determines whether to show or hide the free transform handles for the current tool (true shows the handles; false hides them).
+	 */
 	public function showTransformHandles(bShow:Bool):Void;
 	
-	// ツールパネル内のポップアップメニューのツールの深度を指定する整数です。
+	/**
+	 * An integer that specifies the depth of the tool in the pop-up menu in the Tools panel.
+	 */
 	public var depth(default, null):Int;
 	
-	// ツールのリソース ID を指定する整数です。
+	/**
+	 * An integer that specifies the resource ID of the tool.
+	 */
 	public var iconID(default, null):Int;
 	
-	// 読み取り専用。ツールパネル内のツールの位置を指定する整数です。
+	/**
+	 * Read-only; an integer specifying the position of the tool in the Tools panel.
+	 */
 	public var position(default, null):Int;
 
 }

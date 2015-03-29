@@ -23,5 +23,4 @@ private class Impl {
 	public static inline var BOTTOM:String = "bottom";
 	public static inline var VERTICAL_CENTER:String = "vertical center";
 	public static inline var HORIZONTAL_CENTER:String = "horizontal center";
-
 }

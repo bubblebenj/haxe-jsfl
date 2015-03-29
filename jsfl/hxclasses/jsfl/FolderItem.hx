@@ -1,6 +1,8 @@
 package jsfl;
-
-// folderItem オブジェクトは、Item オブジェクトのサブクラスです。folderItem に固有のメソッドやプロパティはありません。Item オブジェクトを参照してください。
-
+/**
+ * The folderItem object is a subclass of the Item object.
+ * There are no unique methods or properties for folderItem.
+ * See Item object.
+ */
 @:native("FolderItem")
 extern class FolderItem extends Item { }

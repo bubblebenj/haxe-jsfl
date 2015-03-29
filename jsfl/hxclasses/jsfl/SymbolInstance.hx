@@ -1,96 +1,176 @@
 package jsfl;
 
+/**
+ * SymbolInstance is a subclass of the Instance object and represents a symbol in a frame (see Instance object).
+ */
 @:native("SymbolInstance")
 extern class SymbolInstance extends Instance {
 
-	// アクセシビリティパネルの「名前」フィールドと等価のストリング。
+	/**
+	 * A string that is equivalent to the Name field in the Accessibility panel.
+	 */
 	public var accName(default, default):String;
 	
-	// 「不透明」が選択されている場合にマットカラーを指定するストリング。
+	/**
+	 * a string that specifies the actions assigned to the symbol. This applies only to movie clip and button instances. For a graphic symbol instance, the value returns undefined
+	 */
+	@:require(jsfl_version < CC)
+	public var actionScript:String;
+
+	/**
+	 * A string specifying the matte color when Opaque is selected.
+	 */
+	@:require(jsfl_version >= CS5)
 	public var backgroundColor(default, default):String;
 	
-	// シンボルインスタンスの表示タイプを指定するストリング。
+	/**
+	 * A string specifying the display type for a symbol instance.
+	 */
+	@:require(jsfl_version >= CS5)
 	public var bitmapRenderMode(default, default):String;
 	
-	// ムービークリップシンボルに適用するブレンドモードを指定するストリング。
+	/**
+	 * A string that specifies the blending mode to be applied to a movie clip symbol.
+	 */
+	@:require(jsfl_version >= FlashPro8)
 	public var blendMode(default, default):String;
 	
-	// colorMode == 'brightness' の場合に明るさのカラー効果プロパティインスペクターで設定されている値を返す整数（-100 ～ 100 のパーセンテージ）。
+	/**
+	 * An integer that returns the value set in the color effect Property Inspector for brightness (percentage between -100 and 100) when colorMode == 'brightness'.
+	 */
+	@:require(jsfl_version >= CC)
 	public var brightness(default, null):Int;
 	
-	// プロパティインスペクターのボタントラックまたはメニューアイテムトラックのポップアップメニューと同じプロパティを設定するストリング（ボタンシンボルの場合のみ）。
+	/**
+	 * A string (button symbols only) that sets the same property as the pop-up menu for Track as Button or Track As Menu Item in the Property inspector.
+	 */
 	public var buttonTracking(default, default):String;
 	
-	// 実行時のビットマップキャッシングが有効かどうかを指定するブール値。
+	/**
+	 * A Boolean value that specifies whether run-time bitmap caching is enabled.
+	 */
+	@:require(jsfl_version >= FlashPro8)
 	public var cacheAsBitmap(default, default):Bool;
 	
-	// 拡張効果の「アルファ」の設定を指定することで、インスタンスのカラー変換の一部を指定する整数。これは、プロパティインスペクターで「カラー」の「詳細」を選択し、「設定」をクリックして表示するダイアログボックスの右側のコントロールを調整するのと等価です。
+	/**
+	 * An integer that is part of the color transformation for the instance, specifying the Advanced Effect Alpha settings; equivalent to using the Color > Advanced setting in the Property inspector and adjusting the controls on the right of the dialog box.
+	 */
 	public var colorAlphaAmount(default, default):Int;
 	
-	// インスタンスのカラー変換の一部を指定する整数。これは、インスタンスのプロパティインスペクターで「カラー」の「詳細」を選択し、「設定」をクリックして表示するダイアログボックスの左側のパーセンテージコントロールを調整するのと等価です。
+	/**
+	 * An integer that specifies part of the color transformation for the instance; equivalent to using the Color > Advanced setting in the instance Property inspector (the percentage controls on the left of the dialog box).
+	 */
 	public var colorAlphaPercent(default, default):Int;
 	
-	// インスタンスのカラー変換の一部を指定する整数。これは、インスタンスのプロパティインスペクターで「カラー」の「詳細」を選択し、「設定」をクリックして表示するダイアログボックスを使用するのと等価です。
+	/**
+	 * An integer that is part of the color transformation for the instance; equivalent to using the Color > Advanced setting in the instance Property inspector.
+	 */
 	public var colorBlueAmount(default, default):Int;
 	
-	// インスタンスのカラー変換の一部を指定する整数。これは、インスタンスのプロパティインスペクターで「カラー」の「詳細」を選択し、「設定」をクリックして表示するダイアログボックスの左側のパーセンテージコントロールを使用するのと等価です。
+	/**
+	 * An integer that is part of the color transformation for the instance; equivalent to using the Color > Advanced setting in the instance Property inspector (the percentage controls on the left of the dialog box).
+	 */
 	public var colorBluePercent(default, default):Int;
 	
-	// インスタンスのカラー変換の一部を指定する整数。これは、インスタンスのプロパティインスペクターで「カラー」の「詳細」を選択し、「設定」をクリックして表示するダイアログボックスを使用するのと等価です。有効な値は、-255 ～ 255です。
+	/**
+	 * An integer that is part of the color transformation for the instance; equivalent to using the Color > Advanced setting in the instance Property inspector. Allowable values are from -255 to 255.
+	 */
 	public var colorGreenAmount(default, default):Int;
 	
-	// インスタンスのカラー変換の一部。これは、インスタンスのプロパティインスペクターで「カラー」の「詳細」を選択し、「設定」をクリックして表示するダイアログボックスの左側のパーセンテージコントロールを使用するのと等価です。
+	/**
+	 * Part of the color transformation for the instance; equivalent to using the Color > Advanced setting in the instance Property inspector (the percentage controls on the left of the dialog box).
+	 */
 	public var colorGreenPercent(default, default):Int;
 	
-	// シンボルのプロパティインスペクターのカラーポップアップメニューで示されるカラーモードを指定するストリング。
+	/**
+	 * A string that specifies the color mode as identified in the symbol Property inspector Color pop-up menu.
+	 */
 	public var colorMode(default, default):ColorMode;
 	
-	// インスタンスのカラー変換の一部を指定する整数。これは、インスタンスのプロパティインスペクターで「カラー」の「詳細」を選択し、「設定」をクリックして表示するダイアログボックスを使用するのと等価です。
+	/**
+	 * An integer that is part of the color transformation for the instance, equivalent to using the Color > Advanced setting in the instance Property inspector.
+	 */
 	public var colorRedAmount(default, default):Int;
 	
-	// インスタンスのカラー変換の一部。これは、インスタンスのプロパティインスペクターで「カラー」の「詳細」を選択し、「設定」をクリックして表示するダイアログボックスの左側のパーセンテージコントロールを使用するのと等価です。
+	/**
+	 * Part of the color transformation for the instance; equivalent to using the Color > Advanced setting in the instance Property inspector (the percentage controls on the left of the dialog box).
+	 */
 	public var colorRedPercent(default, default):Int;
 	
-	// アクセシビリティパネルの「説明」フィールドと等価のストリング。
+	/**
+	 * A string that is equivalent to the Description field in the Accessibility panel.
+	 */
 	public var description(default, default):String;
 	
-	// Filter オブジェクトの配列です。Filter オブジェクトを参照してください。
-	public var filters(default, default):Filter;
+	/**
+	 * An array of Filter objects (see Filter object).
+	 */
+	@:require(jsfl_version >= FlashPro8)
+	public var filters(default, default): Array<Filter>;
 	
-	// グラフィックのタイムラインに表示される最初のフレームを指定するゼロから始まる整数。
+	/**
+	 * A zero-based integer that specifies the first frame to appear in the timeline of the graphic.
+	 */
 	public var firstFrame(default, default):Int;
 	
-	// オブジェクトの子のアクセシビリティを有効または無効にするブール値。これは、アクセシビリティパネルの「子オブジェクトをアクセス可能にする」の設定の逆ロジックと等価です。
+	/**
+	 * A Boolean value that enables and disables the accessibility of the objectâ€™s children; equivalent to the inverse logic of the Make Child Objects Accessible setting in the Accessibility panel.
+	 */
 	public var forceSimple(default, default):Bool;
 	
-	// インスタンスに 3D 変換が含まれるかどうかを示すブール値。
+	/**
+	 * A Boolean value indicating whether the instance contains any 3D transforms.
+	 */
+	@:require(jsfl_version >= CS6)
 	public var is3D(default, null):Bool;
 	
-	// グラフィックシンボルの場合に、プロパティインスペクターのループポップアップメニューと同じプロパティを設定するストリング。
+	/**
+	 * A string that, for graphic symbols, sets the same property as the Loop pop-up menu in the Property inspector.
+	 */
 	public var loop(default, default):LoopType;
 	
-	// シンボルに割り当てられているショートカットキーと等価のストリング。これは、アクセシビリティパネルの「ショートカット」フィールドと等価です。
+	/**
+	 * A string that is equivalent to the shortcut key associated with the symbol; equivalent to the Shortcut field in the Accessibility panel.
+	 */
 	public var shortcut(default, default):String;
 	
-	// オブジェクトのアクセシビリティを有効または無効にするブール値。これは、アクセシビリティパネルの「オブジェクトをアクセス可能にする」の設定の逆ロジックと等価です。
+	/**
+	 * A Boolean value that enables or disables the accessibility of the object; equivalent to the inverse logic of the Make Object Accessible setting in the Accessibility panel.
+	 */
 	public var silent(default, default):Bool;
 	
-	// シンボルの種類を指定するストリング。これは、新規シンボルの作成ダイアログボックスおよびシンボルに変換ダイアログボックスの「ビヘイビアー」の値と等価です。
+	/**
+	 * A string that specifies the type of symbol; equivalent to the value for Behavior in the Create New Symbol and Convert To Symbol dialog boxes.
+	 */
 	public var symbolType(default, default):SymbolType;
 	
-	// アクセシビリティパネルの「タブインデックス」フィールドと等価の整数。
+	/**
+	 * An integer that is equivalent to the Tab index field in the Accessibility panel.
+	 */
 	public var tabIndex(default, default):Int;
 	
-	// カラー効果プロパティインスペクターでスタイルの濃淡（colorMode == 'tint'）を使用している場合は、濃淡に適用されるカラーを返します。
+	/**
+	 * When the Color Effect Property Inspector is using style tint (colorMode == 'tint'), return the color applied to the tint.
+	 */
+	@:require(jsfl_version >= CC)
 	public var tintColor(default, null):Dynamic;
 	
-	// カラー効果プロパティインスペクターでスタイルの濃淡（colorMode == 'tint'）を使用している場合は、濃淡の割合（-100 ～ 100）を返します。
+	/**
+	 * When the color effect Property Inspector is using style tint (colorMode == 'tint') then return the applied to the tint percentage from -100 to 100.
+	 */
+	@:require(jsfl_version >= CC)
 	public var tintPercent(default, null):Int;
 	
-	// インスタンスのアルファで 24 ビットモードと 32 ビットモードのどちらを使用するかを指定するブール値。
+	/**
+	 * A boolean value that specifies whether to use 24 bit mode or 32 bit mode with alpha for the instance.
+	 */
+	@:require(jsfl_version >= CS5)
 	public var useBackgroundColor(default, default):Bool;
 	
-	// インスタンスが表示か非表示かを指定するブール値。
+	/**
+	 * A boolean value specifying whether the instance is visible or not.
+	 */
+	@:require(jsfl_version >= CS5)
 	public var visible(default, default):Bool;
 
 }
