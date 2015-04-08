@@ -1,21 +1,37 @@
 package jsfl;
 
+
+/**
+ * The Rectangle object is a shape that is drawn using the Rectangle Primitive tool.
+ * To determine if an item is a Rectangle object, use shape.isRectangleObject
+ */
 @:native("Rectangle")
+@:require(jsfl_version >= CS3)
 extern class Rectangle extends Shape {
 
-	// 読み取り専用。Rectangle オブジェクトの左下隅の半径を設定する浮動小数値。
+	/**
+	 * Read-only; a float value that sets the radius of the bottom-left corner of the Rectangle object.
+	 */
 	public var bottomLeftRadius(default, null):Float;
 	
-	// 読み取り専用。Rectangle オブジェクトの右下隅の半径を設定する浮動小数値。
+	/**
+	 * Read-only; a float value that sets the radius of the bottom-right corner of the Rectangle object.
+	 */
 	public var bottomRightRadius(default, null):Float;
 	
-	// 読み取り専用。矩形の角をそれぞれ異なる半径値に設定できるかどうかを判定するブール値。
-	public var lockFlag(default, null):Float;
+	/**
+	 * Read-only; a Boolean value that determines whether different corners of the rectangle can have different radius values.
+	 */
+	public var lockFlag(default, null):Bool;
 	
-	// 読み取り専用。矩形のすべての角の半径、または Rectangle オブジェクトの左上隅の半径のみを設定する浮動小数値。
+	/**
+	 * Read-only; a float value that sets the radius of all corners of the rectangle or that sets only the radius of the top-left corner of the Rectangle object.
+	 */
 	public var topLeftRadius(default, null):Float;
 	
-	// 読み取り専用。Rectangle オブジェクトの右上隅の半径を設定する浮動小数値。
+	/**
+	 * Read-only; a float value that sets the radius of the top-right corner of the Rectangle object.
+	 */
 	public var topRightRadius(default, null):Float;
 
 }

@@ -2,3 +2,10 @@ bin/
 src/
 haxe-jsfl.hxproj
 build.hxml
+.idea/compiler.xml
+haxe-jsfl.iml
+.idea/copyright/profiles_settings.xml
+.idea/modules.xml
+.idea/workspace.xml
+.idea/encodings.xml
+.idea

@@ -1,60 +1,101 @@
 package jsfl;
 
+/**
+ * The TextAttrs object contains all the properties of text that can be applied to a subselection.
+ * This object is a property of the TextRun object (textRun.textAttrs).
+ */
 @:native("TextAttrs")
 extern class TextAttrs {
 	
-	// 小さなテキストの読みやすさを向上させるために最適化されたメソッドを使用してテキストが描画されるように指定するブール値。
+	/**
+	 * A Boolean value that specifies that Flash should draw the text using a method optimized for increasing the legibility of small text.
+	 */
 	public var aliasText(default, default):Bool;
 	
-	// 段落の位置揃えを指定するストリング。 有効な値は「left」、「center」、「right」および「justify」です。
+	/**
+	 * A string that specifies paragraph justification. Acceptable values are "left", "center", "right", and "justify" 
+	 */
 	public var alignment(default, default):String;
 	
-	// テキストをカーニングするためにフォントの自動カーニング情報を使用するか（true）または無視するか（false）を決定するブール値。
+	/**
+	 * A Boolean value that determines whether Flash uses (true) or ignores (false) pair kerning information in the font(s) to kern the text.
+	 */
 	public var autoKern(default, default):Bool;
 	
-	// ブール値です。 値が true の場合、テキストは太字のフォントで表示されます。
+	/**
+	 * A Boolean value. A value of true causes text to appear with the bold version of the font.
+	 */
 	public var bold(default, default):Bool;
 	
-	// テキストのベースラインを決定するストリング。
+	/**
+	 * A string that determines the baseline for the text.
+	 */
 	public var characterPosition(default, default):String;
 	
-	// このプロパティの代わりに textAttrs.letterSpacing を使用してください。文字の間隔を表す整数。
+	/**
+	 * Deprecated in favor of textAttrs.letterSpacing. An integer that represents the space between characters.
+	 */
 	public var characterSpacing(default, default):Int;
 	
-	// 「Arial」などのフォントの名前を表すストリング。
+	/**
+	 * A string that represents the name of the font, such as "Arial" 
+	 */
 	public var face(default, default):String;
 	
-	// 塗りのカラーを表す、ストリング、16 進数値または整数。
-	public var fillColor(default, default):Int;
+	/**
+	 * A string, hexadecimal value, or integer that represents the fill color.
+	 */
+	public var fillColor(default, default):Dynamic;
 	
-	// 段落のインデントを指定する整数。
+	/**
+	 * An integer that specifies paragraph indentation.
+	 */
 	public var indent(default, default):Int;
 	
-	// ブール値です。 値が true の場合、テキストはイタリックのフォントで表示されます。
-	public var italic(default, default):String;
+	/**
+	 * A Boolean value. A value of true causes text to appear with the italic version of the font.
+	 */
+	public var italic(default, default):Bool;
 	
-	// 段落の左余白を指定する整数。
+	/**
+	 * An integer that specifies the paragraph’s left margin.
+	 */
 	public var leftMargin(default, default):Int;
 	
-	// 文字の間隔を表す整数。
+	/**
+	 * An integer that represents the space between characters.
+	 */
+	@:require(jsfl_version >= FlashPro8)
 	public var letterSpacing(default, default):Int;
 	
-	// 段落の行間（行送り）を指定する整数。
+	/**
+	 * An integer that specifies the line spacing (leading) of the paragraph
+	 */
 	public var lineSpacing(default, default):Int;
 	
-	// 段落の右余白を指定する整数。
+	/**
+	 * An integer that specifies the paragraph’s right margin.
+	 */
 	public var rightMargin(default, default):Int;
 	
-	// ブール値です。 値が true の場合、テキストの文字が 90 度回転します。デフォルト値はfalse です。
+	/**
+	 * A Boolean value. A value of true causes Flash to rotate the characters of the text 90°. The default value is false 
+	 */
 	public var rotation(default, default):Bool;
 	
-	// フォントのサイズを指定する整数。
+	/**
+	 * An integer that specifies the size of the font.
+	 */
 	public var size(default, default):Int;
 	
-	// テキストフィールドの target プロパティを表すストリング。
+	/**
+	 * A string that represents the target property of the text field.
+	 */
 	public var target(default, default):String;
 	
-	// テキストフィールドの URL プロパティを表すストリング。
+	/**
+	 * A string that represents the URL property of the text field.
+	 */
 	public var url(default, default):String;
 	
 }

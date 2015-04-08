@@ -1,5 +1,13 @@
 package jsfl;
 
+/**
+ * A string that represents the type of the specified element. Acceptable values are:
+	• "shape"
+	• "text"
+	• "tlfText" (Flash Pro CS5 and later)
+	• "instance"
+	• "shapeObj"
+ */
 @:fakeEnum(String)
 extern enum ElementType {
 	SHAPE;

@@ -1,27 +1,57 @@
 package jsfl;
 
+/**
+ * The swfPanel object represents a Window SWF panel.
+ * Window SWF panels are SWF files that implement applications you can run from the Flash authoring environment; they are available from the Window > Other Panels menu.
+ * By default, Window SWF panels are stored in a subfolder of the Configuration folder (see “Saving JSFL files” on page 2).
+ * For example, on Windows XP, the folder is in boot drive\Documents and Settings\user\Local Settings\Application Data\Adobe\Flash CS4\language\Configuration\WindowSWF.
+ * A sample Window SWF panel is available; see “Sample Trace Bitmap panel” on page 17.
+ * The array of registered Window SWF panels is stored in the fl.swfPanels property.
+ */
 @:native("SwfPanel")
+@:require(jsfl_version >= CS4)
 extern class SwfPanel {
-
-	// ActionScript の ExternalInterface.addCallback() および MMExecute() メソッドと連携して、オーサリング環境から SWF パネルと通信します。
-	public function call(request:String, functionName:String, ?arg:Dynamic = null):String;
 	
-	// SWF パネルのコンテンツをリロードします。
+	/**
+	 * Works in conjunction with the ActionScript ExternalInterface.addCallback() and MMExecute() methods to communicate with the SWF panel from the authoring environment.
+	 * @param	functionName Name of the function to be called
+	 * @param	arg Parameters to pass to the function.
+	 * @return Either null or a string that is returned by the function call. The function result could be an empty string.
+	 */
+	public function call(functionName:String, ?arg:Dynamic):String;
+	
+	/**
+	 * Reloads content in the SWF panel.
+	 */
+	@:require(jsfl_version >= CC)
 	public function reload():Void;
 	
-	// 指定した SWF パネルにキーボードフォーカスを設定します。
+	/**
+	 * Sets the keyboard focus to the specified SWF panel.
+	 */
+	@:require(jsfl_version >= CS5)
 	public function setFocus():Void;
 	
-	// swfPanel の DPI の拡大／縮小率（scaleX）を含むストリング。
+	/**
+	 * A string that contains the DPI scale factor (scaleX) for swfPanel.
+	 */
+	@:require(jsfl_version >= CC)
 	public var dpiScaleFactorX(default, default):String;
 	
-	// swfPanel の DPI の拡大／縮小率（scaleY）を含むストリング。
+	/**
+	 * A string that contains the DPI scale factor (scaleY) for swfPanel.
+	 */
+	@:require(jsfl_version >= CC)
 	public var dpiScaleFactorY(default, default):String;
 	
-	// 読み取り専用。指定した Window SWF パネルの名前を表すストリングです。
+	/**
+	 * Read-only; a string that represents the name of the specified Window SWF panel.
+	 */
 	public var name(default, null):String;
 	
-	// 読み取り専用。指定した Window SWF パネルで使用される SWF ファイルへのパスを表すストリングです。
+	/**
+	 * Read-only; a string that represents the path to the SWF file used in the specified Window SWF panel.
+	 */
 	public var path(default, null):String;
 
 }

@@ -1,7 +1,8 @@
 package jsfl;
 
-// 指定できる値は、「integer」、「integerArray」、「double」、「doubleArray」、「string」および「byteArray」です。
-
+/**
+ * Defines the type of data. Acceptable values are "integer", "integerArray", "double", "doubleArray", "string", and "byteArray".
+ */
 @:fakeEnum(String)
 extern enum PersistentDataType {
 	INTEGER;

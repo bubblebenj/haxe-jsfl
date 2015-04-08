@@ -1,5 +1,9 @@
 package jsfl;
 
+/**
+ * a string that specifies the current use of the layer; equivalent to the Type setting in the Layer Properties dialog box.
+ */
+
 @:fakeEnum(String)
 extern enum LayerType {
 	NORMAL;

@@ -1,62 +1,108 @@
 package jsfl;
 
+/**
+ * This object contains all the properties for all filters. The filter.name property specifies the type of filter,
+ * and determines which properties are applicable to each filter. See filter.name.
+ * 
+ * To return the filter list for an object or objects, use document.getFilters().
+ * To apply filters to an object or objects, use document.setFilters(). See document.getFilters() and document.setFilters() 
+ */
 @:native("Filter")
 extern class Filter {
-	// シャドウやハイライトカラーの角度を度数で指定する浮動小数値。
+
+	/**
+	 * A float value that specifies the angle of the shadow or highlight color, in degrees.
+	 */
 	public var angle(default, default):Float;
 	
-	// x 方向のぼかし量をピクセル単位で指定する浮動小数値。
+	/**
+	 * A float value that specifies the amount to blur in the x direction, in pixels.
+	 */
 	public var blurX(default, default):Float;
 	
-	// y 方向のぼかし量を指定する浮動小数値。
+	/**
+	 * A float value that specifies the amount to blur in the y direction.
+	 */
 	public var blurY(default, default):Float;
 	
-	// フィルターの明度を指定する浮動小数値。
+	/**
+	 * A float value that specifies the brightness of the filter.
+	 */
 	public var brightness(default, default):Float;
 	
-	// フィルターのカラーを表す、ストリング、16 進数値または整数。
+	/**
+	 * A string, hexadecimal value, or integer that represents the filter color.
+	 */
 	public var color(default, default):Dynamic;
 	
-	// フィルターのコントラスト値を指定する浮動小数値。
+	/**
+	 * A float value that specifies the contrast value of the filter.
+	 */
 	public var contrast(default, default):Float;
 	
-	// フィルターのエフェクトとオブジェクトの距離をピクセル単位で指定する浮動小数値。
+	/**
+	 * A float value that specifies the distance between the filter’s effect and an object, in pixels.
+	 */
 	public var distance(default, default):Float;
 	
-	// 指定したフィルターが有効であるか無効であるかを指定するブール値。
+	/**
+	 * A Boolean value that specifies whether the specified filter is enabled.
+	 */
 	public var enabled(default, default):Bool;
 	
-	// ソースイメージが非表示かどうかを指定するブール値。
+	/**
+	 * A Boolean value that specifies whether the source image is hidden.
+	 */
 	public var hideObject(default, default):Bool;
 	
-	// ハイライトカラーを表す、ストリング、16 進数値または整数。
+	/**
+	 * A string, hexadecimal value, or integer that represents the highlight color.
+	 */
 	public var highlightColor(default, default):Dynamic;
 	
-	// フィルターの色相を指定する浮動小数値。
+	/**
+	 * A float value that specifies the hue of the filter.
+	 */
 	public var hue(default, default):Float;
 	
-	// 影が内側の影かどうかを指定するブール値。
+	/**
+	 * A Boolean value that specifies whether the shadow is an inner shadow.
+	 */
 	public var inner(default, default):Bool;
 	
-	// フィルターがノックアウトフィルターかどうかを指定するブール値。
+	/**
+	 * A Boolean value that specifies whether the filter is a knockout filter.
+	 */
 	public var knockout(default, default):Bool;
 	
-	// 読み取り専用。フィルターのタイプを指定するストリング。
+	/**
+	 * Read-only; a string that specifies the type of filter.
+	 */
 	public var name(default, null):FilterType;
 	
-	// ぼかしの品質を指定するストリング。
+	/**
+	 * A string that specifies the blur quality.
+	 */
 	public var quality(default, default):String;
 	
-	// フィルターの彩度値を指定する浮動小数値。
+	/**
+	 * A float value that specifies the saturation value of the filter.
+	 */
 	public var saturation(default, default):Float;
 	
-	// 影の色を表す、ストリング、16 進数値または整数。
+	/**
+	 * A string, hexadecimal value, or integer that represents the shadow color.
+	 */
 	public var shadowColor(default, default):Dynamic;
 	
-	// フィルターの強さをパーセンテージで指定する整数。
+	/**
+	 * An integer that specifies the percentage strength of the filter.
+	 */
 	public var strength(default, default):Int;
 	
-	// べベルまたは光彩の種類を指定するストリング。
+	/**
+	 * A string that specifies the type of bevel or glow.
+	 */
 	public var type(default, default):String;
 
 }

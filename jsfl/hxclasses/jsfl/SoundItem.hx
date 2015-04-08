@@ -1,39 +1,90 @@
 package jsfl;
 
+/**
+ * The SoundItem object is a subclass of the Item object.
+ * It represents a library item used to create a sound.
+ * See also frame.soundLibraryItem and Item object.
+ */
 @:native("SoundItem")
 extern class SoundItem extends Item {
 	
-	// 指定したアイテムを MP3 ファイルまたは WAV ファイルに書き出します（Macintosh および Windows）。
+	/**
+	 * Exports the specified item to an MP3 or WAV file (Macintosh and Windows).
+	 * @param	fileURI
+	 * @return
+	 */
+	@:require(jsfl_version >= CS4)
 	public function exportToFile(fileURI:String):Bool;
 	
-	// ライブラリ内のサウンドのビットレートを指定するストリング。 MP3 圧縮タイプでのみ使用できます。
+	/**
+	 * A string that specifies the bit rate of a sound in the library. Available only for the MP3 compression type.
+	 */
 	public var bitRate(default, default):String;
 	
-	// ライブラリ内の ADPCM 圧縮を使用するサウンドのビット値を指定するストリング。
+	/**
+	 * A string that specifies the bits value for a sound in the library that has ADPCM compression.
+	 */
 	public var bits(default, default):String;
 	
-	// ライブラリ内のサウンドの圧縮タイプを指定するストリング。
+	/**
+	 * A string that specifies the compression type for a sound in the library.
+	 */
 	public var compressionType(default, default):String;
 	
-	// MP3 および Raw 圧縮タイプでのみ使用可能なブール値。
+	/**
+	 * A Boolean value available only for MP3 and Raw compression types.
+	 */
 	public var convertStereoToMono(default, default):Bool;
 	
-	// 読み取り専用。1970 年 1 月 1 日から、ファイルがライブラリに読み込まれた時点での（ディスク上の）元のファイルの修正日までの経過秒数を表す 16 進数値を含むストリングです。
+	/**
+	 * Read-only; a string containing a hexadecimal number that represents the number of seconds that have elapsed between January 1, 1970, and the modification date of the original file (on disk) at the time the file was imported to the library.
+	 */
+	@:require(jsfl_version >= CS4)
 	public var fileLastModifiedDate(default, null):String;
 	
-	// 読み取り専用。ライブラリ内のサウンドアイテムを変更した日付です。
+	/**
+	 * Read-only; the modification date of the sound item in the Library.
+	 */
+	@:require(jsfl_version >= CS6)
 	public var lastModifiedDate(default, null):String;
 	
-	// 読み取り専用。指定したアイテムが MP3 ファイルとして読み込まれたかどうかを指定するストリングです。
+	/**
+	 * Read-only; a string that specifies whether the specified item was imported as an MP3 file.
+	 */
+	@:require(jsfl_version >= CS4)
 	public var originalCompressionType(default, null):String;
 	
-	// ライブラリ内のサウンドの再生品質を指定するストリング。 MP3 圧縮タイプでのみ使用できます。
+	/**
+	 * A string that specifies the playback quality of a sound in the library. Available only for the MP3 compression type.
+	 */
 	public var quality(default, default):String;
 	
-	// オーディオクリップのサンプルレートを指定するストリング。
+	/**
+	 * A string that specifies the sample rate for the audio clip.
+	 */
 	public var sampleRate(default, default):String;
 	
-	// 読み取り専用。ライブラリに読み込まれたファイルが読み込み元の場所にまだ存在しているかどうかを指定するブール値です。
+	/**
+	 * Read-only; a Boolean value that specifies whether the file that was imported to the Library still exists in the location from where it was imported.
+	 */
+	@:require(jsfl_version >= CS4)
 	public var sourceFileExists(default, null):Bool;
+	
+	/**
+	 * Read-only; a Boolean value that specifies whether the file modification date of the Library item is the same as the modification date on disk of the file that was imported.
+	 */
+	@:require(jsfl_version >= CS4)
+	public var sourceFileIsCurrent(default, null):Bool;
+	
+	/**
+	 * Read-only; a string, expressed as a file:/// URI, that represents the path and name of the file that was imported into the Library.
+	 */
+	@:require(jsfl_version >= CS4)
+	public var sourceFilePath(default, null):String;
+	
+	/**
+	 * A Boolean value; if  true , all other properties are ignored, and the imported MP3 quality is used.
+	 */
+	public var useImportedMP3Quality:Bool;
 
 }

@@ -1,8 +1,8 @@
 package jsfl;
 
-// 値は、「undefined」、「component」、「movie clip」、「graphic」、「button」、「folder」
-// 「font」、「sound」、「bitmap」、「compiled clip」、「screen」または「video」のいずれかです。
-
+/**
+ * a string that specifies the type of element. The value is one of the following: "undefined", "component", "movie clip", "graphic", "button", "folder", "font", "sound", "bitmap", "compiled clip", "screen", or "video". 
+ */
 @:fakeEnum(String)
 extern enum ItemType {
 	UNDEFINED;

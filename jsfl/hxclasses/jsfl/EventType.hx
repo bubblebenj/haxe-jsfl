@@ -1,9 +1,10 @@
 package jsfl;
 
-// 指定できる値は、「documentNew」、「documentOpened」、「documentClosed」、「mouseMove」
-// 「documentChanged」、「layerChanged」、「timelineChanged」、「frameChanged」
-// 「prePublish」、「postPublish」、「selectionChanged」および「dpiChanged」です。
-
+/**
+ * A string that specifies the event type to pass to this callback function.
+ * Acceptable values are "documentNew", "documentOpened", "documentClosed", "mouseMove", "documentChanged", "layerChanged",
+ * "timelineChanged", "frameChanged", “ prePublish ”, “ postPublish ”, “ selectionChanged ”, and “ dpiChanged ”.
+ */
 @:fakeEnum(String)
 extern enum EventType {
 	DOCUMENT_NEW;

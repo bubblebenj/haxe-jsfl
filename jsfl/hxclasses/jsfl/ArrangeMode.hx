@@ -6,23 +6,17 @@ package jsfl;
  */
 
 @:fakeEnum(String)
-extern enum AlignMode {
-	LEFT;
-	RIGHT;
-	TOP;
-	BOTTOM;
-	VERTICAL_CENTER;
-	HORIZONTAL_CENTER;
+extern enum ArrangeMode {
+	BACK;
+	BACKWARD;
+	FORWARD;
+	FRONT;
 }
 
-@:native("jsfl.AlignMode")
+@:native("jsfl.ArrangeMode")
 private class Impl {
-	public static inline var LEFT:String = "left";
-	public static inline var RIGHT:String = "right";
-	public static inline var TOP:String = "top";
-	public static inline var BOTTOM:String = "bottom";
-	public static inline var VERTICAL_CENTER:String = "vertical center";
-	public static inline var HORIZONTAL_CENTER:String = "horizontal center";
-
+	public static inline var BACK:String = "back";
+	public static inline var BACKWARD:String = "backward";
+	public static inline var FORWARD:String = "forward";
+	public static inline var FRONT:String = "front";
 }
-

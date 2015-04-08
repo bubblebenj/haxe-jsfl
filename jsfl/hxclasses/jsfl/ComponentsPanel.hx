@@ -1,7 +1,10 @@
 package jsfl;
-
+	
+import jsfl.Math;
+	
 /**
- * The componentsPanel object, which represents the Components panel, is a property of the flash object (fl) and can be accessed by fl.componentsPanel
+ * The componentsPanel object, which represents the Components panel, is a property of the
+ * flash object (fl) and can be accessed by fl.componentsPanel (see flash object (fl)).
  */
 @:native("ComponentsPanel")
 extern class ComponentsPanel {
@@ -12,12 +15,13 @@ extern class ComponentsPanel {
 	 * @param	category Name Specifies the name of the component category. The valid category names are listed in the Components panel.
 	 * @param	componentName Specifies the name of the component in the specified category. The valid component names are listed in the Components panel.
 	 */
-	public function addItemToDocument(position:{x:Int,y:Int}, categoryName:String, componentName:String):Void;
+	public function addItemToDocument(position: JSFLPoint, categoryName:String, componentName:String):Void;
 	
 	/**
 	 * Refreshes the Components panel's list of components
 	 * @return A Boolean value of true if the Component panel list is refreshed, false otherwise.
 	 */
+	@:require(jsfl_version >= FlashPro8)
 	public function reload():Bool;
 	
 }
