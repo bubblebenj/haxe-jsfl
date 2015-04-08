@@ -17,7 +17,7 @@ using StringTools;
 
 enum VersionName {
 	//FlashPro5;	// No jsfl yet
-	//CMX;		// No jsfl yet
+	//MX;		// No jsfl yet
 	MX2004;
 	FlashPro8;
 	CS3;
@@ -50,5 +50,9 @@ class Utils {
 	
 	static public function compareVersion(v0:Int, v1:Int):Int {
 		return v0 - v1;
+	}
+	
+	static public function compareVersion2(v0:VersionName, v1:VersionName):Int {
+		return getVersionNumber(v0) - getVersionNumber(v1);
 	}
 }

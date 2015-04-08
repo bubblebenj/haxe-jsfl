@@ -5,6 +5,7 @@ package jsfl;
  */
 @:native("ActionsPanel")
 @:require(jsfl_version >= CS3)
+@:build(jsfl.haxe.Config.build())
 extern class ActionsPanel {
 	
 	/**
@@ -12,9 +13,9 @@ extern class ActionsPanel {
 	 * @param	ASvariableName A string that represents the name of an ActionScript variable.
 	 * @return A string that represents the class of which ASvariableName is a member.
 	 */
-	@:require(jsfl_version >= CS3 && jsfl_version < CC)
-	@:jsflVersion({ added : CS3, removed : CC })
-	public function getClassForObject(ASvariableName:String):String;
+	//@:require(jsfl_version >= CS3 && jsfl_version < CC)
+	@:jsflVersion({ added: CS3, removed: CC })
+	public function getClassForObject(ASvariableName: String): String;
 	
 		/**
 	 * specifies whether Script Assist mode is enabled.
