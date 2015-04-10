@@ -5,6 +5,7 @@ package jsfl;
  * To access this object, use fl.outputPanel (or flash.outputPanel). See fl.outputPanel.
  */
 @:native("OutputPanel")
+@:build(jsfl.haxe.Config.build())
 extern class OutputPanel {
 	
 	/**

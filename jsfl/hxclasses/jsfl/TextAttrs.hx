@@ -5,6 +5,7 @@ package jsfl;
  * This object is a property of the TextRun object (textRun.textAttrs).
  */
 @:native("TextAttrs")
+@:build(jsfl.haxe.Config.build())
 extern class TextAttrs {
 	
 	/**
@@ -65,7 +66,7 @@ extern class TextAttrs {
 	/**
 	 * An integer that represents the space between characters.
 	 */
-	@:require(jsfl_version >= FlashPro8)
+	@:jsflVersion({ added: FlashPro8 })
 	public var letterSpacing(default, default):Int;
 	
 	/**

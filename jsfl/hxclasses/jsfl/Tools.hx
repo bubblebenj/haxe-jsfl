@@ -8,6 +8,7 @@ import jsfl.Math;
  * property returns the ToolObj object for the currently active tool.
  */
 @:native("Tools")
+@:build(jsfl.haxe.Config.build())
 extern class Tools {
 	
 	/**

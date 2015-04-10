@@ -4,6 +4,7 @@ package jsfl;
  * A Contour object represents a closed path of half edges on the boundary of a shape.
  */
 @:native("Contour")
+@:build(jsfl.haxe.Config.build())
 extern class Contour {
 	
 	/**

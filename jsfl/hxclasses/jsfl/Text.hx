@@ -6,6 +6,8 @@ package jsfl;
  * To change properties of a selection within a text field, you can use document.setElementTextAttr() and specify a range of text, or use the current selection.
  * To set generic properties of the selected text field, use document.setElementProperty().
  */
+@:native("Element")
+@:build(jsfl.haxe.Config.build())
 extern class Text extends Element {
 
 	/**
@@ -51,13 +53,13 @@ extern class Text extends Element {
 	/**
 	 * A float value that specifies the anti-aliasing sharpness of the text.
 	 */
-	@:require(jsfl_version >= FlashPro8)
+	@:jsflVersion({ added: FlashPro8 })
 	public var antiAliasSharpness(default, default):Float;
 	
 	/**
 	 * A float value that specifies the anti-aliasing thickness of the text.
 	 */
-	@:require(jsfl_version >= FlashPro8)
+	@:jsflVersion({ added: FlashPro8 })
 	public var antiAliasThickness(default, default):Float;
 	
 	/**
@@ -88,19 +90,19 @@ extern class Text extends Element {
 	/**
 	 * A Boolean value that specifies whether to enable the embedding of variant glyphs.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public var embedVariantGlyphs(default, default):Bool;
 	
 	/**
 	 * An array of filters applied to the text element
 	 */
-	@:require(jsfl_version >= CS6)
+	@:jsflVersion({ added: CS6 })
 	public var filters(default, default):Array<Filter>;
 	
 	/**
 	 * A string that specifies the rendering mode for the text.
 	 */
-	@:require(jsfl_version >= FlashPro8)
+	@:jsflVersion({ added: FlashPro8 })
 	public var fontRenderingMode(default, default):FontRenderingMode;
 	
 	/**

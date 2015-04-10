@@ -4,6 +4,7 @@ package jsfl;
  * The Parameter object type is accessed from the componentInstance.parameters array (which corresponds to the component Property inspector in the authoring tool).
  */
 @:native("Parameter")
+@:build(jsfl.haxe.Config.build())
 extern class Parameter {
 	
 	/**

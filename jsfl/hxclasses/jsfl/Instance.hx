@@ -4,6 +4,7 @@ package jsfl;
  * Instance is a subclass of the Element object.
  */
 @:native("Instance")
+@:build(jsfl.haxe.Config.build())
 extern class Instance extends Element {
 	
 	/**

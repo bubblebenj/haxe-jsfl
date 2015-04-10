@@ -1,6 +1,6 @@
 package jsfl;
 
-@:require(jsfl_version >= CS4 && jsfl_version < CC)
+@:jsflVersion({ added: CS4, removed: CC })
 typedef Effect = {
 	public var effectName:String;
 	public var groupName:String;

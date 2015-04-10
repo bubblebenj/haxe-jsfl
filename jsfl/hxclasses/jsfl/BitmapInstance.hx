@@ -4,6 +4,7 @@ package jsfl;
  * The BitmapInstance object is a subclass of the Instance object and represents a bitmap in a frame (see Instance object).
  */
 @:native("BitmapInstance")
+@:build(jsfl.haxe.Config.build())
 extern class BitmapInstance extends Instance {
 
 	/**

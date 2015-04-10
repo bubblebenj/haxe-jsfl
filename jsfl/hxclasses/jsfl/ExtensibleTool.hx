@@ -3,6 +3,7 @@ package jsfl;
 import jsfl.Flash;
 
 @:native("")
+@:build(jsfl.haxe.Config.build())
 class ExtensibleTool {
 	
 	/**

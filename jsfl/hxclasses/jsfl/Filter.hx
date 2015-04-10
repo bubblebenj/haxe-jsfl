@@ -8,6 +8,7 @@ package jsfl;
  * To apply filters to an object or objects, use document.setFilters(). See document.getFilters() and document.setFilters() 
  */
 @:native("Filter")
+@:build(jsfl.haxe.Config.build())
 extern class Filter {
 
 	/**

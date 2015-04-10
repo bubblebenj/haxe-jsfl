@@ -10,6 +10,7 @@ import jsfl.Math;
  * All Shape methods and properties that change a shape or any of its subordinate parts must be placed between shape.beginEdit() and shape.endEdit() calls to function correctly.
  */
 @:native("Shape")
+@:build(jsfl.haxe.Config.build())
 extern class Shape extends Element {
 	
 	/**
@@ -33,7 +34,7 @@ extern class Shape extends Element {
 	 * @param	cubicSegmentIndex An integer that specifies the cubic segment for which points are returned.
 	 * @return An array of points that define a cubic curve for the Edge object that corresponds to the specified cubicSegmentIndex.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public function getCubicSegmentPoints(cubicSegmentIndex:Int): Array<JSFLPoint>;
 	
 	/**
@@ -49,13 +50,13 @@ extern class Shape extends Element {
 	/**
 	 * Read-only; if true, the shape is a drawing object.
 	 */
-	@:require(jsfl_version >= FlashPro8)
+	@:jsflVersion({ added: FlashPro8 })
 	public var isDrawingObject(default, null):Bool;
 	
 	/**
 	 * Read-only; if true, the shape is floating above the parent frame's (or group's) shape.
 	 */
-	@:require(jsfl_version >= CS6)
+	@:jsflVersion({ added: CS6 })
 	public var isFloating(default, null):Bool;
 	
 	/**
@@ -66,25 +67,25 @@ extern class Shape extends Element {
 	/**
 	 * Read-only; if true, the shape is a primitive Oval object (was created using the Oval tool).
 	 */
-	@:require(jsfl_version >= CS3)
+	@:jsflVersion({ added: CS3 })
 	public var isOvalObject(default, null):Bool;
 	
 	/**
 	 * Read-only; if true, the shape is a primitive Rectangle object (was created using the Rectangle tool).
 	 */
-	@:require(jsfl_version >= CS3)
+	@:jsflVersion({ added: CS3 })
 	public var isRectangleObject(default, null):Bool;
 	
 	/**
 	 * An array of objects in the currently selected group.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public var members(default, default):Array<Dynamic>;
 	
 	/**
 	 * Read-only; the number of cubic segments in the shape.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public var numCubicSegments(default, null):Int;
 	
 	/**

@@ -7,6 +7,7 @@ package jsfl;
  * See also the drawingLayer object.
  */
 @:native("Path")
+@:build(jsfl.haxe.Config.build())
 extern class Path {
 
 	/**

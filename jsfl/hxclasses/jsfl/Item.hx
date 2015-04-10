@@ -4,6 +4,7 @@ package jsfl;
  * The Item object is an abstract base class. Anything in the library derives from Item. See also library object.
  */
 @:native("Item")
+@:build(jsfl.haxe.Config.build())
 extern class Item {
 	
 	/**
@@ -28,7 +29,7 @@ example, if type is " integer ", the value of data must be an integer, and so on
 	 * @param	format A string that specifies the publishing format. If _EMBED_SWF_ is set, the persistent data is embedded in the SWF file every time a document is published.
 	 * @return A Boolean value that indicates whether publishing of the specified persistent data is enabled for the specified format on this library item.
 	 */
-	@:require(jsfl_version >= CC)
+	@:jsflVersion({ added: CC })
 	public function getPublishData(name:String, format:String):Bool;
 	
 	/**
@@ -50,7 +51,7 @@ example, if type is " integer ", the value of data must be an integer, and so on
 	 * @param	format A string that specifies the publishing format. If _EMBED_SWF_ is set, the persistent data is embedded in the SWF file every time a document is published.
 	 * @param	publish A Boolean that indicates whether to enable or disable publishing of persistent data for the specified format.
 	 */
-	@:require(jsfl_version >= CC)
+	@:jsflVersion({ added: CC })
 	public function setPublishData(name:String, format:String, publish:Bool):Void;
 	
 	/**
@@ -61,7 +62,7 @@ example, if type is " integer ", the value of data must be an integer, and so on
 	/**
 	 * A string that specifies the ActionScript 3.0 class that will be associated with the symbol.
 	 */
-	@:require(jsfl_version >= CS3)
+	@:jsflVersion({ added: CS3 })
 	public var linkageBaseClass(default, default):String;
 	
 	/**

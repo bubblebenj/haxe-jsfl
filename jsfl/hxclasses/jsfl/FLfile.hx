@@ -11,6 +11,7 @@ package jsfl;
  *	Note: Don't confuse the shared libraries that contain symbols in your Flash documents with the JavaScript API shared libraries. They are two different things.
  */
 @:native("FLfile")
+@:build(jsfl.haxe.Config.build())
 extern class FLfile {
 
 	/**
@@ -94,7 +95,7 @@ names. If omitted, both filenames and folder names are returned. Acceptable valu
 	 * @param	fileName A string, expressed in a platform-specific format, specifying the filename you want to convert.
 	 * @return A string expressed as a file:/// URI.
 	 */	
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public static function platformPathToURI(fileName:String):String;
 
 	/**
@@ -125,7 +126,7 @@ names. If omitted, both filenames and folder names are returned. Acceptable valu
 	 * @param	fileURI A string, expressed as a file:/// URI, specifying the filename you want to convert.
 	 * @return A string representing a platform-specific path.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public static function uriToPlatformPath(fileURI: String): String;
 	
 	/**

@@ -5,18 +5,19 @@ package jsfl;
  * To retrieve a Fill object, use document.getCustomFill().
  */
 @:native("Fill")
+@:build(jsfl.haxe.Config.build())
 extern class Fill {
 	
 	/**
 	 * A Boolean value that specifies whether the bitmap fill for a shape that is larger than the bitmap is clipped or repeated.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public var bitmapIsClipped(default, default):Bool;
 	
 	/**
 	 * A string that specifies the path and name of the bitmap fill in the Library.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public var bitmapPath(default, default):String;
 	
 	/**
@@ -32,7 +33,7 @@ extern class Fill {
 	/**
 	 * An integer that specifies the gradient focal point horizontal offset from the transformation point.
 	 */
-	@:require(jsfl_version >= FlashPro8)
+	@:jsflVersion({ added: FlashPro8 })
 	public var focalPoint(default, default):Int;
 	
 	/**
