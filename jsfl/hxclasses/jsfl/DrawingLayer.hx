@@ -6,6 +6,7 @@ package jsfl;
  * You should call drawingLayer.beginFrame() before you call any other drawingLayer methods.
  */
 @:native("DrawingLayer")
+@:build(jsfl.haxe.Config.build())
 extern class DrawingLayer {
 	
 	/**

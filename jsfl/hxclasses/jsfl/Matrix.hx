@@ -4,6 +4,7 @@ package jsfl;
  * The Matrix object represents a transformation matrix.
  */
 @:native("Matrix")
+@:build(jsfl.haxe.Config.build())
 extern class Matrix {
 	
 	/**

@@ -12,6 +12,7 @@ extern enum SymbolType {
 	GRAPHIC;
 	BUTTON;
 }
+
 @:native("jsfl.SymbolType")
 private class Impl {
 	public static inline var MOVIE_CLIP:String = "movie clip";

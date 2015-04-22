@@ -4,6 +4,7 @@ package jsfl;
  * SymbolInstance is a subclass of the Instance object and represents a symbol in a frame (see Instance object).
  */
 @:native("SymbolInstance")
+@:build(jsfl.haxe.Config.build())
 extern class SymbolInstance extends Instance {
 
 	/**
@@ -14,31 +15,31 @@ extern class SymbolInstance extends Instance {
 	/**
 	 * a string that specifies the actions assigned to the symbol. This applies only to movie clip and button instances. For a graphic symbol instance, the value returns undefined
 	 */
-	@:require(jsfl_version < CC)
+	@:jsflVersion({ removed: CC })
 	public var actionScript:String;
 
 	/**
 	 * A string specifying the matte color when Opaque is selected.
 	 */
-	@:require(jsfl_version >= CS5)
+	@:jsflVersion({ added: CS5 })
 	public var backgroundColor(default, default):String;
 	
 	/**
 	 * A string specifying the display type for a symbol instance.
 	 */
-	@:require(jsfl_version >= CS5)
+	@:jsflVersion({ added: CS5 })
 	public var bitmapRenderMode(default, default):String;
 	
 	/**
 	 * A string that specifies the blending mode to be applied to a movie clip symbol.
 	 */
-	@:require(jsfl_version >= FlashPro8)
+	@:jsflVersion({ added: FlashPro8 })
 	public var blendMode(default, default):String;
 	
 	/**
 	 * An integer that returns the value set in the color effect Property Inspector for brightness (percentage between -100 and 100) when colorMode == 'brightness'.
 	 */
-	@:require(jsfl_version >= CC)
+	@:jsflVersion({ added: CC })
 	public var brightness(default, null):Int;
 	
 	/**
@@ -49,7 +50,7 @@ extern class SymbolInstance extends Instance {
 	/**
 	 * A Boolean value that specifies whether run-time bitmap caching is enabled.
 	 */
-	@:require(jsfl_version >= FlashPro8)
+	@:jsflVersion({ added: FlashPro8 })
 	public var cacheAsBitmap(default, default):Bool;
 	
 	/**
@@ -105,7 +106,7 @@ extern class SymbolInstance extends Instance {
 	/**
 	 * An array of Filter objects (see Filter object).
 	 */
-	@:require(jsfl_version >= FlashPro8)
+	@:jsflVersion({ added: FlashPro8 })
 	public var filters(default, default): Array<Filter>;
 	
 	/**
@@ -114,14 +115,14 @@ extern class SymbolInstance extends Instance {
 	public var firstFrame(default, default):Int;
 	
 	/**
-	 * A Boolean value that enables and disables the accessibility of the objectâ€™s children; equivalent to the inverse logic of the Make Child Objects Accessible setting in the Accessibility panel.
+	 * A Boolean value that enables and disables the accessibility of the object’s children; equivalent to the inverse logic of the Make Child Objects Accessible setting in the Accessibility panel.
 	 */
 	public var forceSimple(default, default):Bool;
 	
 	/**
 	 * A Boolean value indicating whether the instance contains any 3D transforms.
 	 */
-	@:require(jsfl_version >= CS6)
+	@:jsflVersion({ added: CS6 })
 	public var is3D(default, null):Bool;
 	
 	/**
@@ -152,25 +153,25 @@ extern class SymbolInstance extends Instance {
 	/**
 	 * When the Color Effect Property Inspector is using style tint (colorMode == 'tint'), return the color applied to the tint.
 	 */
-	@:require(jsfl_version >= CC)
+	@:jsflVersion({ added: CC })
 	public var tintColor(default, null):Dynamic;
 	
 	/**
 	 * When the color effect Property Inspector is using style tint (colorMode == 'tint') then return the applied to the tint percentage from -100 to 100.
 	 */
-	@:require(jsfl_version >= CC)
+	@:jsflVersion({ added: CC })
 	public var tintPercent(default, null):Int;
 	
 	/**
 	 * A boolean value that specifies whether to use 24 bit mode or 32 bit mode with alpha for the instance.
 	 */
-	@:require(jsfl_version >= CS5)
+	@:jsflVersion({ added: CS5 })
 	public var useBackgroundColor(default, default):Bool;
 	
 	/**
 	 * A boolean value specifying whether the instance is visible or not.
 	 */
-	@:require(jsfl_version >= CS5)
+	@:jsflVersion({ added: CS5 })
 	public var visible(default, default):Bool;
 
 }

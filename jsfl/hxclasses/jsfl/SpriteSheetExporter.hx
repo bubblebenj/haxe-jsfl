@@ -8,7 +8,8 @@ package jsfl;
  * The SpriteSheetExporter object is a subclass of the Item object.
  */
 @:native("SpriteSheetExporter")
-@:require(jsfl_version >= CS6)
+@:build(jsfl.haxe.Config.build())
+@:jsflVersion({ added: CS6 })
 extern class SpriteSheetExporter extends Item {
 	
 	public function new();
@@ -50,8 +51,8 @@ extern class SpriteSheetExporter extends Item {
 	 * Export the sprite sheet into a an image file.
 	 * @param	path String; A file path with no extension to be used as the base name of the exported files.
 	 * @param	imageFormat String or Object. A string or an object that describes the type of image format to generate.
-	 * 		* String: Valid values are either "png" or "jpg", the exporter use whatever values where last used.
-	 * 		* Object: If you pass an object, it needs at least a string property "format" which is either "png" or "jpg". Optionally the object may include "backgroundColor," which is a valid color value (alpha may be included); "quality" (jpg only), which is an integer from 1 to 100; and "bitDepth" (png only) which can be 8, 24 or 32.
+	 * 		• String: Valid values are either "png" or "jpg", the exporter use whatever values where last used.
+	 * 		• Object: If you pass an object, it needs at least a string property "format" which is either "png" or "jpg". Optionally the object may include "backgroundColor," which is a valid color value (alpha may be included); "quality" (jpg only), which is an integer from 1 to 100; and "bitDepth" (png only) which can be 8, 24 or 32.
 	 * @param	writeMetaData Whether or not to write the metadata file with the image file.
 	 * @return String.
 	 */
@@ -149,13 +150,13 @@ framework specified by the layoutFormat property.
 	/**
 	 * Controls the maximum height of the generated sprite sheet when autoSize = true, clipped to a maximum value of 8192.
 	 */
-	@:require(jsfl_version >= CC)
+	@:jsflVersion({ added: CC })
 	public var maxSheetHeight(default, default):Int;
 	
 	/**
 	 * Controls the maximum width of the generated sprite sheet when autoSize = true, clipped to a maximum value of 8192.
 	 */
-	@:require(jsfl_version >= CC)
+	@:jsflVersion({ added: CC })
 	public var maxSheetWidth(default, default):Int;
 	
 	/**

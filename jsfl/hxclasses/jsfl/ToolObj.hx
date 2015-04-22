@@ -5,6 +5,7 @@ package jsfl;
  * To access a ToolObj object, use properties of the Tools object: either the tools.toolObjs array or tools.activeTool.
  */
 @:native("ToolObj")
+@:build(jsfl.haxe.Config.build())
 extern class ToolObj {
 
 	/**

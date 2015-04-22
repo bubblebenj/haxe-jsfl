@@ -6,6 +6,7 @@ package jsfl;
  * This documentation uses fl in code samples throughout.
  */
 @:native("Flash")
+@:build(jsfl.haxe.Config.build())
 extern class Flash {
 	
 	/**
@@ -14,10 +15,9 @@ extern class Flash {
 	 * @param	callbackFunction The name of the function you want to execute every time the event occurs.
 	 * @return An integer that identifies the event listener. Use this identifier when calling fl.removeEventListener() 
 	 */
-	@:require(jsfl_version >= CS3)
+	@:jsflVersion({ added: CS3 })
 	public function addEventListener(eventType:EventType, callbackFunction:Void->Void):Int;
 
-	#if (jsfl_version < CS6)
 	/**
 	 * Opens a File Open or File Save system dialog box and lets the user specify a file to be opened or saved.
 	 * @param	browseType A string that specifies the type of file browse operation. Acceptable values are  "open", "select" or "save" . The values  "open" and "select" open the system File Open dialog box. Each value is provided for compatibility with Dreamweaver. The value "save" opens a system File Save dialog box.
@@ -25,8 +25,8 @@ extern class Flash {
 	 * @param	previewArea An optional parameter that is ignored by Flash and Fireworks and is present only for compatibility with Dreamweaver.
 	 * @return The URL of the file, expressed as a file:/// URI; returns null if the user cancels out of the dialog box.
 	 */
+	@:jsflVersion({ removed: CS6 })
 	public function browseForFileURL(browseType:String, ?title:String, ?previewArea:Void): String;
-	#else
 	/**
 	 * Opens a File Open or File Save system dialog box and lets the user specify a file to be opened or saved.
 	 * @param	browseType A string that specifies the type of file browse operation. Valid values are "open", "select" or "save". The values "open" and "select" open the system File Open dialog box. Each value is provided for compatibility with Dreamweaver. The value "save" opens a system File Save dialog box.
@@ -35,28 +35,28 @@ extern class Flash {
 	 * @param	fileFilter An optional string that specifies a filter, such that only files that match the filters are displayed in the dialog, for example: "fla", "fla;as", "jsfl;fla;as"
 	 * @return The URL of the file, expressed as a file:/// URI; returns null if the user cancels out of the dialog box.
 	 */
+	@:jsflVersion({ added: CS6 })
 	public function browseForFileURL(browseType:String, ?title:String = null, ?fileDescription:String = null, ?fileFilter:Array<String> = null): String;
-	#end
 
 	/**
 	 * Displays a Browse for Folder dialog box and lets the user select a folder.
 	 * @param	description A string that specifies the event type to pass to this callback function.
 	 * @return A string that specifies the event type to pass to this callback function.
 	 */
-	@:require(jsfl_version >= FlashPro8)
+	@:jsflVersion({ added: FlashPro8 })
 	public function browseForFolderURL(?description:String = null):String;
 
 	/**
 	 * Clears the publish cache.
 	 */
-	@:require(jsfl_version >= CS5)
+	@:jsflVersion({ added: CS5 })
 	public function clearPublishCache():Void;
 
 	/**
 	 * Copies the specified string to the Clipboard.
 	 * @param	string A string to be copied to the Clipboard.
 	 */
-	@:require(jsfl_version >= CS3)
+	@:jsflVersion({ added: CS3 })
 	public function clipCopyString(string:String):Void;
 
 	/**
@@ -69,9 +69,9 @@ extern class Flash {
 	 * Closes all the SWF files that were opened with Control > Test Movie.
 	 * @return A Boolean value: true if one or more movie windows were open; false otherwise.
 	 */
-	@:require(jsfl_version >= CS3)
+	@:jsflVersion({ added: CS3 })
 	public function closeAllPlayerDocuments():Bool;
-	
+
 	/**
 	 * Closes the specified document.
 	 * @param	documentObject A Document object. If documentObject refers to the active document, the Document window might not close until the script that calls this method finishes executing.
@@ -83,7 +83,7 @@ extern class Flash {
 	 * Closes the Flash Project (FLP) file that is currently open.
 	 * @return A Boolean value of true if the project was successfully closed; false if there is no project file open.
 	 */
-	@:require(jsfl_version >= FlashPro8 && jsfl_version < CS4)
+	@:jsflVersion({ added: FlashPro8, removed: CS4 })
 	public function closeProject():Bool;
 
 	/**
@@ -92,7 +92,7 @@ extern class Flash {
 	 * @param	libraryItemPath A string, that specifies the path to the library item to be copied.
 	 * @return A Boolean value: true if the copy succeeds; false otherwise.
 	 */
-	@:require(jsfl_version >= CS6) // Not in JSFL cs5 doc
+	@:jsflVersion({ added: CS6 }) // Not in JSFL cs5 doc
 	public function copyLibraryItem(fileURI:String, libraryItemPath:String):Bool;
 
 	/**
@@ -110,7 +110,7 @@ asking whether to overwrite the file.
 	 * @param	name An optional string that is displayed as the project name in the Project panel. If  name is omitted, the name of the FLP file (excluding path or extension) is displayed in the Project panel.
 	 * @return A Project object if the method is successful; undefined if the file can’t be created.
 	 */
-	@:require(jsfl_version >= FlashPro8 && jsfl_version < CS4)
+	@:jsflVersion({ added: FlashPro8, removed: CS4 })
 	public function createProject(fileURI:String, ?name:String):Project;
 
 	/**
@@ -118,14 +118,14 @@ asking whether to overwrite the file.
 	 * @param	fileURI A string, expressed as a file:/// URI, that specifies the local path of the file to be downloaded from the Version Cue server. Only files that are not already opened can be downloaded. If the file specified by fileURI is already open, this method has no effect.
 	 * @return A Boolean value of  true if the file was downloaded successfully;  false otherwise.
 	 */
-	@:require(jsfl_version >= CS3 && jsfl_version < CS5)
+	@:jsflVersion({ added: CS3, removed: CS5 })
 	public function downloadLatestVersion(fileURI:String):Bool;
 
 	/**
 	 * lets the script developer enable immediate visual updates of the Timeline when executing effects. Immediate updates are normally suppressed so the user does not see intermediate steps that can be visually distracting and can make the effect appear to take longer than necessary. This method is purely for debugging purposes and should not be used in effects that are deployed in the field. After the effect completes, the internal state is reset to suppress immediate updates.
 	 * @param	bEnableUpdates A Boolean value that specifies whether to enable ( true ) or disable ( false ) immediate visual updates of the Timeline when executing effects.
 	 */
-	@:require(jsfl_version < CS4)
+	@:jsflVersion({ removed: CS4 })
 	public function enableImmediateUpdates(bEnableUpdates:Bool):Void;
 
 	/**
@@ -134,7 +134,7 @@ asking whether to overwrite the file.
 	 * @param	profileName A string that specifies the profile name to export.
 	 * @return A string, expressed as a file:/// URI, that contains the path to the file.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public function exportPublishProfileString(ucfURI:String, ?profileName:String = null):String;
 
 	/**
@@ -149,7 +149,7 @@ asking whether to overwrite the file.
 	 * @param	id A Document object, or null if no document exists with the specified id.
 	 * @return The document name for which you want to find the index. The document must be open.
 	 */
-	@:require(jsfl_version >= CS3)
+	@:jsflVersion({ added: CS3 })
 	public function findDocumentDOM(id:Int):Document;
 
 	/**
@@ -165,7 +165,7 @@ asking whether to overwrite the file.
 	 * @param	document A string that specifies the instance name of an item in the specified document.
 	 * @return An array of generic objects. Use the.obj property of each item in the array to get the object. The object has the following properties: keyframe, layer, timeline, and parent.
 	 */
-	@:require(jsfl_version >= CS3)
+	@:jsflVersion({ added: CS3 })
 	public function findObjectInDocByName(instanceName:String, document:Document):Array<{keyframe:Dynamic, layer:Layer, timeline:Timeline, parent:Dynamic, obj:Dynamic}>;
 
 	/**
@@ -174,7 +174,7 @@ asking whether to overwrite the file.
 	 * @param	document The Document object in which to search for the specified item.
 	 * @return An array of generic objects. Use the.obj property of each item in the array to get the element object. Each object has the following properties: keyframe, layer, timeline, and parent. 
 	 */
-	@:require(jsfl_version >= CS3)
+	@:jsflVersion({ added: CS3 })
 	public function findObjectInDocByType(elementType:String,document:Document):Array<{keyframe:Dynamic,layer:Layer,timeline:Timeline,parent:Dynamic,obj:Dynamic}>;
 
 	/**
@@ -182,7 +182,7 @@ asking whether to overwrite the file.
 	 * @param	memType An integer that specifies the memory utilization area to be queried. For a list of acceptable values see original doc.
 	 * @return An integer that represents the number of bytes being used in a specified area of Flash.exe memory.
 	 */
-	@:require(jsfl_version >= FlashPro8)
+	@:jsflVersion({ added: FlashPro8 })
 	public function getAppMemoryInfo(memType:Int):Int;
 
 	/**
@@ -195,7 +195,7 @@ asking whether to overwrite the file.
 	 * returns a Project object that represents the currently open project.
 	 * @return A Project object that represents the currently open project. If no project is currently open, returns undefined.
 	 */
-	@:require(jsfl_version >= FlashPro8 && jsfl_version < CS4)
+	@:jsflVersion({ added: FlashPro8, removed: CS4 })
 	public function getProject():Project;
 
 	/**
@@ -204,7 +204,7 @@ asking whether to overwrite the file.
 	 * @param	useLocalizedPanelName If false, the panelName parameter is assumed to be the English (unlocalized) name of the panel, which corresponds to the SWF filename without the file extension.
 	 * @return Availability SWFPanel object
 	 */
-	@:require(jsfl_version >= CS5)
+	@:jsflVersion({ added: CS5 })
 	public function getSwfPanel(panelName:String, ?useLocalizedPanelName:Bool = true):SwfPanel;
 
 	/**
@@ -212,25 +212,25 @@ asking whether to overwrite the file.
 	 * @param	themeParamName A String containing a theme color (in #rrggbb or #rrggbbaa format) that matches the passed parameter. If the theme parameter is themeUseGradients, this method returns either "true" or "false".
 	 * @return A string that contains a theme parameter from the list returned by the fl.getThemeColorParameters() method. If the theme parameter is themeUseGradients, this method returns either "true" or "false".
 	 */
-	@:require(jsfl_version >= CC)
+	@:jsflVersion({ added: CC })
 	public function getThemeColor(themeParamName:String):String;
 
 	/**
 	 * Retrieves an array of theme parameter names.
 	 * @return infoType Method; returns an Array of strings that contain the theme color parameters. The available theme color parameters can be found in the original doc.
 	 */
-	@:require(jsfl_version >= CC)
+	@:jsflVersion({ added: CC })
 	public function getThemeColorParameters():Array<String>;
 
 	/**
 	 * Return either the font style or the font size that is used to draw the UI of the specified size.
 	 * @param	infoType A string that contains one of the following:
-		* fontStyle - Return the font style for the size specified by the size parameter.
-		* fontSize - Return the font size for the size specified by the size parameter.
+		• fontStyle - Return the font style for the size specified by the size parameter.
+		• fontSize - Return the font size for the size specified by the size parameter.
 	 * @param	size A string that specifies either "large" or "small".
 	 * @return A String containing either the font style or the font size for the specifie size.
 	 */
-	@:require(jsfl_version >= CC)
+	@:jsflVersion({ added: CC })
 	public function getThemeFontInfo(infoType:String, size:String):String;
 
 	/**
@@ -238,7 +238,7 @@ asking whether to overwrite the file.
 	 * @param	fontName A string that specifies the name of a device font.
 	 * @return A Boolean value of true if the specified font is installed; false otherwise.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public function isFontInstalled(fontName:String):Bool;
 
 	/**
@@ -280,7 +280,7 @@ asking whether to overwrite the file.
 	 * @param	publishProfile A string that specifies the publish profile to use when publishing. If this parameter is omitted, the default publish profile is used.
 	 * @return Boolean indicating if the profile was found or not. In the case where the second parameter is not supplied, the return value is always true.
 	 */
-	@:require(jsfl_version >= CS5)
+	@:jsflVersion({ added: CS5 })
 	public function publishDocument(flaURI: String, ?publishProfile: String): Bool;
 	
 	/**
@@ -292,7 +292,7 @@ asking whether to overwrite the file.
 	/**
 	 * reloads all effects descriptors defined in the user’s Configuration Effects folder. This permits you to rapidly change the scripts during development, and it provides a mechanism to improve the effects without relaunching the application. This method works best if used in a command placed in the Commands folder.
 	 */
-	@:require(jsfl_version < CC)
+	@:jsflVersion({ removed: CC })
 	public function reloadEffects():Void;
 
 	/**
@@ -315,13 +315,13 @@ asking whether to overwrite the file.
 	/**
 	 * Resets the global Classpath setting in the ActionScript 3.0 Settings dialog box to the default value.
 	 */
-	@:require(jsfl_version >= CS3)
+	@:jsflVersion({ added: CS3 })
 	public function resetAS3PackagePaths():Void;
 
 	/**
 	 * resets the global Classpath setting in the ActionScript 2.0 Settings dialog box to the default value. To reset the ActionScript 3.0 global Classpath, use  fl.resetAS3PackagePaths() .
 	 */
-	@:require(jsfl_version >= CS3)
+	@:jsflVersion({ added: CS3 })
 	public function resetPackagePaths():Void;
 
 	/**
@@ -339,7 +339,7 @@ To revert a document to the last version that was saved locally, use  fl.revertD
 	 * @param	documentObject A Document object.
 	 * @return A Boolean value of  true if the document is successfully reverted;  false otherwise.
 	 */
-	@:require(jsfl_version >= CS3 && jsfl_version < CS5)
+	@:jsflVersion({ added: CS3, removed: CS5 })
 	public function revertDocumentToLastVersion(documentObject:Document):Bool;
 	
 	/**
@@ -364,7 +364,7 @@ saves a version of the specified document to the server, and logs any errors to 
 	 * @param	document A Document object.
 	 * @return A Boolean value of  true if a version of the document is successfully saved to the Version Cue server;  false otherwise.
 	 */
-	@:require(jsfl_version >= CS3 && jsfl_version < CS5)
+	@:jsflVersion({ added: CS3, removed: CS5 })
 	public function saveAVersionOfDocument(document:Document):Bool;
 
 	/**
@@ -388,14 +388,14 @@ saves a version of the specified document to the server, and logs any errors to 
 	 * @param	editMode A Boolean value that specifies whether you want to edit the element (true) or want only to select it (false).
 	 * @return A Boolean value of true if the element was successfully selected; false otherwise.
 	 */
-	@:require(jsfl_version >= CS3)
+	@:jsflVersion({ added: CS3 })
 	public function selectElement(elementObject:Element, editMode:Bool):Bool;
 
 	/**
 	 * Selects the specified tool in the Tools panel.
 	 * @param	toolName A string that specifies the name of the tool to select. The acceptable default values for toolName are "arrow", "bezierSelect", "freeXform", "fillXform", "lasso", "pen", "penplus", "penminus", "penmodify", "text",	"line", "rect", "oval", "rectPrimitive", "ovalPrimitive", "polystar", "pencil", "brush", "inkBottle",	"bucket", "eyeDropper", "eraser", "hand", and "magnifier" 
 	 */
-	@:require(jsfl_version >= CS3)
+	@:jsflVersion({ added: CS3 })
 	public function selectTool(toolName:String):Void;
 
 	/**
@@ -411,14 +411,14 @@ saves a version of the specified document to the server, and logs any errors to 
 	 * @param	keyName A string that contains the name of the boolean preference setting to be set.
 	 * @param	keyValue A string that contains the value to be set (true or false).
 	 */
-	@:require(jsfl_version >= CC)
+	@:jsflVersion({ added: CC })
 	public function setPrefBoolean(keySection:String, keyName:String, keyValue:String):Void;
 
 	/**
 	 * Lets you disable the warning about a script running too long.
 	 * @param	show A Boolean value specifying whether to enable or disable the warning about a script running too long.
 	 */
-	@:require(jsfl_version >= FlashPro8)
+	@:jsflVersion({ added: FlashPro8 })
 	public function showIdleMessage(show:Bool):Void;
 
 	/**
@@ -426,7 +426,7 @@ saves a version of the specified document to the server, and logs any errors to 
 	 * @param	documentObject A Document object.
 	 * @return A Boolean value of  true if the specified file was successfully synchronized with the Version Cue server;  false otherwise.
 	 */
-	@:require(jsfl_version >= CS3 && jsfl_version < CS5)
+	@:jsflVersion({ added: CS3, removed: CS5 })
 	public function synchronizeDocumentWithHeadVersion(documentObject:Document):Bool;
 
 	/**
@@ -435,7 +435,7 @@ saves a version of the specified document to the server, and logs any errors to 
 	 * @param	line An integer; the line number at which to toggle the breakpoint.
 	 * @param	enable Boolean; if set to true, the breakpoint is enabled. If set to false, the breakpoint is disabled.
 	 */
-	@:require(jsfl_version >= CS5)
+	@:jsflVersion({ added: CS5 })
 	public function toggleBreakpoint(fileURI:String, line:Int, enable:Bool):Void;
 
 	/**
@@ -449,7 +449,7 @@ saves a version of the specified document to the server, and logs any errors to 
 	 * @param	xmlURI A URI specifying the XML file that defines the controls in the panel. You must specify the full path name.
 	 * @return XMLUI. The object returned contains properties for all controls defined in the XML file. All properties are returned as strings. The returned object will have one predefined property named "dismiss," which will have a string value that is either "accept" or "cancel".
 	 */
-	@:require(jsfl_version >= CC)
+	@:jsflVersion({ added: CC })
 	public function xmlPanel(xmlURI:String):XMLUI;
 
 	/**
@@ -457,25 +457,25 @@ saves a version of the specified document to the server, and logs any errors to 
 	 * @param	xmlString A string containing XML that defines a dialog.
 	 * @return XMLUI.
 	 */
-	@:require(jsfl_version >= CC)
+	@:jsflVersion({ added: CC })
 	public function xmlPanelFromString(xmlString:String):XMLUI;
 
 	/**
 	 * Read-only property; an actionsPanel object, which represents the currently displayed Actions panel.
 	 */
-	@:require(jsfl_version >= CS3)
+	@:jsflVersion({ added: CS3 })
 	public var actionsPanel(default, null):ActionsPanel;
 
 	/**
 	 * Read-only property; the Effect object for the current effect being applied.
 	 */
-	@:require(jsfl_version < CS4)
+	@:jsflVersion({ removed: CS4 })
 	public var activeEffect(default, null): Effect;
 
 	/**
 	 * A string that corresponds to the global Classpath setting in the ActionScript 3.0 Settings dialog box.
 	 */
-	@:require(jsfl_version >= CS3)
+	@:jsflVersion({ added: CS3 })
 	public var as3PackagePaths(default, default):String;
 
 	/**
@@ -499,9 +499,9 @@ saves a version of the specified document to the server, and logs any errors to 
 	public var configURI(default, null):String;
 	
 	/**
-	 * A Boolean value that specifies whether Contact Sensitive selection mode is enabled (true) or not (false).
+	 * A Boolean value that specifies whether Contact Sensitive selection mode is enabled ( true ) or not ( false ).
 	 */
-	@:require(jsfl_version >= FlashPro8)
+	@:jsflVersion({ added: FlashPro8 })
 	public var contactSensitiveSelection(default, default):Bool;
 	
 	/**
@@ -532,37 +532,37 @@ saves a version of the specified document to the server, and logs any errors to 
 	/**
 	 * Read-only property; an array of Effect objects, based on XML parameter file. These are not effects, but a description of effects. The array length corresponds to the number of effects (based on the XML parameter definition files, not the number of JSFL implementation files) registered when the program opens.
 	 */
-	@:require(jsfl_version < CS4)
+	@:jsflVersion({ removed: CS4 })
 	public var effects(default, null): Array<Effect>;
 
 	/**
 	 * A string that contains a list of items in the global ActionScript 3.0 External library path, which specifies the location of SWC files used as runtime shared libraries.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public var externalLibraryPath(default, default):String;
 
 	/**
 	 * A string that specifies the path to the Flex SDK folder, which contains bin, frameworks, lib, and other folders.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public var flexSDKPath(default, default):String;
 
 	/**
 	 * Returns an array of generic objects corresponding to the list of installed Flash Players in the document Property inspector.
 	 */
-	@:require(jsfl_version >= CS5)
+	@:jsflVersion({ added: CS5 })
 	public var installedPlayers(default, default): Array<Dynamic>;
 
 	/**
 	 * Returns the five character code identifying the locale of the application’s user interface.
 	 */
-	@:require(jsfl_version >= CS5)
+	@:jsflVersion({ added: CS5 })
 	public var languageCode(default, default):String;
 
 	/**
 	 * A string that contains a list of items in the global ActionScript 3.0 Library path, which specifies the location of SWC files or folders containing SWC files.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public var libraryPath(default, default):String;
 
 	/**
@@ -583,31 +583,31 @@ saves a version of the specified document to the server, and logs any errors to 
 	/**
 	 * An integer that sets the disk cache size limit preference.
 	 */
-	@:require(jsfl_version >= CS5)
+	@:jsflVersion({ added: CS5 })
 	public var publishCacheDiskSizeMax(default, default):Int;
 
 	/**
 	 * A boolean value that sets whether publish cache is enabled.
 	 */
-	@:require(jsfl_version >= CS5)
+	@:jsflVersion({ added: CS5 })
 	public var publishCacheEnabled(default, default):Bool;
 
 	/**
 	 * An integer property that sets the maximum size for the memory cache entry preference.
 	 */
-	@:require(jsfl_version >= CS5)
+	@:jsflVersion({ added: CS5 })
 	public var publishCacheMemoryEntrySizeLimit(default, default):Dynamic;
 
 	/**
 	 * An integer that sets the memory cache size limit preference.
 	 */
-	@:require(jsfl_version >= CS5)
+	@:jsflVersion({ added: CS5 })
 	public var publishCacheMemorySizeMax(default, default):Int;
 
 	/**
 	 * An integer that represents the object drawing mode that is enabled.
 	 */
-	@:require(jsfl_version >= FlashPro8)
+	@:jsflVersion({ added: FlashPro8 })
 	public var objectDrawingMode(default, default):Int;
 
 	/**
@@ -618,37 +618,37 @@ saves a version of the specified document to the server, and logs any errors to 
 	/**
 	 * a string that corresponds to the global Classpath setting in the ActionScript 2.0 Settings dialog box. Class paths within the string are delimited with semi-colons (;). To view or change ActionScript 3.0 Classpath settings, use fl.as3PackagePaths.
 	 */
-	@:require(jsfl_version >= CS3)
+	@:jsflVersion({ added: CS3 })
 	public var packagePaths(default, default): String;
 
 	/**
 	 * Read-only; a presetPanel object.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public var presetPanel(default, null):PresetPanel;
 
 	/**
 	 * Read-only; a string that represents the path of the currently running JSFL script, expressed as a file:/// URI.
 	 */
-	@:require(jsfl_version >= CS3)
+	@:jsflVersion({ added: CS3 })
 	public var scriptURI(default, null):String;
 
 	/**
 	 * A string that contains a list of items in the global ActionScript 3.0 Source path, which specifies the location of ActionScript class files.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public var sourcePath(default, default):String;
 
 	/**
 	 * Returns an instance of SpriteSheetExporter object.
 	 */
-	@:require(jsfl_version >= CS6)
+	@:jsflVersion({ added: CS6 })
 	public var spriteSheetExporter(default, default):SpriteSheetExporter;
 
 	/**
 	 * An array of registered swfPanel objects (see swfPanel object).
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public var swfPanels(default, null):Array<SwfPanel>;
 
 	/**

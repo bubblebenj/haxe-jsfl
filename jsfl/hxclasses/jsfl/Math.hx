@@ -26,6 +26,7 @@ typedef JSFLRect = {
  * The Math object is available as a read-only property of the flash object; see fl.Math.
  * This object provides methods that perform common mathematical operations.
  */
+@:build(jsfl.haxe.Config.build())
 extern class Math {
 
 	/**
@@ -57,7 +58,7 @@ extern class Math {
 	 * @param	point Contains the point to which the matrix is applied.
 	 * @return The transformed point.
 	 */
-	@:require(jsfl_version >= CS6)
+	@:jsflVersion({ added: CS6 })
 	public function transformPoint(matrix:Matrix, point:JSFLPoint): JSFLPoint;
 
 }

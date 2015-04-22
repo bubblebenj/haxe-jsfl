@@ -1,11 +1,12 @@
 package jsfl;
-
+	
 /**
  * A Contour object represents a closed path of half edges on the boundary of a shape.
  */
 @:native("Contour")
+@:build(jsfl.haxe.Config.build())
 extern class Contour {
-
+	
 	/**
 	 * Returns a HalfEdge object on the contour of the selection.
 	 * @return A HalfEdge object.
@@ -26,5 +27,5 @@ extern class Contour {
 	 * Read-only; an integer indicating the orientation of the contour.
 	 */
 	public var orientation(default, null):Int;
-
+	
 }

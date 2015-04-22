@@ -7,7 +7,8 @@ package jsfl;
  * 	fl.getDocumentDOM().screenOutline.screens
  */
 @:native("Screen")
-@:require(jsfl_version < CS5)
+@:build(jsfl.haxe.Config.build())
+@:jsflVersion({ removed: CS5 })
 extern class Screen {
 	
 	/**

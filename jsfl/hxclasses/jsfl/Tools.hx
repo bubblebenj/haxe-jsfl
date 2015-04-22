@@ -8,6 +8,7 @@ import jsfl.Math;
  * property returns the ToolObj object for the currently active tool.
  */
 @:native("Tools")
+@:build(jsfl.haxe.Config.build())
 extern class Tools {
 	
 	/**
@@ -37,7 +38,7 @@ extern class Tools {
 		• 7 = hand cursor
 	 */
 	public function setCursor(cursor:Int):Void;
-	
+
 	
 	/**
 	 * Takes a point as input and returns a new point that may be adjusted or snapped to the nearest geometric object.

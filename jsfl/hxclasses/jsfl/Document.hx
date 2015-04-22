@@ -1,13 +1,13 @@
 package jsfl;
-
-import jsfl.Config;
+	
 import jsfl.Math;
-
+	
 /**
  * The Document object represents the Stage. That is, only FLA files are considered documents.
  * To return the Document object for the current document, use fl.getDocumentDOM().
  */
 @:native("Document")
+@:build(jsfl.haxe.Config.build())
 extern class Document {
 	
 	/**
@@ -61,7 +61,7 @@ extern class Document {
 	 * @param	bSuppressFill A Boolean value that, if set to true, causes the method to create the oval without a fill. 
 	 * @param	bSuppressStroke A Boolean value that, if set to true, causes the method to create the oval without a stroke.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public function addNewPrimitiveOval(boundingRectangle:JSFLRect, ?bSuppressFill:Bool = false, ?bSuppressStroke:Bool = false):Void;
 	
 	/**
@@ -71,7 +71,7 @@ extern class Document {
 	 * @param	bSuppressFill A Boolean value that, if set to true, causes the method to create the rectangle without a fill.
 	 * @param	bSuppressStroke A Boolean value that, if set to true, causes the method to create the rectangle without a stroke.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public function addNewPrimitiveRectangle(rect:Rectangle, roundness:Int, ?bSuppressFill:Bool = false, ?bSuppressStroke:Bool = false):Void;
 	
 	/**
@@ -91,7 +91,7 @@ extern class Document {
 	public function addNewRectangle(boundingRectangle:JSFLRect, roundness:Int, ?bSuppressFill:Bool = false, ?bSuppressStroke:Bool = false):Void;
 
 	/**
-	 * Adds a new scene (Timeline object) as the next scene after the currently selected scene and makes the new scene the currently selected scene.
+	 * Adds a new scene(Timeline object) as the next scene after the currently selected scene and makes the new scene the currently selected scene.
 	 * @param	name Specifies the name of the scene. If you do not specify a name, a new scene name is generated.
 	 * @return A Boolean value: true if the scene is added successfully; false otherwise.
 	 */
@@ -113,9 +113,9 @@ extern class Document {
 	
 	/**
 	 * 
-	 * @return A Boolean value: true if document.screenOutline can be used safely;  false otherwise.
+	 * @return A Boolean value:  true if  document.screenOutline can be used safely;  false otherwise.
 	 */
-	@:require(jsfl_version < CC)
+	@:jsflVersion({ removed: CC })
 	public function allowScreens():Bool;
 	
 	/**
@@ -145,7 +145,7 @@ extern class Document {
 	 * 
 	 * @return
 	 */
-	@:require(jsfl_version < CS5)
+	@:jsflVersion({ removed: CS5 })
 	public function canSaveAVersion():Bool;
 	
 	/**
@@ -198,7 +198,7 @@ extern class Document {
 	 * Converts selected objects in the current frame to a bitmap and inserts the bitmap into the library.
 	 * @return 
 	 */
-	@:require(jsfl_version >= CC)
+	@:jsflVersion({ added: CC })
 	public function convertSelectionToBitmap():Bool;
 
 	/**
@@ -217,14 +217,14 @@ extern class Document {
 
 	/**
 	 * Initiates a debug session with the document.
-	 * @param	abortIfErrorsExist If set to true, the debug session will not start and the .swf
+	 * @param	abortIfErrorsExist If set to true, the debug session will not start and the.swf
 window will not open if there are compiler errors. Compiler warnings will not abort the command.
 	 */
-	@:require(jsfl_version >= CS5)
+	@:jsflVersion({ added: CS5 })
 	public function debugMovie(?abortIfErrorsExist:Bool = false):Void;
 
 	/**
-	 * Deletes the envelope (bounding box that contains one or more objects) from the selected object.
+	 * Deletes the envelope(bounding box that contains one or more objects) from the selected object.
 	 */
 	public function deleteEnvelope():Void;
 	
@@ -235,7 +235,7 @@ window will not open if there are compiler errors. Compiler warnings will not ab
 	public function deletePublishProfile():Int;
 	
 	/**
-	 * Deletes the current scene (Timeline object), and if the deleted scene was not the last one, sets the next scene as the current Timeline object.
+	 * Deletes the current scene(Timeline object), and if the deleted scene was not the last one, sets the next scene as the current Timeline object.
 	 * @return A Boolean value: true if the scene is successfully deleted; false otherwise.
 	 */
 	public function deleteScene():Bool;
@@ -272,7 +272,7 @@ window will not open if there are compiler errors. Compiler warnings will not ab
 	/**
 	 * Performs a distribute-to-keyframes operation on the current selection; equivalent to selecting Distribute to Keyframes.
 	 */
-	@:require(jsfl_version >= CC)
+	@:jsflVersion({ added: CC })
 	public function distributeToKeyframes():Void;
 
 	/**
@@ -338,7 +338,7 @@ window will not open if there are compiler errors. Compiler warnings will not ab
 	 * @param	frameNumber Integer indicating the frame to be exported.
 	 * @param	bitmapName A string representing the name of the bitmap to be added to the Library.
 	 */
-	@:require(jsfl_version >= CS6)
+	@:jsflVersion({ added: CS6 })
 	public function exportInstanceToLibrary(frameNumber:Int, bitmapName:String):Void;
 	
 	/**
@@ -348,15 +348,15 @@ window will not open if there are compiler errors. Compiler warnings will not ab
 	 * @param	endFrameNum An Integer indicating the last frame to be exported. 
 	 * @param	matrix A matrix to be appended to the exported PNG sequence.
 	 */
-	@:require(jsfl_version >= CS6)
+	@:jsflVersion({ added: CS6 })
 	public function exportInstanceToPNGSequence(outputURI:String, ?startFrameNum:Int = 1, ?endFrameNum:Int = 99999, ?matrix:Matrix):Void;
 
 	/**
 	 * Exports the document as one or more PNG files.
 	 * @param	fileURI A string, expressed as a file:/// URI, that specifies the filename for the exported file. If fileURI is an empty string or is not specified, Flash displays the Export Movie dialog box.
-	 * @param	bCurrentPNGSettings A Boolean value that specifies whether to use the current PNG publish settings (true) or to display the Export PNG dialog box (false).
-	 * @param	bCurrentFrame A Boolean value that specifies whether to export only the current frame (true) or to export all
-frames, with each frame as a separate PNG file (false).
+	 * @param	bCurrentPNGSettings A Boolean value that specifies whether to use the current PNG publish settings(true) or to display the Export PNG dialog box(false).
+	 * @param	bCurrentFrame A Boolean value that specifies whether to export only the current frame(true) or to export all
+frames, with each frame as a separate PNG file(false).
 	 * @return A Boolean value of true if the file is successfully exported as a PNG file; false otherwise.
 	 */
 	public function exportPNG(?fileURI:String, ?bCurrentPNGSettings:Bool = false, ?bCurrentFrame:Bool = false):Bool;
@@ -372,8 +372,8 @@ frames, with each frame as a separate PNG file (false).
 	 * @param	profileName A string that specifies the name of the profile to export to an XML string. if not set, the current profile is exported.
 	 * @return An XML string.
 	 */
-	@:require(jsfl_version >= CS4)
-	public function exportPublishProfileString(?profileName: String): String;
+	@:jsflVersion({ added: CS4 })
+	public function exportPublishProfileString(?profileName:String):String;
 	
 	/**
 	 * Exports the document in the Flash SWF format.
@@ -385,12 +385,12 @@ frames, with each frame as a separate PNG file (false).
 	/**
 	 * Exports a video from the document and optionally sends it to Adobe Media Encoder to convert the video.
 	 * @param	fileURI A string, expressed as a file:/// URI, that specifies the fully qualified path to which the video is saved.
-	 * @param	convertInAdobeMediaEncoder A boolen value that specifies whether (true) or not (false) to send the recorded video to Adobe Media Encoder. 
-	 * @param	transparent A boolean value that specifies whether (true) or not (false) the background should be included in the video.
-	 * @param	stopAtFrame A boolean value that specifies whether the video should be recorded (true) until it reaches a certain frame or a specific time.
+	 * @param	convertInAdobeMediaEncoder A boolen value that specifies whether(true) or not(false) to send the recorded video to Adobe Media Encoder. 
+	 * @param	transparent A boolean value that specifies whether(true) or not(false) the background should be included in the video.
+	 * @param	stopAtFrame A boolean value that specifies whether the video should be recorded(true) until it reaches a certain frame or a specific time.
 	 * @param	stopAtFrameOrTime If stopAtFrame is true, this is an int specifying the number of frames to record. If stopAtFrame is false, this is the number of milliseconds to record. The default value is 0 which, if stopAtFrame is true, will record all the frames in the main timeline.
 	 */
-	@:require(jsfl_version >= CC)
+	@:jsflVersion({ added: CC })
 	public function exportVideo(fileURI:String, ?convertInAdobeMediaEncoder:Bool = true, ?transparent:Bool = false, ?stopAtFrame:Bool = true, ?stopAtFrameOrTime:Int = 0):Void;
 
 	/**
@@ -408,8 +408,8 @@ frames, with each frame as a separate PNG file (false).
 	/**
 	 * Retrieves the fill object of the selected shape, or the Tools panel and Property inspector if specified.
 	 * @param	objectToFill A string that specifies the location of the fill object. The following values are valid:
-		* "toolbar" returns the fill object of the Tools panel and Property inspector.
-		* "selection" returns the fill object of the selection.
+		• "toolbar" returns the fill object of the Tools panel and Property inspector.
+		• "selection" returns the fill object of the selection.
 	 * @return The Fill object specified by the objectToFill parameter, if successful; otherwise, it returns undefined.
 	 */
 	public function getCustomFill(?objectToFill: String="selection"): Fill;
@@ -417,8 +417,8 @@ frames, with each frame as a separate PNG file (false).
 	/**
 	 * Returns the stroke object of the selected shape, or the Tools panel and Property inspector if specified.
 	 * @param	locationOfStroke A string that specifies the location of the stroke object. The following values are valid:
-		* "toolbar", if set, returns the stroke object of the Tools panel and Property inspector.
-		* "selection", if set, returns the stroke object of the selection.
+		• "toolbar", if set, returns the stroke object of the Tools panel and Property inspector.
+		• "selection", if set, returns the stroke object of the selection.
 	 * @return The Stroke object specified by the locationOfStroke parameter, if successful; otherwise, it returns undefined 
 	 */
 	public function getCustomStroke(?locationOfStroke:String="selection"):Stroke;
@@ -434,15 +434,15 @@ frames, with each frame as a separate PNG file (false).
 	 * Gets the specified Element property for the current selection.
 	 * @param	propertyName A string that specifies the name of the Element property for which to retrieve the value.
 	 * @return The value of the specified property.
-		* Returns null if the property is an indeterminate state, as when multiple elements are selected with different property values.
-		* Returns undefined if the property is not a valid property of the selected element.
+		• Returns null if the property is an indeterminate state, as when multiple elements are selected with different property values.
+		• Returns undefined if the property is not a valid property of the selected element.
 	 */
-	public function getElementProperty(propertyName: String): Dynamic;
+	public function getElementProperty(propertyName:String):Dynamic;
 	
 	/**
 	 * Gets a specified TextAttrs property of the selected Text objects.
 	 * @param	attrName A string that specifies the name of the TextAttrs property to be returned.
-	 * @param	startIndex An integer that specifies the index of first character, with 0 (zero) specifying the first position.
+	 * @param	startIndex An integer that specifies the index of first character, with 0(zero) specifying the first position.
 	 * @param	endIndex An integer that specifies the index of last character.
 	 * @return The text field if the selection return a unique value. Otherwise undefined.
 	 */
@@ -477,7 +477,7 @@ frames, with each frame as a separate PNG file (false).
 	 * @param	format A string that specifies the publishing format. If set to "_EMBED_SWF_", the persistent data will be embedded in the SWF file every time a document is published.
 	 * @return True if publishing of the specified persistent data is enabled for the specified format in this document. Otherwise False 
 	 */
-	@:require(jsfl_version >= CC)
+	@:jsflVersion({ added: CC })
 	public function getPublishDocumentData(format:String):Bool;
 
 	/**
@@ -490,14 +490,14 @@ frames, with each frame as a separate PNG file (false).
 	 * Gets the full path to the SWF file that is set in the current Publish profile.
 	 * @return The full path to the SWF file that is set in the current Publish profile.
 	 */
-	@:require(jsfl_version >= CS6)
+	@:jsflVersion({ added: CS6 })
 	public function getSWFPathFromProfile():String;
 	
 	/**
 	 * Indicates whether the “Enable detailed telemetry” checkbox is selected in the Publish Settings dialog.
 	 * @return Returns true if the “Enable detailed telemetry” checkbox is selected; otherwise false 
 	 */
-	@:require(jsfl_version >= CC)
+	@:jsflVersion({ added: CC })
 	public function getTelemetryForSwf():Bool;
 
 	/**
@@ -505,7 +505,7 @@ frames, with each frame as a separate PNG file (false).
 	 * @param	startIndex An integer that is an index of first character to get.
 	 * @param	endIndex An integer that is an index of last character to get.
 	 * @return A string that contains the selected text.
-	 */
+	 */	
 	public function getTextString(?startIndex:Null<Int>, ?endIndex:Null<Int>):String;
 	
 	/**
@@ -516,7 +516,7 @@ frames, with each frame as a separate PNG file (false).
 	
 	/**
 	 * Gets the location of the transformation point of the current selection. Used for commutations such as rotate and skew.
-	 * @return A point (for example, {x:10, y:20}, where x and y are floating-point numbers) that specifies the position of the transformation point (also origin point or zero point) within the selected element’s coordinate system.
+	 * @return A point(for example, {x:10, y:20}, where x and y are floating-point numbers) that specifies the position of the transformation point(also origin point or zero point) within the selected element’s coordinate system.
 	 */
 	public function getTransformationPoint(): JSFLPoint;
 	
@@ -528,9 +528,9 @@ frames, with each frame as a separate PNG file (false).
 	/**
 	 * Imports a file into the document.
 	 * @param	fileURI A string, expressed as a file:/// URI, that specifies the path of the file to import.
-	 * @param	importToLibrary A Boolean value that specifies whether to import the file only into the document’s library (true) or to also place a copy on the Stage (false).
+	 * @param	importToLibrary A Boolean value that specifies whether to import the file only into the document’s library(true) or to also place a copy on the Stage(false).
 	 * @param	showDialog A Boolean value that specifies whether to display the Import dialog box. Specifying true displays the import dialog. If you specify false, the function imports the file using specifications set in the Preferences dialog. require CC.
-	 * @param	showImporterUI A Boolean value that specifies whether to display errors visually (for example, using the Library Conflict dialog box). require CC.
+	 * @param	showImporterUI A Boolean value that specifies whether to display errors visually(for example, using the Library Conflict dialog box). require CC.
 	 */
 	public function importFile(fileURI:String, ?importToLibrary:Bool = false, ?showDialog:Bool = true, ?showImporterUI:Bool = false):Void;
 	
@@ -546,14 +546,14 @@ frames, with each frame as a separate PNG file (false).
 	 * @param	xmlString A string that contains the XML data to be imported as the current profile.
 	 * @return A Boolean value of true if the string was successfully imported; false otherwise.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public function importPublishProfileString(xmlString:String):Bool;
 	
 	/**
 	 * 
 	 * @param	fileURI A string, expressed as a file:/// URI, that specifies the file for the SWF file to import.
 	 */
-	@:require(jsfl_version < CC)
+	@:jsflVersion({ removed: CC })
 	public function importSWF(fileURI:String):Void;
 	
 	/**
@@ -566,7 +566,7 @@ frames, with each frame as a separate PNG file (false).
 	 * @param	URI the absolute path to the cue point XML file.
 	 * @return The return value is the same as the string serialized in the Cue Point property of the object containing the instance of an FLVPlayback Component.
 	 */
-	@:require(jsfl_version >= CS5 && jsfl_version < CC)
+	@:jsflVersion({ added: CS5, removed: CC })
 	public function loadCuePointXML(URI: String): String;
 
 	/**
@@ -574,7 +574,7 @@ frames, with each frame as a separate PNG file (false).
 	 * @param	bWidth A Boolean value that, when set to true, causes the method to make the widths of the selected items the same.
 	 * @param	bHeight A Boolean value that, when set to true, causes the method to make the heights of the selected items the same.
 	 * @param	bUseDocumentBounds A Boolean value that, when set to true, causes the method to match the size of the objects to the bounds of the document. Otherwise, the method uses the bounds of the largest object.
-	 */
+	 */	
 	public function match(bWidth:Bool, bHeight:Bool, ?bUseDocumentBounds:Bool = false):Void;
 
 	/**
@@ -588,8 +588,8 @@ frames, with each frame as a separate PNG file (false).
 	/**
 	 * Performs a double mouse click from the Selection tool.
 	 * @param	position A pair of floating-point values that specify the x and y coordinates of the click in pixels.
-	 * @param	bAltDown A Boolean value that records whether the Alt key is down (true) at the time of the event.
-	 * @param	bShiftDown A Boolean value that records whether the Shift key was down (true) when the event occurred.
+	 * @param	bAltDown A Boolean value that records whether the Alt key is down(true) at the time of the event.
+	 * @param	bShiftDown A Boolean value that records whether the Shift key was down(true) when the event occurred.
 	 * @param	bShiftSelect A Boolean value that indicates the state of the application preference Shift select: true for on; false for off.
 	 */
 	public function mouseDblClk(position: JSFLPoint, bAltDown: Bool, bShiftDown: Bool, bShiftSelect: Bool):Void;
@@ -614,7 +614,7 @@ frames, with each frame as a separate PNG file (false).
 	public function optimizeCurves(smoothing:Int,bUseMultiplePasses:Bool):Void;
 	
 	/**
-	 * Publishes the document according to the active publish settings (File > Publish Settings); equivalent to selecting File > Publish.
+	 * Publishes the document according to the active publish settings(File > Publish Settings); equivalent to selecting File > Publish.
 	 */
 	public function publish():Void;
 	
@@ -692,15 +692,15 @@ frames, with each frame as a separate PNG file (false).
 	 * 
 	 * @return
 	 */
-	@:require(jsfl_version < CS5)
+	@:jsflVersion({ removed: CS5 })
 	public function revertToLastVersion():Bool;
 	
 	/**
 	 * Applies a 3D rotation to the selection.
 	 * @param	xyzCoordinate An XYZ coordinate point that specifies the axes for 3D rotation.
-	 * @param	bGlobalTransform A Boolean value that specifies whether the transformation mode should be global (true) or local (false).
+	 * @param	bGlobalTransform A Boolean value that specifies whether the transformation mode should be global(true) or local(false).
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public function rotate3DSelection(xyzCoordinate: JSFLPoint3D, bGlobalTransform: Bool):Void;
 	
 	/**
@@ -708,7 +708,7 @@ frames, with each frame as a separate PNG file (false).
 	 * @param	angle A floating-point value that specifies the angle of the rotation.
 	 * @param	rotationPoint A string that specifies which side of the bounding box to rotate. Acceptable values are "top right", "top left", "bottom right", "bottom left", "top center", "right center", "bottom center", and "left center".
 	 */
-	public function rotateSelection(angle:Float, ?rotationPoint:String):Void;
+	public function rotateSelection(angle:Float,?rotationPoint:String):Void;
 	
 
 	/**
@@ -724,7 +724,7 @@ frames, with each frame as a separate PNG file (false).
 box. If  false and the file was never saved, the file is not saved. The default value is  true.
 	 * @return A Boolean value:  true if the save-and-compact operation completes successfully;  false otherwise.
 	 */
-	@:require(jsfl_version < CS6)
+	@:jsflVersion({ removed: CS6 })
 	public function saveAndCompact(?bOkToSaveAs:Bool):Bool;
 
 	/**
@@ -733,14 +733,14 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	 * @param	selectionOnly A boolean indicating whether only the current Stage selection should be saved to the new FLA file.
 	 * @return A Boolean value: true if the saveAsCopy operation completes successfully; false otherwise.
 	 */
-	@:require(jsfl_version >= CS6)
+	@:jsflVersion({ added: CS6 })
 	public function saveAsCopy(URI:String, ?selectionOnly:Bool = false):Bool;
 	
 	/**
 	 * 
 	 * @return
 	 */
-	@:require(jsfl_version < CS5)
+	@:jsflVersion({ removed: CS5 })
 	public function saveAVersion():Bool;
 	
 	/**
@@ -752,7 +752,7 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	public function scaleSelection(xScale:Float, yScale:Float, ?whichCorner:String):Void;
 	
 	/**
-	 * Selects all items on the Stage; equivalent to pressing Control+A (Windows) or Command+A (Macintosh) or selecting Edit > Select All.
+	 * Selects all items on the Stage; equivalent to pressing Control+A(Windows) or Command+A(Macintosh) or selecting Edit > Select All.
 	 */
 	public function selectAll():Void;
 	
@@ -799,15 +799,15 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	 * @param	startIndex An integer value that specifies the index of the first character that is affected.
 	 * @param	endIndex An integer value that specifies the index of the last character that is affected.
 	 * @return A Boolean value: true if at least one text attribute property is changed; false otherwise.
-	 */
+	 */	
 	public function setElementTextAttr(attrName:String, attrValue:Dynamic, ?startIndex:Null<Int>, ?endIndex:Null<Int>):Bool;
 	
 	/**
 	 * Changes the selection and the tools panel to the specified color.
 	 * @param	color The color of the fill, in one of the following formats:
-		* A string in the format "#RRGGBB" or "#RRGGBBAA"
-		* A hexadecimal number in the format 0xRRGGBB
-		* An integer that represents the decimal equivalent of a hexadecimal number
+		• A string in the format "#RRGGBB" or "#RRGGBBAA"
+		• A hexadecimal number in the format 0xRRGGBB
+		• An integer that represents the decimal equivalent of a hexadecimal number
 		If set to null, no fill color is set, which is the same as setting the Fill color swatch in the user interface to no fill.
 	 */
 	public function setFillColor(color:Dynamic):Void;
@@ -828,22 +828,22 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	
 	/**
 	 * Sets the opacity of the instance.
-	 * @param	opacity An integer between 0 (transparent) and 100 (completely saturated) that adjusts the transparency of the instance.
+	 * @param	opacity An integer between 0(transparent) and 100(completely saturated) that adjusts the transparency of the instance.
 	 */
 	public function setInstanceAlpha(opacity:Int):Void;
 	
 	/**
 	 * Sets the brightness for the instance.
-	 * @param	brightness An integer that specifies brightness as a value from -100 (black) to 100 (white).
+	 * @param	brightness An integer that specifies brightness as a value from -100(black) to 100(white).
 	 */
 	public function setInstanceBrightness(brightness:Int):Void;
 	
 	/**
 	 * Sets the tint for the instance. 
 	 * @param	color The color of the tint, in one of the following formats:
-		* A string in the format "#RRGGBB" or "#RRGGBBAA"
-		* A hexadecimal number in the format 0xRRGGBB
-		* An integer that represents the decimal equivalent of a hexadecimal number
+		• A string in the format "#RRGGBB" or "#RRGGBBAA"
+		• A hexadecimal number in the format 0xRRGGBB
+		• An integer that represents the decimal equivalent of a hexadecimal number
 	 * @param	strength An integer between 0 and 100 that specifies the opacity of the tint.
 	 */
 	public function setInstanceTint(color:Dynamic, strength :Int):Void;
@@ -881,9 +881,9 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	 * Enables or disables publishing of persistent data for an entire document.
 	 * If set to "_EMBED_SWF_", the persistent data will be embedded in the SWF file every time a document is published.
 	 * @param	format A string that specifies the publishing format.
-	 * @param	publish A boolean that indicates whether to enable or disable publishing of persistent data for the specified format.
+	 * @param	publish A boolean that indicates whether to enable or disable publishing of persistent data for the specified format. 
 	 */
-	@:require(jsfl_version >= CC)
+	@:jsflVersion({ added: CC })
 	public function setPublishDocumentData(format:String, publish:Bool):Void;
 
 
@@ -897,15 +897,15 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	/**
 	 * Moves and resizes the selection in a single operation.
 	 * @param	boundingRectangle A rectangle that specifies the new location and size of the selection.
-	 * @param	bContactSensitiveSelection A Boolean value that specifies whether the Contact Sensitive selection mode is enabled (true) or disabled (false) during object selection.
+	 * @param	bContactSensitiveSelection A Boolean value that specifies whether the Contact Sensitive selection mode is enabled(true) or disabled(false) during object selection.
 	 */
 	public function setSelectionBounds(boundingRectangle:JSFLRect, ?bContactSensitiveSelection:Bool = false):Void;
 	
 	/**
 	 * Draws a rectangular selection marquee relative to the Stage, using the specified coordinates.
 	 * @param	rect A rectangle object to set as selected.
-	 * @param	bReplaceCurrentSelection A Boolean value that specifies whether the method replaces the current selection (true) or adds to the current selection (false).
-	 * @param	bContactSensitiveSelection A Boolean value that specifies whether the Contact Sensitive selection mode is enabled (true) or disabled (false) during object selection.
+	 * @param	bReplaceCurrentSelection A Boolean value that specifies whether the method replaces the current selection(true) or adds to the current selection(false).
+	 * @param	bContactSensitiveSelection A Boolean value that specifies whether the Contact Sensitive selection mode is enabled(true) or disabled(false) during object selection.
 	 */
 	public function setSelectionRect(rect:Rectangle, ?bReplaceCurrentSelection:Bool = true, ?bContactSensitiveSelection:Bool = false):Void;
 	
@@ -913,22 +913,22 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	 * Specifies the vanishing point for viewing 3D objects.
 	 * @param	point A point that specifies the x and y coordinates of the location at which to set the vanishing point for viewing 3D objects.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public function setStageVanishingPoint(point: JSFLPoint):Void;
 	
 	/**
 	 * Specifies the perspective angle for viewing 3D objects.
 	 * @param	angle A floating point value between 0.0 and 179.0.
-	 */
-	@:require(jsfl_version >= CS4)
+	 */	
+	@:jsflVersion({ added: CS4 })
 	public function setStageViewAngle(angle:Float):Void;
 	
 	/**
 	 * Sets the color, width, and style of the selected strokes.
 	 * @param	color The color of the stroke, in one of the following formats:
-		* A string in the format "#RRGGBB" or "#RRGGBBAA"
-		* A hexadecimal number in the format 0xRRGGBB
-		* An integer that represents the decimal equivalent of a hexadecimal number
+		• A string in the format "#RRGGBB" or "#RRGGBBAA"
+		• A hexadecimal number in the format 0xRRGGBB
+		• An integer that represents the decimal equivalent of a hexadecimal number
 	 * @param	size A floating-point value that specifies the new stroke size for the selection.
 	 * @param	strokeType A string that specifies the new type of stroke for the selection. Acceptable values are "hairline", "solid", "dashed", "dotted", "ragged", "stipple", and "hatched". TODO
 	 */
@@ -937,9 +937,9 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	/**
 	 * Changes the stroke color of the selection to the specified color.
 	 * @param	The color of the stroke, in one of the following formats:
-		* A string in the format "#RRGGBB" or "#RRGGBBAA"
-		* A hexadecimal number in the format 0xRRGGBB
-		* An integer that represents the decimal equivalent of a hexadecimal number
+		• A string in the format "#RRGGBB" or "#RRGGBBAA"
+		• A hexadecimal number in the format 0xRRGGBB
+		• An integer that represents the decimal equivalent of a hexadecimal number
 	 */
 	public function setStrokeColor(color:Dynamic):Void;
 	
@@ -973,7 +973,7 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	/**
 	 * Inserts a string of text.
 	 * @param	text A string of the characters to insert in the text field.
-	 * @param	startIndex An integer that specifies the first character to replace. The first character position is 0 (zero).
+	 * @param	startIndex An integer that specifies the first character to replace. The first character position is 0(zero).
 	 * @param	endIndex An integer that specifies the last character to replace.
 	 * @return A Boolean value: true if the text of at least one text string is set; false otherwise.
 	 */
@@ -981,7 +981,7 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	
 	/**
 	 * Moves the transformation point of the current selection.
-	 * @param	transformationPoint A point (for example, {x:10, y:20}, where x and y are floating-point numbers) that specifies values for the transformation point.
+	 * @param	transformationPoint A point(for example, {x:10, y:20}, where x and y are floating-point numbers) that specifies values for the transformation point.
 	 */
 	public function setTransformationPoint(transformationPoint:JSFLPoint):Void;
 	
@@ -992,7 +992,7 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	 * @param	ySkew A floating-point number that specifies the amount of y by which to skew, measured in degrees.
 	 * @param	whichEdge A string that specifies the edge where the transformation occurs; if omitted, skew occurs at the transformation point. Acceptable values are "top center", "right center", "bottom center", and "left center". 
 	 */
-	public function skewSelection(xSkew:Float, ySkew:Float, ?whichEdge:String):Void;
+	public function skewSelection(xSkew:Float,ySkew:Float,?whichEdge:String):Void;
 	
 	/**
 	 * Smooths the curve of each selected fill outline or curved line.
@@ -1026,7 +1026,7 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	 * 
 	 * @return
 	 */
-	@:require(jsfl_version < CS5)
+	@:jsflVersion({ removed: CS5 })
 	public function synchronizeWithHeadVersion():Bool;
 	
 	/**
@@ -1051,10 +1051,10 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	
 	/**
 	 * Performs a general transformation on the current selection by applying the matrix specified in the arguments.
-	 * @param	a A floating-point number that specifies the (0,0) element of the transformation matrix.
-	 * @param	b A floating-point number that specifies the (0,1) element of the transformation matrix.
-	 * @param	c A floating-point number that specifies the (1,0) element of the transformation matrix.
-	 * @param	d A floating-point number that specifies the (1,1) element of the transformation matrix.
+	 * @param	a A floating-point number that specifies the(0,0) element of the transformation matrix.
+	 * @param	b A floating-point number that specifies the(0,1) element of the transformation matrix.
+	 * @param	c A floating-point number that specifies the(1,0) element of the transformation matrix.
+	 * @param	d A floating-point number that specifies the(1,1) element of the transformation matrix.
 	 */
 	public function transformSelection(a:Float, b:Float, c:Float, d:Float):Void;
 	
@@ -1062,15 +1062,15 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	 * Sets the XYZ position around which the selection is translated or rotated. 
 	 * @param	xyzCoordinate An XYZ coordinate that specifies the center point for 3D rotation or translation.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public function translate3DCenter(xyzCoordinate:JSFLPoint3D):Void;
 	
 	/**
 	 * Applies a 3D translation to the selection. This method is available only for movie clips.
 	 * @param	xyzCoordinate An XYZ coordinate that specifies the axes for 3D translation.
-	 * @param	bGlobalTransform A Boolean value that specifies whether the transformation mode should be global (true) or local (false).
+	 * @param	bGlobalTransform A Boolean value that specifies whether the transformation mode should be global(true) or local(false).
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public function translate3DSelection(xyzCoordinate: JSFLPoint3D, ?bGlobalTransform:Bool = false):Void;
 	
 	/**
@@ -1097,10 +1097,10 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	
 	/**
 	 * A string that is equivalent to the Name field in the Accessibility panel.
-	 */
+	 */	
 	public var accName(default, default):String;
 		
-	@:require(jsfl_version < CC)
+	@:jsflVersion({ removed: CC })
 	public var activeEffect:Effect;
 	
 	/**
@@ -1161,7 +1161,7 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	/**
 	 * 
 	 */
-	@:require(jsfl_version < CC)
+	@:jsflVersion({ removed: CC })
 	public var drawingLayer: DrawingLayer;
 	
 	/**
@@ -1172,7 +1172,7 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	/**
 	 * A string that contains a list of items in the document’s ActionScript 3.0 External library path, which specifies the location of SWC files used as runtime shared libraries.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public var externalLibraryPath(default, default):String;
 
 	/**
@@ -1186,12 +1186,12 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	public var frameRate(default, default):Float;
 	
 	/**
-	 * An integer that specifies the height of the document (Stage) in pixels. 
+	 * An integer that specifies the height of the document(Stage) in pixels. 
 	 */
 	public var height(default, default):Int;
 	
 	/**
-	 * A unique integer (assigned automatically) that identifies a document during a Flash session.
+	 * A unique integer(assigned automatically) that identifies a document during a Flash session.
 	 */
 	public var id(default, default):Int;
 	
@@ -1203,7 +1203,7 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	/**
 	 * A string that contains a list of items in the document’s ActionScript 3.0 Library path, which specifies the location of SWC files or folders containing SWC files.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public var libraryPath(default, default):String;
 	
 	/**
@@ -1212,14 +1212,14 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	public var livePreview(default, default):Bool;
 	
 	/**
-	 * Read-only; a string that represents the name of a document (FLA file).
+	 * Read-only; a string that represents the name of a document(FLA file).
 	 */
 	public var name(default, null):String;
 	
 	/**
 	 * A string that corresponds to the global Classpath setting in the ActionScript 2.0 Settings dialog box.
 	 */
-	@:require(jsfl_version < CC)
+	@:jsflVersion({ removed: CC })
 	public var packagePaths:Array<String>;
 	
 	/**
@@ -1230,7 +1230,7 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	/**
 	 * Read-only; a string that represents the path of the document, expressed as a file:/// URI.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public var pathURI(default, null):String;
 	
 	/**
@@ -1241,7 +1241,7 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	/**
 	 * Read-only property; the current ScreenOutline object for the document.
 	 */
-	@:require(jsfl_version < CC)
+	@:jsflVersion({ removed: CC })
 	public var screenOutline:ScreenOutline;
 	
 	/**
@@ -1257,17 +1257,17 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	/**
 	 * A string that contains a list of items in the document’s ActionScript 3.0 Source path, which specifies the location of ActionScript class files.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public var sourcePath(default, default):String;
 	
 	/**
 	 * An integer that returns the JPEG Quality setting from the current Publish Profile in the document.
 	 */
-	@:require(jsfl_version >= CS6)
+	@:jsflVersion({ added: CS6 })
 	public var swfJPEGQuality(default, default):Int;
 
 	/**
-	 * Read-only; an array of Timeline objects (see Timeline object).
+	 * Read-only; an array of Timeline objects(see Timeline object).
 	 */
 	public var timelines(default, null):Array<Timeline>;
 	
@@ -1277,7 +1277,7 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	public var viewMatrix(default, null):Matrix;
 	
 	/**
-	 * An integer that specifies the width of the document (Stage) in pixels.
+	 * An integer that specifies the width of the document(Stage) in pixels.
 	 */
 	public var width(default, default):Int;
 	

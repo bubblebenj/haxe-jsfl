@@ -4,7 +4,8 @@ package jsfl;
  * The Project object represents a Flash Project (FLP) file.
  */
 @:native("Project")
-@:require(jsfl_version >= FlashPro8 && jsfl_version < CS4)
+@:build(jsfl.haxe.Config.build())
+@:jsflVersion({ added: FlashPro8, removed: CS4 })
 extern class Project {
 	
 	/**

@@ -6,6 +6,7 @@ package jsfl;
  * See also frame.soundLibraryItem and Item object.
  */
 @:native("SoundItem")
+@:build(jsfl.haxe.Config.build())
 extern class SoundItem extends Item {
 	
 	/**
@@ -13,7 +14,7 @@ extern class SoundItem extends Item {
 	 * @param	fileURI
 	 * @return
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public function exportToFile(fileURI:String):Bool;
 	
 	/**
@@ -39,19 +40,19 @@ extern class SoundItem extends Item {
 	/**
 	 * Read-only; a string containing a hexadecimal number that represents the number of seconds that have elapsed between January 1, 1970, and the modification date of the original file (on disk) at the time the file was imported to the library.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public var fileLastModifiedDate(default, null):String;
 	
 	/**
 	 * Read-only; the modification date of the sound item in the Library.
 	 */
-	@:require(jsfl_version >= CS6)
+	@:jsflVersion({ added: CS6 })
 	public var lastModifiedDate(default, null):String;
 	
 	/**
 	 * Read-only; a string that specifies whether the specified item was imported as an MP3 file.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public var originalCompressionType(default, null):String;
 	
 	/**
@@ -67,19 +68,19 @@ extern class SoundItem extends Item {
 	/**
 	 * Read-only; a Boolean value that specifies whether the file that was imported to the Library still exists in the location from where it was imported.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public var sourceFileExists(default, null):Bool;
 	
 	/**
 	 * Read-only; a Boolean value that specifies whether the file modification date of the Library item is the same as the modification date on disk of the file that was imported.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public var sourceFileIsCurrent(default, null):Bool;
 	
 	/**
 	 * Read-only; a string, expressed as a file:/// URI, that represents the path and name of the file that was imported into the Library.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public var sourceFilePath(default, null):String;
 	
 	/**

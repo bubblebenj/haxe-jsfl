@@ -9,6 +9,7 @@ import jsfl.Math;
  * The library object contains an array of items of different types, including symbols, bitmaps, sounds, and video.
  */
 @:native("Library")
+@:build(jsfl.haxe.Config.build())
 extern class Library {
 
 	/**
@@ -59,7 +60,7 @@ and path using slash notation.
 	 * @param	namePath A string that specifies the name and, optionally, the path of the folder to expand or collapse. If this parameter is not specified, the method applies to the currently selected folder.
 	 * @return A Boolean value:  true if the item is successfully expanded or collapsed;  false if unsuccessful or the specified item is not a folder.
 	 */
-	@:require(jsfl_version < CC)
+	@:jsflVersion({ removed: CC })
 	public function expandFolder(?bExpand:Bool=false, ?bRecurseNestedParents:Bool=false, ?namePath:String):Bool;
 	
 	/**
@@ -97,7 +98,7 @@ and path using slash notation.
 	 * @param	libName A string that specifies the library name for the created item. If the name is already used, the method creates
 an alternate name. This parameter is optional.
 	 */
-	@:require(jsfl_version < CC)
+	@:jsflVersion({ removed: CC })
 	public function importEmbeddedSWF(linkageName:String,swfData:Dynamic,?libName:String):Void;
 	
 	/**
@@ -129,6 +130,7 @@ an alternate name. This parameter is optional.
 	 * @return A Boolean value of true if the name of the item changes successfully, false otherwise. If multiple items are selected, no names are changed, and the return value is false (to match user interface behavior).
 	 */
 	public function renameItem(name:String):Bool;
+
 	
 	/**
 	 * Selects or deselects all items in the library.
@@ -172,7 +174,7 @@ an alternate name. This parameter is optional.
 	/**
 	 * An array of library Items that are not used in the document.
 	 */
-	@:require(jsfl_version >= CC)
+	@:jsflVersion({ added: CC })
 	public var unusedItems(default, default):Array<Item>;
 	
 }

@@ -1,15 +1,17 @@
 package jsfl;
 
+
 /**
  * The FLfile object lets you write Flash extensions that can access, modify, and remove files and folders on the local file system. The FLfile API is provided in the form of an extension to the JavaScript API.
  * This extension is called a shared library and is located in the following folder:
- *	 * Windows 7 and 8:
+ *	 • Windows 7 and 8:
  * 		boot drive\Users\username\AppData\Local\Adobe\Flash CC\language\Configuration\External Libraries\FLfile.dll
- *	 * Mac OS X:
+ *	 • Mac OS X:
  * 		Macintosh HD/Users/username/Library/Application Support/Adobe/Flash CC/language/Configuration/ExternalLibraries/FLfile.dll
  *	Note: Don't confuse the shared libraries that contain symbols in your Flash documents with the JavaScript API shared libraries. They are two different things.
  */
 @:native("FLfile")
+@:build(jsfl.haxe.Config.build())
 extern class FLfile {
 
 	/**
@@ -75,6 +77,7 @@ extern class FLfile {
 	 * @return An integer that represents the size of the specified file, in bytes, or 0 if the file doesn’t exist.
 	 */
 	public static function getSize(fileURI:String):Int;
+
 	
 	/**
 	 * Lists the contents of a folder.
@@ -92,7 +95,7 @@ names. If omitted, both filenames and folder names are returned. Acceptable valu
 	 * @param	fileName A string, expressed in a platform-specific format, specifying the filename you want to convert.
 	 * @return A string expressed as a file:/// URI.
 	 */	
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public static function platformPathToURI(fileName:String):String;
 
 	/**
@@ -123,7 +126,7 @@ names. If omitted, both filenames and folder names are returned. Acceptable valu
 	 * @param	fileURI A string, expressed as a file:/// URI, specifying the filename you want to convert.
 	 * @return A string representing a platform-specific path.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public static function uriToPlatformPath(fileURI: String): String;
 	
 	/**
@@ -133,6 +136,6 @@ names. If omitted, both filenames and folder names are returned. Acceptable valu
 	 * @param	strAppendMode An optional string with the value "append", which specifies that you want to append textToWrite to the existing file. If omitted, fileURI is overwritten with textToWrite.
 	 * @return A Boolean value of true if successful; false otherwise.
 	 */
-	public static function write(fileURI: String, textToWrite: String, ?strAppendMode: String=null): Bool;
-	
+	public static function write(fileURI: String, textToWrite: String, ?strAppendMode: String = null): Bool;
+
 }

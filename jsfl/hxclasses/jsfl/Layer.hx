@@ -4,12 +4,13 @@ package jsfl;
  * The Layer object represents a layer in the timeline. The timeline.layers property contains an array of Layer objects, which can be accessed by fl.getDocumentDOM().getTimeline().layers.
  */
 @:native("Layer")
+@:build(jsfl.haxe.Config.build())
 extern class Layer {
 
 	/**
 	 * The layer type: "none", "motion object", or "IK pose".
 	 */
-	@:require(jsfl_version >= CS6)
+	@:jsflVersion({ added: CS6 })
 	public var animationType(default, default):String;
 	
 	/**

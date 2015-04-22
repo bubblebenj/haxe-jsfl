@@ -4,8 +4,9 @@ package jsfl;
  * The BitmapInstance object is a subclass of the Instance object and represents a bitmap in a frame (see Instance object).
  */
 @:native("BitmapInstance")
+@:build(jsfl.haxe.Config.build())
 extern class BitmapInstance extends Instance {
-	
+
 	/**
 	 * Lets you create bitmap effects by getting the bits out of the bitmap, manipulating them, and then returning them to Flash.
 	 * @return An object that contains width, height, depth, bits, and, if the bitmap has a color table, cTab properties.

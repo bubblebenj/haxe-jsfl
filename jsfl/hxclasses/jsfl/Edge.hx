@@ -6,6 +6,7 @@ import jsfl.Math;
  * The Edge object represents an edge of a shape on the Stage.
  */
 @:native("Edge")
+@:build(jsfl.haxe.Config.build())
 extern class Edge {
 
 	/**
@@ -39,7 +40,7 @@ extern class Edge {
 	/**
 	 * An integer that specifies the index value of a cubic segment of the edge.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public var cubicSegmentIndex(default, null):Int;
 	
 	/**
@@ -55,7 +56,7 @@ extern class Edge {
 	/**
 	 * A Stroke object.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public var stroke(default, default):Stroke;
 
 }

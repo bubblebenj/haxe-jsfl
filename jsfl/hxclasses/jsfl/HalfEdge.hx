@@ -10,6 +10,7 @@ package jsfl;
  * One half edge represents one side of the edge; the other half edge represents the other side.
  */
 @:native("HalfEdge")
+@:build(jsfl.haxe.Config.build())
 extern class HalfEdge {
 
 	/**
@@ -50,7 +51,7 @@ extern class HalfEdge {
 	/**
 	 * Read-only property; an integer with a value of 0 or 1 that specifies the index for this HalfEdge object in the parent edge.
 	 */
-	@:require(jsfl_version < CC)
+	@:jsflVersion({ added: CC })
 	public var index(default, null):Int;
 
 }

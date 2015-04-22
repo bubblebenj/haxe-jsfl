@@ -5,7 +5,8 @@ package jsfl;
  * This object is a property of the Project object (see project.items ).
  */
 @:native("ProjectItem")
-@:require(jsfl_version >= FlashPro8 && jsfl_version < CS4)
+@:build(jsfl.haxe.Config.build())
+@:jsflVersion({ added: FlashPro8, removed: CS4 })
 extern class ProjectItem {
 	
 	/**

@@ -1,8 +1,7 @@
 package jsfl;
 
 /**
- * a string that specifies the type of element.
- * The value is one of the following: "undefined", "component", "movie clip", "graphic", "button", "folder", "font", "sound", "bitmap", "compiled clip", "screen", or "video". 
+ * a string that specifies the type of element. The value is one of the following: "undefined", "component", "movie clip", "graphic", "button", "folder", "font", "sound", "bitmap", "compiled clip", "screen", or "video". 
  */
 @:fakeEnum(String)
 extern enum ItemType {

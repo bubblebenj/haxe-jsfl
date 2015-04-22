@@ -6,25 +6,26 @@ import jsfl.Math;
  * The Frame object represents frames in the layer.
  */
 @:native("Frame")
+@:build(jsfl.haxe.Config.build())
 extern class Frame {
 
 	/**
 	 * Converts the selected motion object to a 2D motion object.
 	 */
-	@:require(jsfl_version >= CS5)
+	@:jsflVersion({ added: CS5 })
 	public function convertMotionObjectTo2D():Void;
 
 	/**
 	 * Converts the selected motion object to a 3D motion object.
 	 */
-	@:require(jsfl_version >= CS5)
+	@:jsflVersion({ added: CS5 })
 	public function convertMotionObjectTo3D():Void;
 	
 	/**
 	 * Converts the current frame to Frame-by-Frame Animation
 	 * @return Returns boolean. Returns true if the frame contains animation that can be converted to frame by frame animation.
 	 */
-	@:require(jsfl_version >= CC)
+	@:jsflVersion({ added: CC })
 	public function convertToFrameByFrameAnimation():Bool;
 	
 	/**
@@ -32,63 +33,63 @@ extern class Frame {
 	 * @param	property An optional string that specifies the property for which you want to return the custom ease value. Acceptable values are "all", "position", "rotation", "scale", "color", and "filters".
 	 * @return Returns an array of JavaScript objects, each of which has an x and y property.
 	 */
-	@:require(jsfl_version >= FlashPro8)
+	@:jsflVersion({ added: FlashPro8 })
 	public function getCustomEase(?property:String="all"):Array<JSFLPoint>;
 	
 	/**
 	 * Returns the motion XML from the selected motion object.
 	 * @return Returns a string of the motion XML from the selected motion object.
 	 */
-	@:require(jsfl_version >= CS5)
+	@:jsflVersion({ added: CS5 })
 	public function getMotionObjectXML():Dynamic;
 	
 	/**
 	 * Gets the sound envelope data of any frame.
 	 * @return Returns a Sound object.
 	 */
-	@:require(jsfl_version >= CC)
+	@:jsflVersion({ added: CC })
 	public function getSoundEnvelope():Dynamic;
 	
 	/**
 	 * Gets the limits(start, end) for a custom Sound envelope that is applied to the frame sound
 	 * @return Returns a structure that contain start and end fields.
 	 */
-	@:require(jsfl_version >= CC)
+	@:jsflVersion({ added: CC })
 	public function getSoundEnvelopeLimits():{start:Dynamic, end:Dynamic};
 	
 	/**
 	 * Informs you whether or not the currrent selection has a motion tween.
 	 * @return a Boolean value. Lets you know whether the current selection includes a motion path.
 	 */
-	@:require(jsfl_version >= CS5)
+	@:jsflVersion({ added: CS5 })
 	public function hasMotionPath():Bool;
 	
 	/**
 	 * Informs you whether or not the currrent selection is a 3D motion object.
 	 * @return a Boolean value. Lets you know whether the current selection is a 3D motion object.
 	 */
-	@:require(jsfl_version >= CS5)
+	@:jsflVersion({ added: CS5 })
 	public function is3DMotionObject():Bool;
 	
 	/**
 	 * Informs you whether the frame contains any elements.
 	 * @return a Boolean value.
 	 */
-	@:require(jsfl_version >= CC)
+	@:jsflVersion({ added: CC })
 	public function isEmpty():Bool;
 	
 	/**
 	 * Informs you whether or not the currrent selection is a motion object.
 	 * @return a Boolean value.
 	 */
-	@:require(jsfl_version >= CS5)
+	@:jsflVersion({ added: CS5 })
 	public function isMotionObject():Bool;
 	
 	/**
 	 * Selects or deselects the motion path of the current motion object.
 	 * @return a Boolean value. Selects(true) or deselects(false)
 	 */
-	@:require(jsfl_version >= CS5)
+	@:jsflVersion({ added: CS5 })
 	public function selectMotionPath():Bool;
 	
 	/**
@@ -96,7 +97,7 @@ extern class Frame {
 	 * @param	property A string that specifies the property the ease curve should be used for. Acceptable values are "all", "position", "rotation", "scale", "color", and "filters" 
 	 * @param	easeCurve An array of objects that defines the ease curve. Each array element must be a JavaScript object with x and y properties.
 	 */
-	@:require(jsfl_version >= FlashPro8)
+	@:jsflVersion({ added: FlashPro8 })
 	public function setCustomEase(property: String, easeCurve: Array<JSFLPoint>):Void;
 	
 	/**
@@ -104,7 +105,7 @@ extern class Frame {
 	 * @param	duration Specifies the number of frames for the tween span of the selected motion object.
 	 * @param	stretchExistingKeyframes A boolean value that determines whether the tween span is stretched, or if frames are added, to the end of the last frame.
 	 */
-	@:require(jsfl_version >= CS5)
+	@:jsflVersion({ added: CS5 })
 	public function setMotionObjectDuration(duration:Int, stretchExistingKeyframes:Bool):Void;
 	
 	/**
@@ -112,21 +113,21 @@ extern class Frame {
 	 * @param	xmlstr A string value that specifies the XML string.
 	 * @param	endAtCurrentLocation A boolean value that determines whether the tween starts or ends at the current position.
 	 */
-	@:require(jsfl_version >= CS5)
+	@:jsflVersion({ added: CS5 })
 	public function setMotionObjectXML(xmlstr:String, endAtCurrentLocation:Bool):Void;
 	
 	/**
 	 * Sets the sound envelope data of a frame.
 	 * @param	soundEnv A sound envelope.
 	 */
-	@:require(jsfl_version >= CC)
+	@:jsflVersion({ added: CC })
 	public function setSoundEnvelope(soundEnv:Array<{mark: Dynamic, leftChannel: Dynamic, rightChannel: Dynamic}>):Void;
 	
 	/**
 	 * Sets the sound envelope limits of any frame with a sound file.
 	 * @param	limits A structure that contains start and end fields that signify the limits for a custom sound envelope.
 	 */
-	@:require(jsfl_version >= CC)
+	@:jsflVersion({ added: CC })
 	public function setSoundEnvelopeLimits(limits:{start:Dynamic, end:Dynamic}):Void;
 	
 	/**
@@ -147,7 +148,7 @@ extern class Frame {
 	/**
 	 * A Boolean value that specifies whether the frame gets its ease information from the custom ease curve.
 	 */
-	@:require(jsfl_version >= FlashPro8)
+	@:jsflVersion({ added: FlashPro8 })
 	public var hasCustomEase(default, default):Bool;
 	
 	/**
@@ -238,7 +239,7 @@ extern class Frame {
 	/**
 	 * Assigns an instance name to the specified motion object.
 	 */
-	@:require(jsfl_version >= CS5)
+	@:jsflVersion({ added: CS5 })
 	public var tweenInstanceName(default, default):String;
 	
 	/**
@@ -249,7 +250,7 @@ extern class Frame {
 	/**
 	 * A Boolean value that specifies whether a single custom ease curve is used for easing information for all properties.
 	 */
-	@:require(jsfl_version >= FlashPro8)
+	@:jsflVersion({ added: FlashPro8 })
 	public var useSingleEaseCurve(default, default):Bool;
 	
 }

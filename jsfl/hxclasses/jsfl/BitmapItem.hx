@@ -5,6 +5,7 @@ package jsfl;
  * The BitmapItem object is a subclass of the Item object (see Item object).
  */
 @:native("BitmapItem")
+@:build(jsfl.haxe.Config.build())
 extern class BitmapItem extends Item {
 	
 	/**
@@ -13,8 +14,8 @@ extern class BitmapItem extends Item {
 	 * @param	quality A number, from 1-100, that determines the quality of the exported image file. A higher number indicates higher quality. Available starting CS6.
 	 * @return A Boolean value of true if the file was exported successfully; false otherwise.
 	 */
-	@:require(jsfl_version >= CS4)
-	public function exportToFile(fileURI: String, ?quality: Int=80): Bool;
+	@:jsflVersion({ added: CS4 })
+	public function exportToFile(fileURI: String, ?quality: Int): Bool;
 	
 	/**
 	 * A Boolean value that specifies whether to allow smoothing of a bitmap (true) or not (false).
@@ -29,31 +30,31 @@ extern class BitmapItem extends Item {
 	/**
 	 * Read-only; The number of seconds that have elapsed between January 1, 1970 and the modification date of the original file.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public var fileLastModifiedDate(default, null):String;
 
 	/**
 	 * Read-only; A Boolean value indicating whether the bitmap has an alpha channel.
 	 */
-	@:require(jsfl_version >= CS6)
+	@:jsflVersion({ added: CS6 })
 	public var hasValidAlphaLayer(default, null):Bool;
 
 	/**
 	 * Read-only; Specifies the width of the bitmap, in pixels.
 	 */
-	@:require(jsfl_version >= CS6)
+	@:jsflVersion({ added: CS6 })
 	public var hPixels(default, null):Int;
 	
 	/**
 	 * Read-only; The modification date of the bitmap item in the Library.
 	 */
-	@:require(jsfl_version >= CS6)
+	@:jsflVersion({ added: CS6 })
 	public var lastModifiedDate(default, null):String;
 	
 	/**
 	 * Read-only; Specifies whether the item was imported as an jpeg file.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public var originalCompressionType(default, null):CompressionType;
 	
 	/**
@@ -65,25 +66,25 @@ extern class BitmapItem extends Item {
 	/**
 	 * Read-only; Specifies whether the file that was imported to the Library still exists in the location from where it was imported.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public var sourceFileExists(default, null):Bool;
 	
 	/**
 	 * Read-only; Specifies whether the file modification date of the Library item is the same as the modification date on disk of the file that was imported.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public var sourceFileIsCurrent(default, null):Bool;
 	
 	/**
 	 * Read-only; The path and name of the file that was imported into the Library.
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public var sourceFilePath(default, null):String;
 	
 	/**
 	 * A Boolean value that specifies whether deblocking is enabled (true) or not (false).
 	 */
-	@:require(jsfl_version >= CS4)
+	@:jsflVersion({ added: CS4 })
 	public var useDeblocking(default, default):Bool;
 	
 	/**
@@ -94,7 +95,7 @@ extern class BitmapItem extends Item {
 	/**
 	 * Read-only; Specifies the height of the bitmap, in pixels.
 	 */
-	@:require(jsfl_version >= CS6)
+	@:jsflVersion({ added: CS6 })
 	public var vPixels(default, null):Int;
 
 }

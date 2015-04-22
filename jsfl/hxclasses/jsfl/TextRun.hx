@@ -5,6 +5,7 @@ package jsfl;
  * This object is a property of the Text object (text.textRuns).
  */
 @:native("TextRun")
+@:build(jsfl.haxe.Config.build())
 extern class TextRun {
 	
 	/**

@@ -5,7 +5,8 @@ package jsfl;
  * It is a property of the flash object (fl.presetPanel).
  */
 @:native("PresetPanel")
-@:require(jsfl_version >= CS4)
+@:build(jsfl.haxe.Config.build())
+@:jsflVersion({ added: CS4 })
 extern class PresetPanel {
 	
 	/**
@@ -108,5 +109,4 @@ extern class PresetPanel {
 	 * An array of presetItem objects in the Motion Presets panel.
 	 */
 	public var items(default, default):Array<PresetItem>;
-
 }

@@ -5,6 +5,7 @@ package jsfl;
  * This object is a property of the TextRun object (textRun.textAttrs).
  */
 @:native("TextAttrs")
+@:build(jsfl.haxe.Config.build())
 extern class TextAttrs {
 	
 	/**
@@ -15,7 +16,6 @@ extern class TextAttrs {
 	/**
 	 * A string that specifies paragraph justification. Acceptable values are "left", "center", "right", and "justify" 
 	 */
-	
 	public var alignment(default, default):String;
 	
 	/**
@@ -46,7 +46,7 @@ extern class TextAttrs {
 	/**
 	 * A string, hexadecimal value, or integer that represents the fill color.
 	 */
-	public var fillColor(default, default): Dynamic;
+	public var fillColor(default, default):Dynamic;
 	
 	/**
 	 * An integer that specifies paragraph indentation.
@@ -66,7 +66,7 @@ extern class TextAttrs {
 	/**
 	 * An integer that represents the space between characters.
 	 */
-	@:require(jsfl_version >= FlashPro8)
+	@:jsflVersion({ added: FlashPro8 })
 	public var letterSpacing(default, default):Int;
 	
 	/**
