@@ -16,7 +16,7 @@
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
     <class path="src" />
-    <class path="..\jsfl\hxclasses" />
+    <class path=".." />
   </classpaths>
   <!-- Build options -->
   <build>
