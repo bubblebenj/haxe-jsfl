@@ -18,7 +18,7 @@ Definitions are copied from:
 Install it with `haxelib git`.
 
 ```
-$ haxelib git haxe-jsfl git://github.com/tmskst/haxe-jsfl.git master /jsfl/hxclasses
+$ haxelib git haxe-jsfl git://github.com/tmskst/haxe-jsfl.git
 ```
 
 An example of HXML.
