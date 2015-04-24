@@ -5,7 +5,7 @@ package jsfl;
  */
 @:native("Matrix")
 @:build(jsfl.haxe.Config.build())
-extern class Matrix {
+extern typedef Matrix = {
 	
 	/**
 	 * A floating-point value that specifies the (0,0) element in the transformation matrix.
