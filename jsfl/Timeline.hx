@@ -26,11 +26,11 @@ extern class Timeline {
 	 * Adds a new layer to the document and makes it the current layer.
 	 * @param	name A string that specifies the name for the new layer. If you omit this parameter, a new default layer name is assigned
 to the new layer (“Layer n,” where n is the total number of layers created and deleted for that particular instance of the file).
-	 * @param	layerType A string that specifies the type of layer to add. If you omit this parameter, a “Normal” type layer is created. Acceptable values are "normal", "guide", "guided", "mask", "masked", and "folder" 
+	 * @param	layerType Specifies the type of layer to add. If you omit this parameter, a NORMAL type layer is created.
 	 * @param	bAddAbove A Boolean value that, if set to true (the default), causes Flash to add the new layer above the current layer; false causes Flash to add the layer below the current layer.
 	 * @return An integer value of the zero-based index of the newly added layer.
 	 */
-	public function addNewLayer(?name:String, ?layerType:String, ?bAddAbove:Bool = true):Int;
+	public function addNewLayer(?name:String, ?layerType:LayerType, ?bAddAbove:Bool = true):Int;
 	
 	/**
 	 * Deletes all the contents from a frame or range of frames on the current layer.

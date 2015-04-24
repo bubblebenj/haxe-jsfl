@@ -45,7 +45,7 @@ extern class Parameter {
 	/**
 	 * Read-only; a string that indicates the type of the screen or component parameter.
 	 */
-	public var valueType(default, null):String;
+	public var valueType(default, null): ParameterType;
 	
 	/**
 	 * Specifies where the parameter is displayed.

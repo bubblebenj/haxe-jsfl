@@ -2,7 +2,7 @@ package jsfl;
 
 /**
  * Used by Parameter.valueType
- * a string that indicates the type of the screen or component parameter.
+ * A string that indicates the type of the screen or component parameter.
  */
 @:fakeEnum(String)
 extern enum ParameterType {
