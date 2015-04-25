@@ -446,7 +446,7 @@ frames, with each frame as a separate PNG file(false).
 	 * @param	endIndex An integer that specifies the index of last character.
 	 * @return The text field if the selection return a unique value. Otherwise undefined.
 	 */
-	public function getElementTextAttr(attrName:String, ?startIndex:Null<Int>, ?endIndex:Null<Int>):Dynamic;
+	public function getElementTextAttr(attrName:String, ?startIndex:Int, ?endIndex:Int):Dynamic;
 	
 	/**
 	 * Returns an array that contains the list of filters applied to the currently selected objects.
@@ -506,7 +506,7 @@ frames, with each frame as a separate PNG file(false).
 	 * @param	endIndex An integer that is an index of last character to get.
 	 * @return A string that contains the selected text.
 	 */	
-	public function getTextString(?startIndex:Null<Int>, ?endIndex:Null<Int>):String;
+	public function getTextString(?startIndex:Int, ?endIndex:Int):String;
 	
 	/**
 	 * Retrieves the current Timeline object in the document.
@@ -800,7 +800,7 @@ box. If  false and the file was never saved, the file is not saved. The default 
 	 * @param	endIndex An integer value that specifies the index of the last character that is affected.
 	 * @return A Boolean value: true if at least one text attribute property is changed; false otherwise.
 	 */	
-	public function setElementTextAttr(attrName:String, attrValue:Dynamic, ?startIndex:Null<Int>, ?endIndex:Null<Int>):Bool;
+	public function setElementTextAttr(attrName:String, attrValue:Dynamic, ?startIndex:Int, ?endIndex:Int):Bool;
 	
 	/**
 	 * Changes the selection and the tools panel to the specified color.

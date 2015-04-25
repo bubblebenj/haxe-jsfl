@@ -37,35 +37,35 @@ to the new layer (“Layer n,” where n is the total number of layers created a
 	 * @param	A zero-based index that defines the beginning of the range of frames to clear. If you omit startFrameIndex, the method uses the current selection.
 	 * @param	endFrameIndex A zero-based index that defines the end of the range of frames to clear. The range goes up to, but does not include, endFrameIndex. If you specify only startFrameIndex, endFrameIndex defaults to the value of startFrameIndex.
 	 */
-	public function clearFrames(?startFrameIndex:Null<Int>, ?endFrameIndex:Null<Int>):Void;
+	public function clearFrames(?startFrameIndex:Int, ?endFrameIndex:Int):Void;
 	
 	/**
 	 * Converts a keyframe to a regular frame and deletes its contents on the current layer.
 	 * @param	startFrameIndex A zero-based index that defines the beginning of the range of frames to clear. If you omit startFrameIndex, the method uses the current selection.
 	 * @param	endFrameIndex A zero-based index that defines the end of the range of frames to clear. The range goes up to, but does not include, endFrameIndex. If you specify only startFrameIndex, endFrameIndex defaults to the value of startFrameIndex.
 	 */
-	public function clearKeyframes(?startFrameIndex:Null<Int>, ?endFrameIndex:Null<Int>):Void;
+	public function clearKeyframes(?startFrameIndex:Int, ?endFrameIndex:Int):Void;
 	
 	/**
 	 * Converts frames to blank keyframes on the current layer.
 	 * @param	startFrameIndex A zero-based index that specifies the starting frame to convert to keyframes. If you omit startFrameIndex, the method converts the currently selected frames.
 	 * @param	endFrameIndex A zero-based index that specifies the frame at which the conversion to keyframes will stop. The range of frames to convert goes up to, but does not include, endFrameIndex. If you specify only startFrameIndex, endFrameIndex defaults to the value of startFrameIndex.
 	 */
-	public function convertToBlankKeyframes(?startFrameIndex:Null<Int>, ?endFrameIndex:Null<Int>):Void;
+	public function convertToBlankKeyframes(?startFrameIndex:Int, ?endFrameIndex:Int):Void;
 	
 	/**
 	 * Converts a range of frames to keyframes (or converts the selection if no frames are specified) on the current layer.
 	 * @param	startFrameIndex A zero-based index that specifies the first frame to convert to keyframes. If you omit startFrameIndex, the method converts the currently selected frames.
 	 * @param	endFrameIndex A zero-based index that specifies the frame at which conversion to keyframes will stop. The range frames to convert goes up to, but does not include, endFrameIndex. If you specify only startFrameIndex, endFrameIndex defaults to the value of startFrameIndex.
 	 */
-	public function convertToKeyframes(?startFrameIndex:Null<Int>, ?endFrameIndex:Null<Int>):Void;
+	public function convertToKeyframes(?startFrameIndex:Int, ?endFrameIndex:Int):Void;
 	
 	/**
 	 * Copies a range of frames on the current layer to the clipboard.
 	 * @param	startFrameIndex A zero-based index that specifies the beginning of the range of frames to copy. If you omit startFrameIndex, the method uses the current selection.
 	 * @param	endFrameIndex A zero-based index that specifies the frame at which to stop copying. The range of frames to copy goes up to, but does not include, endFrameIndex. If you specify only startFrameIndex, endFrameIndex defaults to the value of startFrameIndex.
 	 */
-	public function copyFrames(?startFrameIndex:Null<Int>, ?endFrameIndex:Null<Int>):Void;
+	public function copyFrames(?startFrameIndex:Int, ?endFrameIndex:Int):Void;
 	
 	/**
 	 * Copies a range of Timeline layers to the clipboard.
@@ -73,7 +73,7 @@ to the new layer (“Layer n,” where n is the total number of layers created a
 	 * @param	endLayerIndex A zero-based index that specifies the layer at which to stop copying. The range of layers to copy goes up to and including endLayerIndex. If you specify only startLayerIndex, then endLayerIndex defaults to the value of startLayerIndex.
 	 */
 	@:jsflVersion({ added: CS5 })
-	public function copyLayers(?startLayerIndex:Null<Int> =null, ?endLayerIndex:Null<Int> = null):Void;
+	public function copyLayers(?startLayerIndex:Int =null, ?endLayerIndex:Int = null):Void;
 	
 	/**
 	 * Copies motion on selected frames, either from a motion tween or from frame-by-frame animation, so it can be applied to other frames.
@@ -93,21 +93,21 @@ to the new layer (“Layer n,” where n is the total number of layers created a
 	 * @param	endFrame Specifies the frame at which to stop creating motion objects; the range of frames goes up to, but does not include, endFrame. If you specify only startFrame, endFrame defaults to the startFrame value.
 	 */
 	@:jsflVersion({ added: CS5 })
-	public function createMotionObject(?startFrame:Null<Int> =null, ?endFrame:Null<Int> = null):Void;
+	public function createMotionObject(?startFrame:Int =null, ?endFrame:Int = null):Void;
 	
 	/**
 	 * Sets the frame.tweenType property to motion for each selected keyframe on the current layer, and converts each frame’s contents to a single symbol instance if necessary.
 	 * @param	startFrameIndex A zero-based index that specifies the beginning frame at which to create a motion tween. If you omit startFrameIndex, the method uses the current selection.
 	 * @param	endFrameIndex A zero-based index that specifies the frame at which to stop the motion tween. The range of frames goes up to, but does not include, endFrameIndex. If you specify only startFrameIndex, endFrameIndex defaults to the startFrameIndex value.
 	 */
-	public function createMotionTween(?startFrameIndex:Null<Int>, ?endFrameIndex:Null<Int>):Void;
+	public function createMotionTween(?startFrameIndex:Int, ?endFrameIndex:Int):Void;
 	
 	/**
 	 * Cuts a range of frames on the current layer from the timeline and saves them to the clipboard.
 	 * @param	startFrameIndex A zero-based index that specifies the beginning of a range of frames to cut. If you omit startFrameIndex, the method uses the current selection.
 	 * @param	endFrameIndex A zero-based index that specifies the frame at which to stop cutting. The range of frames goes up to, but does not include, endFrameIndex. If you specify only startFrameIndex, endFrameIndex defaults to the startFrameIndex value.
 	 */
-	public function cutFrames(?startFrameIndex:Null<Int>, ?endFrameIndex:Null<Int>):Void;
+	public function cutFrames(?startFrameIndex:Int, ?endFrameIndex:Int):Void;
 	
 	/**
 	 * Cuts a range of Timeline layers and saves them to the clipboard.
@@ -115,7 +115,7 @@ to the new layer (“Layer n,” where n is the total number of layers created a
 	 * @param	endLayerIndex A zero-based index that specifies the layer at which to stop cutting. The range of layers to cut goes up to and including endLayerIndex. If you specify only startLayerIndex, then endLayerIndex defaults to the value of startLayerIndex.
 	 */
 	@:jsflVersion({ added: CS5 })
-	public function cutLayers(?startLayerIndex:Null<Int> =null, ?endLayerIndex:Null<Int> = null):Void;
+	public function cutLayers(?startLayerIndex:Int =null, ?endLayerIndex:Int = null):Void;
 	
 	/**
 	 * Deletes a layer.
@@ -129,7 +129,7 @@ to the new layer (“Layer n,” where n is the total number of layers created a
 	 * @param	endLayerIndex A zero-based index that specifies the layer at which to stop copying. The range of layers to copy goes up to and including endLayerIndex. If you specify only startLayerIndex, then endLayerIndex defaults to the value of startLayerIndex.
 	 */
 	@:jsflVersion({ added: CS5 })
-	public function duplicateLayers(?startLayerIndex:Null<Int>, ?endLayerIndex:Null<Int>):Void;
+	public function duplicateLayers(?startLayerIndex:Int, ?endLayerIndex:Int):Void;
 	
 	/**
 	 * Expands or collapses the specified folder or folders.
@@ -137,7 +137,7 @@ to the new layer (“Layer n,” where n is the total number of layers created a
 	 * @param	bRecurseNestedParents A Boolean value that, if set to true, causes all the layers within the specified folder to be opened or closed, based on the bExpand parameter.
 	 * @param	index A zero-based index of the folder to expand or collapse. Use -1 to apply to all layers (you also must set bRecurseNestedParents to true). This property is equivalent to the Expand All/Collapse All menu items in the Flash authoring tool.
 	 */
-	public function expandFolder(bExpand:Bool, ?bRecurseNestedParents:Bool = true, ?index:Null<Int>):Void;
+	public function expandFolder(bExpand:Bool, ?bRecurseNestedParents:Bool = true, ?index:Int):Void;
 	
 	/**
 	 * Finds an array of indexes for the layers with the given name.
@@ -162,7 +162,7 @@ to the new layer (“Layer n,” where n is the total number of layers created a
 	 * @param	endFrameIndex A zero-based index that specifies the end of the range of frames to select. The range goes up to, but does not include, endFrameIndex. If you specify only startFrameIndex, endFrameIndex defaults to the value of startFrameIndex.
 	 * @return A value for the specified property, or undefined if all the selected frames do not have the same property value.
 	 */
-	public function getFrameProperty(property:String, ?startFrameIndex:Null<Int>, ?endFrameIndex:Null<Int>):Dynamic;
+	public function getFrameProperty(property:String, ?startFrameIndex:Int, ?endFrameIndex:Int):Dynamic;
 	
 	/**
 	 * Returns an XML string that represents the current positions of the horizontal and vertical guide lines for a timeline (View > Guides > Show Guides).
@@ -202,7 +202,7 @@ to the new layer (“Layer n,” where n is the total number of layers created a
 	 * @param	bAllLayers A Boolean value that, if set to true, causes the method to insert the specified number of frames in the numFrames parameter into all layers; if set to false (the default), the method inserts frames into the current layer.
 	 * @param	frameNumIndex A zero-based index that specifies the frame at which to insert a new frame.
 	 */
-	public function insertFrames(?numFrames:Int, ?bAllLayers:Bool = false, ?frameNumIndex:Null<Int>):Void;
+	public function insertFrames(?numFrames:Int, ?bAllLayers:Bool = false, ?frameNumIndex:Int):Void;
 	
 	/**
 	 * Inserts a keyframe at the specified frame.
@@ -215,7 +215,7 @@ to the new layer (“Layer n,” where n is the total number of layers created a
 	 * @param	startFrameIndex A zero-based index that specifies the beginning of a range of frames to paste. If you omit startFrameIndex, the method uses the current selection.
 	 * @param	endFrameIndex A zero-based index that specifies the frame at which to stop pasting frames. The method pastes up to, but not including, endFrameIndex. If you specify only startFrameIndex, endFrameIndex defaults to the startFrameIndex value.
 	 */
-	public function pasteFrames(?startFrameIndex:Null<Int>, ?endFrameIndex:Null<Int>):Void;
+	public function pasteFrames(?startFrameIndex:Int, ?endFrameIndex:Int):Void;
 	
 	/**
 	 * Pastes copied layers to the Timeline above the specified layer index.
@@ -249,7 +249,7 @@ to the new layer (“Layer n,” where n is the total number of layers created a
 	 * @param	endFrame Specifies the frame at which to stop removing motion objects; the range of frames goes up to, but does not include, endFrame. If you specify only startFrame, endFrame defaults to the startFrame value.
 	 */
 	@:jsflVersion({ added: CS5 })
-	public function removeMotionObject(?startFrame:Null<Int> =null, ?endFrame:Null<Int> = null):Void;
+	public function removeMotionObject(?startFrame:Int =null, ?endFrame:Int = null):Void;
 	
 	/**
 	 * Moves the first specified layer before or after the second specified layer.
@@ -278,7 +278,7 @@ to the new layer (“Layer n,” where n is the total number of layers created a
 	 * @param	startFrameIndex A zero-based index that specifies the starting frame number to modify. If you omit startFrameIndex, the method uses the current selection.
 	 * @param	endFrameIndex A zero-based index that specifies the first frame at which to stop. The range of frames goes up to, but does not include, endFrameIndex. If you specify startFrameIndex but omit endFrameIndex, endFrameIndex defaults to the value of startFrameIndex.
 	 */
-	public function setFrameProperty(property:String, value:Dynamic, ?startFrameIndex:Null<Int>, ?endFrameIndex:Null<Int>):Void;
+	public function setFrameProperty(property:String, value:Dynamic, ?startFrameIndex:Int, ?endFrameIndex:Int):Void;
 	
 	/**
 	 * Replaces the guide lines for the timeline with the information specified.
@@ -361,7 +361,7 @@ selection; false causes the method to extend the current selection.
 	 * Read-only property; indicates whether the timeline belongs to a scene.
 	 */
 	@:jsflVersion({ added: CS5 })
-	public var libraryItem(default, null):Null<Item>;
+	public var libraryItem(default, null):Item;
 	
 	/**
 	 * A string that represents the name of the current timeline.
