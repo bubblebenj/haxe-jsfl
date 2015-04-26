@@ -66,7 +66,7 @@ extern class TextAttrs {
 	/**
 	 * An integer that represents the space between characters.
 	 */
-	@:jsflVersion({ added: FlashPro8 })
+	@:jsflVersion({ added: Flash8 })
 	public var letterSpacing(default, default):Int;
 	
 	/**

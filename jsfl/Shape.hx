@@ -50,7 +50,7 @@ extern class Shape extends Element {
 	/**
 	 * Read-only; if true, the shape is a drawing object.
 	 */
-	@:jsflVersion({ added: FlashPro8 })
+	@:jsflVersion({ added: Flash8 })
 	public var isDrawingObject(default, null):Bool;
 	
 	/**

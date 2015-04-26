@@ -53,13 +53,13 @@ extern class SymbolItem extends Item {
 	/**
 	 * A Boolean value that specifies whether 9-slice scaling is enabled for the item.
 	 */
-	@:jsflVersion({ added: FlashPro8 })
+	@:jsflVersion({ added: Flash8 })
 	public var scalingGrid(default, default):Bool;
 	
 	/**
 	 * A Rectangle object that specifies the locations of the four 9-slice guides. For information on the format of the rectangle, see  document.addNewRectangle() 
 	 */
-	@:jsflVersion({ added: FlashPro8 })
+	@:jsflVersion({ added: Flash8 })
 	public var scalingGridRect(default, default):JSFLRect;
 	
 	/**

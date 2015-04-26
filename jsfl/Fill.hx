@@ -33,7 +33,7 @@ extern class Fill {
 	/**
 	 * An integer that specifies the gradient focal point horizontal offset from the transformation point.
 	 */
-	@:jsflVersion({ added: FlashPro8 })
+	@:jsflVersion({ added: Flash8 })
 	public var focalPoint(default, default):Int;
 	
 	/**

@@ -33,7 +33,7 @@ extern class Frame {
 	 * @param	property An optional string that specifies the property for which you want to return the custom ease value. Acceptable values are "all", "position", "rotation", "scale", "color", and "filters".
 	 * @return Returns an array of JavaScript objects, each of which has an x and y property.
 	 */
-	@:jsflVersion({ added: FlashPro8 })
+	@:jsflVersion({ added: Flash8 })
 	public function getCustomEase(?property:String="all"):Array<JSFLPoint>;
 	
 	/**
@@ -97,7 +97,7 @@ extern class Frame {
 	 * @param	property A string that specifies the property the ease curve should be used for. Acceptable values are "all", "position", "rotation", "scale", "color", and "filters" 
 	 * @param	easeCurve An array of objects that defines the ease curve. Each array element must be a JavaScript object with x and y properties.
 	 */
-	@:jsflVersion({ added: FlashPro8 })
+	@:jsflVersion({ added: Flash8 })
 	public function setCustomEase(property: String, easeCurve: Array<JSFLPoint>):Void;
 	
 	/**
@@ -148,7 +148,7 @@ extern class Frame {
 	/**
 	 * A Boolean value that specifies whether the frame gets its ease information from the custom ease curve.
 	 */
-	@:jsflVersion({ added: FlashPro8 })
+	@:jsflVersion({ added: Flash8 })
 	public var hasCustomEase(default, default):Bool;
 	
 	/**
@@ -250,7 +250,7 @@ extern class Frame {
 	/**
 	 * A Boolean value that specifies whether a single custom ease curve is used for easing information for all properties.
 	 */
-	@:jsflVersion({ added: FlashPro8 })
+	@:jsflVersion({ added: Flash8 })
 	public var useSingleEaseCurve(default, default):Bool;
 	
 }

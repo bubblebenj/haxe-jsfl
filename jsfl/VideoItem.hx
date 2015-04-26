@@ -42,13 +42,13 @@ extern class VideoItem extends Item {
 	/**
 	 * Read-only; a string that specifies the path to the video item.
 	 */
-	@:jsflVersion({ added: FlashPro8 })
+	@:jsflVersion({ added: Flash8 })
 	public var sourceFilePath(default, null):String;
 
 	/**
 	 * Read-only; a string that specifies the type of video the item represents.
 	 */
-	@:jsflVersion({ added: FlashPro8 })
+	@:jsflVersion({ added: Flash8 })
 	public var videoType(default, null):VideoType;
 
 }

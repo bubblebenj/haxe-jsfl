@@ -21,7 +21,7 @@ extern class Stroke {
 	/**
 	 * A string that specifies the type of cap for the stroke.
 	 */
-	@:jsflVersion({ added: FlashPro8 })
+	@:jsflVersion({ added: Flash8 })
 	public var capType(default, default):String;
 	
 	/**
@@ -72,7 +72,7 @@ extern class Stroke {
 	/**
 	 * A string that specifies the type of join for the stroke.
 	 */
-	@:jsflVersion({ added: FlashPro8 })
+	@:jsflVersion({ added: Flash8 })
 	public var joinType(default, default):String;
 	
 	/**
@@ -83,7 +83,7 @@ extern class Stroke {
 	/**
 	 * A float value that specifies the angle above which the tip of the miter will be truncated by a segment.
 	 */
-	@:jsflVersion({ added: FlashPro8 })
+	@:jsflVersion({ added: Flash8 })
 	public var miterLimit(default, default):Float;
 	
 	/**
@@ -99,13 +99,13 @@ extern class Stroke {
 	/**
 	 * A string that specifies the type of scale to be applied to the stroke.
 	 */
-	@:jsflVersion({ added: FlashPro8 })
+	@:jsflVersion({ added: Flash8 })
 	public var scaleType(default, default):String;
 	
 	/**
 	 * A string that specifies the spacing of a hatched line.
 	 */
-	@:jsflVersion({ added: FlashPro8 })
+	@:jsflVersion({ added: Flash8 })
 	public var shapeFill(default, default):Fill;
 	
 	/**
@@ -116,7 +116,7 @@ extern class Stroke {
 	/**
 	 * A Boolean value that specifies whether stroke hinting is set on the stroke.
 	 */
-	@:jsflVersion({ added: FlashPro8 })
+	@:jsflVersion({ added: Flash8 })
 	public var strokeHinting(default, default):Bool;
 	
 	/**

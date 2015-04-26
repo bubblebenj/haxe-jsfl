@@ -5,7 +5,7 @@ package jsfl;
  */
 @:native("Project")
 @:build(jsfl.haxe.Config.build())
-@:jsflVersion({ added: FlashPro8, removed: CS4 })
+@:jsflVersion({ added: Flash8, removed: CS4 })
 extern class Project {
 	
 	/**

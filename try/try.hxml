@@ -1,5 +1,5 @@
 -cp src
 -cp ..
 -js bin/Main.jsfl
--D flpro_version=MX2004
+-D jsflVersion=MX2004
 -main Main

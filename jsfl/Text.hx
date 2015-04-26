@@ -53,13 +53,13 @@ extern class Text extends Element {
 	/**
 	 * A float value that specifies the anti-aliasing sharpness of the text.
 	 */
-	@:jsflVersion({ added: FlashPro8 })
+	@:jsflVersion({ added: Flash8 })
 	public var antiAliasSharpness(default, default):Float;
 	
 	/**
 	 * A float value that specifies the anti-aliasing thickness of the text.
 	 */
-	@:jsflVersion({ added: FlashPro8 })
+	@:jsflVersion({ added: Flash8 })
 	public var antiAliasThickness(default, default):Float;
 	
 	/**
@@ -102,7 +102,7 @@ extern class Text extends Element {
 	/**
 	 * A string that specifies the rendering mode for the text.
 	 */
-	@:jsflVersion({ added: FlashPro8 })
+	@:jsflVersion({ added: Flash8 })
 	public var fontRenderingMode(default, default):FontRenderingMode;
 	
 	/**

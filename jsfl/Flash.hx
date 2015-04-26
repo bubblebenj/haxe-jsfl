@@ -43,7 +43,7 @@ extern class Flash {
 	 * @param	description A string that specifies the event type to pass to this callback function.
 	 * @return A string that specifies the event type to pass to this callback function.
 	 */
-	@:jsflVersion({ added: FlashPro8 })
+	@:jsflVersion({ added: Flash8 })
 	public function browseForFolderURL(?description:String = null):String;
 
 	/**
@@ -83,7 +83,7 @@ extern class Flash {
 	 * Closes the Flash Project (FLP) file that is currently open.
 	 * @return A Boolean value of true if the project was successfully closed; false if there is no project file open.
 	 */
-	@:jsflVersion({ added: FlashPro8, removed: CS4 })
+	@:jsflVersion({ added: Flash8, removed: CS4 })
 	public function closeProject():Bool;
 
 	/**
@@ -110,7 +110,7 @@ asking whether to overwrite the file.
 	 * @param	name An optional string that is displayed as the project name in the Project panel. If  name is omitted, the name of the FLP file (excluding path or extension) is displayed in the Project panel.
 	 * @return A Project object if the method is successful; undefined if the file can’t be created.
 	 */
-	@:jsflVersion({ added: FlashPro8, removed: CS4 })
+	@:jsflVersion({ added: Flash8, removed: CS4 })
 	public function createProject(fileURI:String, ?name:String):Project;
 
 	/**
@@ -182,7 +182,7 @@ asking whether to overwrite the file.
 	 * @param	memType An integer that specifies the memory utilization area to be queried. For a list of acceptable values see original doc.
 	 * @return An integer that represents the number of bytes being used in a specified area of Flash.exe memory.
 	 */
-	@:jsflVersion({ added: FlashPro8 })
+	@:jsflVersion({ added: Flash8 })
 	public function getAppMemoryInfo(memType:Int):Int;
 
 	/**
@@ -195,7 +195,7 @@ asking whether to overwrite the file.
 	 * returns a Project object that represents the currently open project.
 	 * @return A Project object that represents the currently open project. If no project is currently open, returns undefined.
 	 */
-	@:jsflVersion({ added: FlashPro8, removed: CS4 })
+	@:jsflVersion({ added: Flash8, removed: CS4 })
 	public function getProject():Project;
 
 	/**
@@ -259,13 +259,16 @@ asking whether to overwrite the file.
 	/**
 	 * Opens a Flash Project (FLP) file in the authoring tool for editing.
 	 * @param	fileURI A string that specifies the path of the Flash project file to open, expressed as a URI (file:///URI).
+	 */
+	@:jsflVersion({ removed: Flash8 })
+	public function openProject(fileURI: String): Void;
+	/**
+	 * Opens a Flash Project (FLP) file in the authoring tool for editing.
+	 * @param	fileURI A string that specifies the path of the Flash project file to open, expressed as a URI (file:///URI).
 	 * @return Nothing in Flash MX 2004; a Project object in Flash 8.
 	 */
-	#if (jsfl_version < FlashPro8)
-	public function openProject(fileURI:String):Void;
-	#elseif (jsfl_version < CS4)
-	public function openProject(fileURI:String):Project;
-	#end
+	@:jsflVersion({ added: Flash8, removed: CS4 })
+	public function openProject(fileURI: String): Project;
 	
 	/**
 	 * Opens a script (JSFL, AS, ASC) or other file (XML, TXT) in the Flash text editor.
@@ -303,14 +306,18 @@ asking whether to overwrite the file.
 	/**
 	 * Unregisters a function that was registered using fl.addEventListener() 
 	 * @param	eventType Specifies the event type to remove from this callback function.
+	 * @return A Boolean value of true if the event listener was successfully removed; false if the function was never added to the list with the fl.addEventListener() method.
+	 */
+	@:jsflVersion({ added: CS3, removed: CS4 })
+	public function removeEventListener(eventType: EventType):Bool;
+	/**
+	 * Unregisters a function that was registered using fl.addEventListener() 
+	 * @param	eventType Specifies the event type to remove from this callback function.
 	 * @param	id An integer that specifies the listener ID returned from the corresponding fl.addEventListener() call.
 	 * @return A Boolean value of true if the event listener was successfully removed; false if the function was never added to the list with the fl.addEventListener() method.
 	 */
-	#if (jsfl_version >= CS4)
-	public function removeEventListener(eventType:EventType, id:Int):Bool;
-	#elseif (jsfl_version >= CS3)
-	public function removeEventListener(eventType:EventType):Bool;
-	#end
+	@:jsflVersion({ added: CS4 })
+	public function removeEventListener(eventType: EventType, id: Int): Bool;
 	
 	/**
 	 * Resets the global Classpath setting in the ActionScript 3.0 Settings dialog box to the default value.
@@ -418,7 +425,7 @@ saves a version of the specified document to the server, and logs any errors to 
 	 * Lets you disable the warning about a script running too long.
 	 * @param	show A Boolean value specifying whether to enable or disable the warning about a script running too long.
 	 */
-	@:jsflVersion({ added: FlashPro8 })
+	@:jsflVersion({ added: Flash8 })
 	public function showIdleMessage(show:Bool):Void;
 
 	/**
@@ -501,7 +508,7 @@ saves a version of the specified document to the server, and logs any errors to 
 	/**
 	 * A Boolean value that specifies whether Contact Sensitive selection mode is enabled ( true ) or not ( false ).
 	 */
-	@:jsflVersion({ added: FlashPro8 })
+	@:jsflVersion({ added: Flash8 })
 	public var contactSensitiveSelection(default, default):Bool;
 	
 	/**
@@ -607,7 +614,7 @@ saves a version of the specified document to the server, and logs any errors to 
 	/**
 	 * An integer that represents the object drawing mode that is enabled.
 	 */
-	@:jsflVersion({ added: FlashPro8 })
+	@:jsflVersion({ added: Flash8 })
 	public var objectDrawingMode(default, default):Int;
 
 	/**

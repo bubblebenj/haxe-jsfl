@@ -33,7 +33,7 @@ extern class SymbolInstance extends Instance {
 	/**
 	 * A string that specifies the blending mode to be applied to a movie clip symbol.
 	 */
-	@:jsflVersion({ added: FlashPro8 })
+	@:jsflVersion({ added: Flash8 })
 	public var blendMode(default, default):String;
 	
 	/**
@@ -50,7 +50,7 @@ extern class SymbolInstance extends Instance {
 	/**
 	 * A Boolean value that specifies whether run-time bitmap caching is enabled.
 	 */
-	@:jsflVersion({ added: FlashPro8 })
+	@:jsflVersion({ added: Flash8 })
 	public var cacheAsBitmap(default, default):Bool;
 	
 	/**
@@ -106,7 +106,7 @@ extern class SymbolInstance extends Instance {
 	/**
 	 * An array of Filter objects (see Filter object).
 	 */
-	@:jsflVersion({ added: FlashPro8 })
+	@:jsflVersion({ added: Flash8 })
 	public var filters(default, default): Array<Filter>;
 	
 	/**
