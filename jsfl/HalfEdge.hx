@@ -17,41 +17,41 @@ extern class HalfEdge {
 	 * Gets the Edge object for the HalfEdge object.
 	 * @return An Edge object.
 	 */
-	public function getEdge():Edge;
+	public function getEdge(): Edge;
 	
 	/**
 	 * Gets the next half edge on the current contour.
 	 * @return A HalfEdge object.
 	 */
-	public function getNext():HalfEdge;
+	public function getNext(): HalfEdge;
 	
 	/**
 	 * Gets the Edge object for the HalfEdge object.
 	 * @return A HalfEdge object.
 	 */
-	public function getOppositeHalfEdge():HalfEdge;
+	public function getOppositeHalfEdge(): HalfEdge;
 	
 	/**
 	 * Gets the preceding HalfEdge object on the current contour.
 	 * @return A HalfEdge object.
 	 */
-	public function getPrev():HalfEdge;
+	public function getPrev(): HalfEdge;
 	
 	/**
 	 * Gets the Vertex object at the head of the HalfEdge object.
 	 * @return A Vertex object
 	 */
-	public function getVertex():Vertex;
+	public function getVertex(): Vertex;
 	
 	/**
 	 * Read-only; a unique integer identifier for the HalfEdge object.
 	 */
-	public var id(default, null):Int;
+	public var id(default, null): Int;
 	
 	/**
 	 * Read-only property; an integer with a value of 0 or 1 that specifies the index for this HalfEdge object in the parent edge.
 	 */
 	@:jsflVersion({ added: CC })
-	public var index(default, null):Int;
+	public var index(default, null): Int;
 
 }

@@ -12,6 +12,6 @@ extern enum VideoType {
 
 @:native("jsfl.VideoType")
 private class Impl {
-	public static inline var EMBEDDED_VIDEO:String = "embedded video";
-	public static inline var VIDEO:String = "video";
+	public static inline var EMBEDDED_VIDEO: String = "embedded video";
+	public static inline var VIDEO: String = "video";
 }

@@ -18,7 +18,7 @@ extern class SpriteSheetExporter extends Item {
 	 * Adds a bitmap or bitmapItem to the sprite sheet.
 	 * @param	bitmap The BitmapItem or Bitmap to include in the sprite sheet.
 	 */
-	public function addBitmap(bitmap:BitmapItem):Void;
+	public function addBitmap(bitmap: BitmapItem): Void;
 	
 	
 	/**
@@ -29,15 +29,15 @@ extern class SpriteSheetExporter extends Item {
 	 * @param	endFrame The last frame of the symbol to include in the sprite sheet.
 	 * @return Boolean.
 	 */
-	@:overload(function (symbol:SymbolInstance, name:String, ?beginFrame:Int, ?endFrame:Int):Bool { } )
-	public function addSymbol(symbol:SymbolItem):Bool;
+	@:overload(function (symbol: SymbolInstance, name: String, ?beginFrame: Int, ?endFrame: Int): Bool { } )
+	public function addSymbol(symbol: SymbolItem): Bool;
 	
 	/**
 	 * Initializes the SpriteSheetExporter to create a new sprite sheet.
 	 */
-	public function beginExport():Void;
+	public function beginExport(): Void;
 	
-	@:overload(function (symbol:SymbolInstance, ?beginFrame:Int, ?endFrame:Int):Bool { })
+	@:overload(function (symbol: SymbolInstance, ?beginFrame: Int, ?endFrame: Int): Bool { })
 	/**
 	 * Changes which symbol frames will be added to the sprite sheet.
 	 * @param	symbol A SymbolItem or SymbolInstance that has already been added to the sprite sheet.
@@ -45,7 +45,7 @@ extern class SpriteSheetExporter extends Item {
 	 * @param	endFrame The last frame of the symbol to include in the sprite sheet.
 	 * @return Boolean.
 	 */
-	public function changeSymbol(symbol:SymbolItem, ?beginFrame:Int, ?endFrame:Int):Bool;
+	public function changeSymbol(symbol: SymbolItem, ?beginFrame: Int, ?endFrame: Int): Bool;
 	
 	/**
 	 * Export the sprite sheet into a an image file.
@@ -56,138 +56,138 @@ extern class SpriteSheetExporter extends Item {
 	 * @param	writeMetaData Whether or not to write the metadata file with the image file.
 	 * @return String.
 	 */
-	public function exportSpriteSheet(path:String, imageFormat:Dynamic, ?writeMetaData:Bool = true):String;
+	public function exportSpriteSheet(path: String, imageFormat: Dynamic, ?writeMetaData: Bool = true): String;
 	
 	/**
 	 * Remove a bitmap object from the sprite sheet.
 	 * @param	bitmap The BitmapItem or Bitmap to remove from the sprite sheet.
 	 */
-	public function removeBitmap(bitmap:BitmapInstance):Void;
+	public function removeBitmap(bitmap: BitmapInstance): Void;
 	
-	@:overload(function (symbol:SymbolInstance):Bool { })
+	@:overload(function (symbol: SymbolInstance): Bool { })
 	/**
 	 * Remove a symbol from the sprite sheet.
 	 * @param	symbol The SymbolItem or SymbolInstance to remove from the sprite sheet.
 	 * @return Boolean.
 	 */
-	public function removeSymbol(symbol:SymbolItem):Bool;
+	public function removeSymbol(symbol: SymbolItem): Bool;
 	
 	/**
 	 * Sets the encoding algorithm for the sprite sheet.
 	 */
-	public var algorithm(default, default):SpriteSheetExporterAlgorithm;
+	public var algorithm(default, default): SpriteSheetExporterAlgorithm;
 	
 	/**
 	 * Allows sprites to be rotated when added to the sprite sheet.
 	 */
-	public var allowRotate(default, default):Bool;
+	public var allowRotate(default, default): Bool;
 	
 	/**
 	 * Allows trimming of whitespace around sprites.
 	 */
-	public var allowTrimming(default, default):Bool;
+	public var allowTrimming(default, default): Bool;
 	
 	/**
 	 * A string indicating the name of the application generating the sprite sheet.
 	 */
-	public var app(default, null):String;
+	public var app(default, null): String;
 	
 	/**
 	 * Automatically size the sprite sheet to fit all sprites.
 	 */
-	public var autoSize(default, default):Bool;
+	public var autoSize(default, default): Bool;
 	
 	/**
 	 * The amount of padding around the sprite sheet borders, in pixels.
 	 */
-	public var borderPadding(default, default):Int;
+	public var borderPadding(default, default): Int;
 	
 	/**
 	 * A Boolean value indicating whether border padding is supported by the
 framework specified by the layoutFormat property.
 	 */
-	public var canBorderPad(default, null):Bool;
+	public var canBorderPad(default, null): Bool;
 	
 	/**
 	 * A Boolean value indicating whether sprite rotation is supported by the
 framework specified by the layoutFormat property.
 	 */
-	public var canRotate(default, null):Bool;
+	public var canRotate(default, null): Bool;
 	
 	/**
 	 * A Boolean value indicating whether shape padding is supported by the
 framework specified by the layoutFormat property.
 	 */
-	public var canShapePad(default, null):Bool;
+	public var canShapePad(default, null): Bool;
 	
 	/**
 	 * A Boolean value indicating whether sprite stacking is supported by the
 framework specified by the layoutFormat property.
 	 */
-	public var canStackDuplicateFrames(default, null):Bool;
+	public var canStackDuplicateFrames(default, null): Bool;
 	
 	/**
 	 * A Boolean value indicating whether shape trimming is supported by the
 framework specified by the layoutFormat property.
 	 */
-	public var canTrim(default, null):Bool;
+	public var canTrim(default, null): Bool;
 	
 	/**
 	 * The format of the sprite sheet image file.
 	 */
-	public var format(default, null):SpriteSheetExporterFormat;
+	public var format(default, null): SpriteSheetExporterFormat;
 	
 	/**
 	 * The name of the image file of the sprite sheet.
 	 */
-	public var image(default, null):String;
+	public var image(default, null): String;
 	
 	/**
 	 * The format of the sprite sheet metadata.
 	 */
-	public var layoutFormat(default, default):SpriteSheetExporterLayoutFormat;
+	public var layoutFormat(default, default): SpriteSheetExporterLayoutFormat;
 	
 	/**
 	 * Controls the maximum height of the generated sprite sheet when autoSize = true, clipped to a maximum value of 8192.
 	 */
 	@:jsflVersion({ added: CC })
-	public var maxSheetHeight(default, default):Int;
+	public var maxSheetHeight(default, default): Int;
 	
 	/**
 	 * Controls the maximum width of the generated sprite sheet when autoSize = true, clipped to a maximum value of 8192.
 	 */
 	@:jsflVersion({ added: CC })
-	public var maxSheetWidth(default, default):Int;
+	public var maxSheetWidth(default, default): Int;
 	
 	/**
 	 * A Boolean value indicating whether all the specified frames can fit in the specified sprite sheet size.
 	 */
-	public var overflowed(default, null):Bool;
+	public var overflowed(default, null): Bool;
 	
 	/**
 	 * The amount of padding around each sprite, in pixels.
 	 */
-	public var shapePadding(default, default):Int;
+	public var shapePadding(default, default): Int;
 	
 	/**
 	 * The height of the sprite sheet, in pixels.
 	 */
-	public var sheetHeight(default, default):Int;
+	public var sheetHeight(default, default): Int;
 	
 	/**
 	 * The width of the sprite sheet, in pixels.
 	 */
-	public var sheetWidth(default, default):Int;
+	public var sheetWidth(default, default): Int;
 	
 	/**
 	 * A Boolean value indicating whether to stack identical symbol frames in the sprite sheet.
 	 */
-	public var stackDuplicateFrames(default, default):Bool;
+	public var stackDuplicateFrames(default, default): Bool;
 	
 	/**
 	 * The version number of the application creating the sprite sheet.
 	 */
-	public var version(default, null):String;
+	public var version(default, null): String;
 
 }
 

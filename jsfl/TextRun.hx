@@ -11,11 +11,11 @@ extern class TextRun {
 	/**
 	 * A string that represents the text contained in the TextRun object.
 	 */
-	public var characters(default, default):String;
+	public var characters(default, default): String;
 
 	/**
 	 * The TextAttrs object containing the attributes of the run of text.
 	 */
-	public var textAttrs(default, default):TextAttrs;
+	public var textAttrs(default, default): TextAttrs;
 
 }

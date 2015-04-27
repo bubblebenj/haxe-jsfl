@@ -12,6 +12,6 @@ extern enum CompressionType {
 
 @:native("jsfl.CompressionType")
 private class Impl {
-	public static inline var PHOTO:String = "photo";
-	public static inline var LOSSLESS:String = "lossless";
+	public static inline var PHOTO: String = "photo";
+	public static inline var LOSSLESS: String = "lossless";
 }

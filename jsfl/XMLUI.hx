@@ -17,19 +17,19 @@ extern class XMLUI {
 	/**
 	 * Closes the current XMLUI dialog box with an accept state.
 	 */
-	public function accept():Void;
+	public function accept(): Void;
 	
 	/**
 	 * Closes the current XMLUI dialog box with a cancel state.
 	 */
-	public function cancel():Void;
+	public function cancel(): Void;
 	
 	/**
 	 * Retrieves the value of the specified property of the current XMLUI dialog box.
 	 * @param	controlPropertyName A string that specifies the name of the XMLUI property whose value you want to retrieve.
 	 * @return A string that represents the value of the specified property. In cases where you might expect a Boolean value of true or false, it returns the string "true" or "false" 
 	 */
-	public function get(controlPropertyName:String):String;
+	public function get(controlPropertyName: String): String;
 	
 	/**
 	 * Returns the current control item for the specified control.
@@ -37,7 +37,7 @@ extern class XMLUI {
 	 * @return An object that represents the current control item for the control specified by controlPropertyName.
 	 */
 	@:jsflVersion({ added: Flash8 })
-	public function getControlItemElement(controlPropertyName:String): { label:String, value:String };
+	public function getControlItemElement(controlPropertyName: String): { label: String, value: String };
 	
 	/**
 	 * Returns a Boolean value that specifies whether the control is enabled or disabled (dimmed).
@@ -45,7 +45,7 @@ extern class XMLUI {
 	 * @return A Boolean value of true if the control is enabled; false otherwise.
 	 */
 	@:jsflVersion({ added: Flash8 })
-	public function getEnabled(controlID:String):Bool;
+	public function getEnabled(controlID: String): Bool;
 	
 	/**
 	 * Returns a Boolean value that specifies whether the control is visible or hidden.
@@ -53,14 +53,14 @@ extern class XMLUI {
 	 * @return A Boolean value of true if the control is visible, or false if it is invisible (hidden).
 	 */
 	@:jsflVersion({ added: Flash8 })
-	public function getVisible(controlID:String):Bool;
+	public function getVisible(controlID: String): Bool;
 	
 	/**
 	 * Modifies the value of the specified property of the current XMLUI dialog box.
 	 * @param	controlPropertyName A string that specifies the name of XMLUI property to modify.
 	 * @param	value A string that specifies the value to which you want to set the XMLUI property.
 	 */
-	public function set(controlPropertyName:String, value:String):Void;
+	public function set(controlPropertyName: String, value: String): Void;
 	
 	/**
 	 * Sets the label and value for the current item. 
@@ -69,7 +69,7 @@ extern class XMLUI {
 	 * If the value property does not exist, then it is created and assigned the same value as label 
 	 */
 	@:jsflVersion({ added: Flash8 })
-	public function setControlItemElement(controlPropertyName:String, elementItem:{label:String, ?value:String}):Void;
+	public function setControlItemElement(controlPropertyName: String, elementItem:{label: String, ?value: String}): Void;
 	
 	/**
 	 * Sets the label, value pairs of the current item.
@@ -78,7 +78,7 @@ extern class XMLUI {
 	 * If the value property does not exist, then it is created and assigned the same value as label.
 	 */
 	@:jsflVersion({ added: Flash8 })
-	public function setControlItemElements(controlID:String,  elementItemArray:Array<{label:String, ?value:String}>):Void;
+	public function setControlItemElements(controlID: String,  elementItemArray: Array<{label: String, ?value: String}>): Void;
 	
 	/**
 	 * Enables or disables (dims) a control.
@@ -86,7 +86,7 @@ extern class XMLUI {
 	 * @param	enable A Boolean value of true if you want to enable the control, or false if you want to disable (dim) it.
 	 */
 	@:jsflVersion({ added: Flash8 })
-	public function setEnabled(controlID:String, enable:Bool):Void;
+	public function setEnabled(controlID: String, enable: Bool): Void;
 	
 	/**
 	 * Shows or hides a control.
@@ -94,6 +94,6 @@ extern class XMLUI {
 	 * @param	visible A Boolean value of true if you want to show the control; false if you want to hide it.
 	 */
 	@:jsflVersion({ added: Flash8 })
-	public function setVisible(controlID:String, visible:Bool):Void;
+	public function setVisible(controlID: String, visible: Bool): Void;
 
 }

@@ -16,36 +16,36 @@ extern class PresetItem {
 	 * Specifies whether the item is installed along with Flash or is a custom item that you or someone else has created.
 	 */
 	@:jsflVersion({ added: CS4 })
-	public var isDefault(default, null):Bool;
+	public var isDefault(default, null): Bool;
 	
 	/**
 	 * Specifies whether the item in the Motion Presets panel is a folder or a preset.
 	 */
 	@:jsflVersion({ added: CS4 })
-	public var isFolder(default, null):Bool;
+	public var isFolder(default, null): Bool;
 	
 	/**
 	 * The level of the item in the folder structure of the Motion Presets panel.
 	 */
 	@:jsflVersion({ added: CS4 })
-	public var level(default, null):Int;
+	public var level(default, null): Int;
 	
 	/**
 	 * The name of the preset or folder, without path information.
 	 */
 	@:jsflVersion({ added: CS4 })
-	public var name(default, null):String;
+	public var name(default, null): String;
 	
 	/**
 	 * Specifies whether a folder in the Motion Presets panel is currently expanded.
 	 */
 	@:jsflVersion({ added: CS4 })
-	public var open(default, null):Bool;
+	public var open(default, null): Bool;
 	
 	/**
 	 * The path to the item in the Motion Presets panel folder tree, and the item name.
 	 */
 	@:jsflVersion({ added: CS4 })
-	public var path(default, null):String;
+	public var path(default, null): String;
 
 }

@@ -159,16 +159,16 @@ class Config {
 	static private function getVersionNumber(name: VersionName): Int {
 		
 		var versionNumber = switch (name) {
-			//case FlashPro5 : 5;
-			//case MX : 6;
-			case MX2004 : 7;
-			case Flash8 : 8;
-			case CS3 : 9;
-			case CS4 : 10;
-			case CS5 : 11;
-			case CS6 : 12;
-			case CC : 13;
-			case CC2014 : 14;
+			//case FlashPro5: 5;
+			//case MX: 6;
+			case MX2004: 7;
+			case Flash8: 8;
+			case CS3: 9;
+			case CS4: 10;
+			case CS5: 11;
+			case CS6: 12;
+			case CC: 13;
+			case CC2014: 14;
 		}
 		return versionNumber;
 	}

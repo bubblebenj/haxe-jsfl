@@ -3,13 +3,13 @@
 JSFL extern definition for Haxe.
 
 Definitions are copied from:
-  * CC [Extending ADOBE ® FLASH ® PROFESSIONAL](http://help.adobe.com/en_US/flash/cs/extend/flash_extending_reference.pdf) （Last updated 12/6/2013).
+  * CC [Extending ADOBE ® FLASH ® PROFESSIONAL] (http://help.adobe.com/en_US/flash/cs/extend/flash_extending_reference.pdf) （Last updated 12/6/2013).
   * CS6 Not found
   * CS5, CS5.5 (http://help.adobe.com/en_US/flash/cs/extend/flash_cs5_extending.pdf)
   * CS4 (http://help.adobe.com/archive/en_US/flash/cs4/flash_cs4_extending.pdf)
   * CS3 not found
   * Flash8 not found
-  * MX2004 (http://download.macromedia.com/pub/documentation/en/flash/mx2004/fl_jsapi.pdf) （Last updated ).
+  * MX2004 (http://download.macromedia.com/pub/documentation/en/flash/mx2004/fl_jsapi.pdf).
 
 ## How to use
 
@@ -18,7 +18,7 @@ Definitions are copied from:
 Install it with `haxelib git`.
 
 ```
-$ haxelib git haxe-jsfl git://github.com/tmskst/haxe-jsfl.git
+$ haxelib git haxe-jsfl git://github.com/bubblebenj/haxe-jsfl.git
 ```
 
 An example of HXML.
@@ -28,6 +28,7 @@ An example of HXML.
 -cp src
 -main Main
 -js bin/Main.jsfl
+-D jsflVersion=CS4
 ```
 
 ### Access the fl
@@ -52,7 +53,7 @@ trace("Hello World"); // Main.hx:10: Hello World
 ```haxe
 import jsfl.Item;
 import jsfl.Lib.fl;
- 
+
 class Main {
 	public static function main() {
 		var items:Array<Item> = fl.getDocumentDOM().library.items;

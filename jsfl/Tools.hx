@@ -23,7 +23,7 @@ extern class Tools {
 	 * Returns the most recently pressed key.
 	 * @return The integer value of the key.
 	 */
-	public function getKeyDown():Int;
+	public function getKeyDown(): Int;
 	
 	/**
 	 * Sets the pointer to a specified appearance.
@@ -37,7 +37,7 @@ extern class Tools {
 		• 6 = X
 		• 7 = hand cursor
 	 */
-	public function setCursor(cursor:Int):Void;
+	public function setCursor(cursor: Int): Void;
 
 	
 	/**
@@ -50,41 +50,41 @@ extern class Tools {
 	/**
 	 * Read-only; returns the ToolObj object for the currently active tool.
 	 */
-	public var activeTool(default, null):ToolObj;
+	public var activeTool(default, null): ToolObj;
 	
 	/**
 	 * Read-only; a Boolean value that identifies if the Alt key is being pressed.
 	 */
-	public var altIsDown(default, null):Bool;
+	public var altIsDown(default, null): Bool;
 	
 	/**
 	 * Read-only; a Boolean value that identifies if the Control key is being pressed.
 	 */
-	public var ctlIsDown(default, null):Bool;
+	public var ctlIsDown(default, null): Bool;
 	
 	/**
 	 * Read-only; a Boolean value that identifies if the left mouse button is currently pressed.
 	 */
-	public var mouseIsDown(default, null):Bool;
+	public var mouseIsDown(default, null): Bool;
 	
 	/**
 	 * Read-only; a point that represents the position of the last mouse-down event on the Stage.
 	 */
-	public var penDownLoc(default, null):JSFLPoint;
+	public var penDownLoc(default, null): JSFLPoint;
 	
 	/**
 	 * Read-only; a point that represents the current location of the mouse.
 	 */
-	public var penLoc(default, null):JSFLPoint;
+	public var penLoc(default, null): JSFLPoint;
 	
 	/**
 	 * Read-only; a Boolean value that identifies if the Shift key is being pressed.
 	 */
-	public var shiftIsDown(default, null):Bool;
+	public var shiftIsDown(default, null): Bool;
 	
 	/**
 	 * Read-only; an array of ToolObj objects.
 	 */
-	public var toolObjs(default, null):Array<ToolObj>;
+	public var toolObjs(default, null): Array<ToolObj>;
 	
 }

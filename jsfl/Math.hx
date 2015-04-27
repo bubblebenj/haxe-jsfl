@@ -35,14 +35,14 @@ extern class Math {
 	 * @param	mat2 Specify the 2nd Matrix objects to be concatenated.
 	 * @return A concatenated object matrix.
 	 */
-	public static function concatMatrix(mat1:Matrix, mat2:Matrix):Matrix;
+	public static function concatMatrix(mat1:Matrix, mat2:Matrix): Matrix;
 	
 	/**
 	 * Returns the inverse of the specified matrix
 	 * @param	mat Indicates the Matrix object to invert.
 	 * @return A Matrix object that is the inverse of the original matrix.
 	 */
-	public static function invertMatrix(mat:Matrix):Matrix;
+	public static function invertMatrix(mat: Matrix): Matrix;
 	
 	/**
 	 * Computes the distance between two points.
@@ -50,7 +50,7 @@ extern class Math {
 	 * @param	pt2 Specify the 2nd end point.
 	 * @return A floating-point value that represents the distance between the points.
 	 */
-	public static function pointDistance(pt1:JSFLPoint, pt2:JSFLPoint):Float;
+	public static function pointDistance(pt1:JSFLPoint, pt2:JSFLPoint): Float;
 	
 	/**
 	 * Applies a matrix to a point.
@@ -59,6 +59,6 @@ extern class Math {
 	 * @return The transformed point.
 	 */
 	@:jsflVersion({ added: CS6 })
-	public function transformPoint(matrix:Matrix, point:JSFLPoint): JSFLPoint;
+	public function transformPoint(matrix: Matrix, point: JSFLPoint): JSFLPoint;
 
 }

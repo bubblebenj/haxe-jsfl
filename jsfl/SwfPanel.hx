@@ -19,40 +19,40 @@ extern class SwfPanel {
 	 * @param	arg Parameters to pass to the function.
 	 * @return Either null or a string that is returned by the function call. The function result could be an empty string.
 	 */
-	public function call(functionName:String, ?arg:Dynamic):String;
+	public function call(functionName: String, ?arg: Dynamic): String;
 	
 	/**
 	 * Reloads content in the SWF panel.
 	 */
 	@:jsflVersion({ added: CC })
-	public function reload():Void;
+	public function reload(): Void;
 	
 	/**
 	 * Sets the keyboard focus to the specified SWF panel.
 	 */
 	@:jsflVersion({ added: CS5 })
-	public function setFocus():Void;
+	public function setFocus(): Void;
 	
 	/**
 	 * A string that contains the DPI scale factor (scaleX) for swfPanel.
 	 */
 	@:jsflVersion({ added: CC })
-	public var dpiScaleFactorX(default, default):String;
+	public var dpiScaleFactorX(default, default): String;
 	
 	/**
 	 * A string that contains the DPI scale factor (scaleY) for swfPanel.
 	 */
 	@:jsflVersion({ added: CC })
-	public var dpiScaleFactorY(default, default):String;
+	public var dpiScaleFactorY(default, default): String;
 	
 	/**
 	 * Read-only; a string that represents the name of the specified Window SWF panel.
 	 */
-	public var name(default, null):String;
+	public var name(default, null): String;
 	
 	/**
 	 * Read-only; a string that represents the path to the SWF file used in the specified Window SWF panel.
 	 */
-	public var path(default, null):String;
+	public var path(default, null): String;
 
 }

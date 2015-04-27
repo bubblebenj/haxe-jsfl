@@ -16,13 +16,13 @@ extern class ComponentsPanel {
 	 * @param	category Name Specifies the name of the component category. The valid category names are listed in the Components panel.
 	 * @param	componentName Specifies the name of the component in the specified category. The valid component names are listed in the Components panel.
 	 */
-	public function addItemToDocument(position: JSFLPoint, categoryName:String, componentName:String):Void;
+	public function addItemToDocument(position: JSFLPoint, categoryName: String, componentName: String): Void;
 	
 	/**
 	 * Refreshes the Components panel's list of components
 	 * @return A Boolean value of true if the Component panel list is refreshed, false otherwise.
 	 */
 	@:jsflVersion({ added: Flash8 })
-	public function reload():Bool;
+	public function reload(): Bool;
 	
 }

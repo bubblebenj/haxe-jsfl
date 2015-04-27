@@ -12,23 +12,23 @@ extern class Oval extends Shape{
 	 * Read-only; a Boolean value that specifies whether the Close Path check box in the Property inspector is selected.
 	 */
 	@:jsflVersion({ added: CS3 })
-	public var closePath(default, null):Bool;
+	public var closePath(default, null): Bool;
 	
 	/**
 	 * Read-only; a float value that specifies the end angle of the Oval object.
 	 */
 	@:jsflVersion({ added: CS3 })
-	public var endAngle(default, null):Float;
+	public var endAngle(default, null): Float;
 	
 	/**
 	 * Read-only; a float value that specifies the inner radius of the Oval object as a percentage.
 	 */
 	@:jsflVersion({ added: CS3 })
-	public var innerRadius(default, null):Float;
+	public var innerRadius(default, null): Float;
 	
 	/**
 	 * Read-only; a float value that specifies the start angle of the Oval object.
 	 */
 	@:jsflVersion({ added: CS3 })
-	public var startAngle(default, null):Float;
+	public var startAngle(default, null): Float;
 }
