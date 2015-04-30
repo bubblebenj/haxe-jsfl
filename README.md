@@ -1,12 +1,20 @@
-# hxfl
+# Jxfl
 
-Haxe extern definition for The Flash JavaScript API (aka jsfl).
+For "Javascript Haxe Flash API" is a Haxe extern definition for The Flash JavaScript API (aka jsfl).
 
 ###Overview
 
-The Flash JavaScript API lets you create scripts that run in the Flash authoring environment.
+The **Jsfl** API lets you create scripts that run in the Flash authoring environment.
 
-Hxfl lets you have the full power of Haxe while creating jsfl files
+**Jxfl** makes jsfl easier
+* Every function are documented jsdoc style
+* Options values are narrowed to those actually available
+* One for all jsfl API: the proposed API match your Flash version (from *Macromedia Flash MX2004* to *Adobe Flash Professional CC*)
+* [Haxe](http://haxe.org/documentation/introduction/) full power while creating jsfl files:
+  * Code completion
+  * Fully typed system (classes, type inference, type checking and more)
+  * Many librairies from haxe, haxe-std are available
+  * and [much more](http://haxe.org/)
 
 ## How to use
 
@@ -15,13 +23,13 @@ Hxfl lets you have the full power of Haxe while creating jsfl files
 Install it with `haxelib git`.
 
 ```
-$ haxelib git hxfl git://github.com/bubblebenj/haxe-jsfl.git
+$ haxelib git jxfl git://github.com/bubblebenj/haxe-jsfl.git
 ```
 
 An example of HXML.
 
 ```
--lib hxfl
+-lib jxfl
 -cp src
 -main Main
 -js bin/Main.jsfl
@@ -37,7 +45,7 @@ var document:Document = fl.getDocumentDOM();
 
 ### Trace output
 
-When link (-lib haxe-jsfl) passes as a library, 'trace' comes to be usable automatically.
+When link (-lib jxfl) passes as a library, 'trace' comes to be usable automatically.
 
 ```haxe
 trace("Hello World"); // Main.hx:10: Hello World
