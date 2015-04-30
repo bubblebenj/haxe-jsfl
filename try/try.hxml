@@ -1,5 +1,5 @@
+-lib hxfl
 -cp src
--cp ..
 -js bin/Main.jsfl
 -D jsflVersion=MX2004
 -main Main
