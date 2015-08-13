@@ -86,6 +86,6 @@ Definitions are copied from:
 | CS6 | Not found |
 | CS5, CS5.5 | [Extending ADOBE® FLASH® PROFESSIONAL CS5 & CS5.5](http://help.adobe.com/en_US/flash/cs/extend/flash_cs5_extending.pdf) |
 | CS4 | [Extending ADOBE® FLASH® CS4 PROFESSIONAL](http://help.adobe.com/archive/en_US/flash/cs4/flash_cs4_extending.pdf) |
-| CS3 | not found |
-| Flash8 | not found [Macromedia Flash 8 - Extending Flash](http://w3.tue.nl/fileadmin/id/objects/E-Atelier/Phidgets/Software/Flash/fl8_extending.pdf) |
+| CS3 | not found > [Unofficial french link EXTENSION DE FLASH](http://forums.mediabox.fr/wiki/doc/pdf/flash_cs3_extending.pdf) |
+| Flash8 | not found > [Unofficial Macromedia Flash 8 - Extending Flash](http://w3.tue.nl/fileadmin/id/objects/E-Atelier/Phidgets/Software/Flash/fl8_extending.pdf) |
 | MX2004 | [Macromedia Flash™MX 2004 - Flash JavaScript Dictionary] (http://download.macromedia.com/pub/documentation/en/flash/mx2004/fl_jsapi.pdf). |
